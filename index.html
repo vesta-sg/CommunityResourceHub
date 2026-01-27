@@ -100,7 +100,7 @@
       const card = document.createElement("div");
       card.className = "card";
       card.innerHTML = `
-        <h3>${resource.name}</h3>
+        <h3><a href="${resource.page}">${resource.name}</a></h3>
         <p>${resource.description}</p>
         <span>Category:</span> ${resource.category}
       `;
