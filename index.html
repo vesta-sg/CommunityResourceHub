@@ -2,12 +2,143 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Community Support</title>
+  <title>Community Resource Hub</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
-  <h1>Community Support</h1>
-  
+
+<header>
+  <h1>Community Resource Hub</h1>
+  <p>Connecting residents to local support, services, and opportunities</p>
+</header>
+
+<section>
+  <h2>About Our Community</h2>
+  <p>
+    This Community Resource Hub is designed to help residents easily discover
+    local non-profits, support services, and community programs that improve
+    quality of life and promote well-being.
+  </p>
+</section>
+
+<section class="highlight">
+  <h2>Featured Community Resources</h2>
+  <div class="resources">
+    <div class="card">
+      <h3>Community Food Pantry</h3>
+      <p>Provides free groceries to families in need.</p>
+      <span>Category:</span> Food Assistance
+    </div>
+    <div class="card">
+      <h3>Youth Learning Center</h3>
+      <p>Offers tutoring, mentoring, and after-school programs.</p>
+      <span>Category:</span> Education
+    </div>
+    <div class="card">
+      <h3>Health & Wellness Clinic</h3>
+      <p>Low-cost medical and mental health services.</p>
+      <span>Category:</span> Healthcare
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Community Resource Directory</h2>
+
+  <div class="controls">
+    <input type="text" id="searchInput" placeholder="Search resources...">
+    <select id="categoryFilter">
+      <option value="all">All Categories</option>
+      <option value="Food">Food Assistance</option>
+      <option value="Education">Education</option>
+      <option value="Healthcare">Healthcare</option>
+      <option value="Events">Community Events</option>
+    </select>
+  </div>
+
+  <div class="resources" id="resourceList"></div>
+</section>
+
+<section>
+  <h2>Submit a New Community Resource</h2>
+  <form id="resourceForm">
+    <input type="text" id="name" placeholder="Resource Name" required><br><br>
+    <input type="text" id="category" placeholder="Category" required><br><br>
+    <textarea id="description" placeholder="Description" required></textarea><br><br>
+    <button type="submit">Submit Resource</button>
+  </form>
+</section>
+
+<section>
+  <h2>Tips for Using This Hub</h2>
+  <ul>
+    <li>Use the search bar to quickly find services you need</li>
+    <li>Filter by category to narrow results</li>
+    <li>Submit new resources to help support the community</li>
+  </ul>
+</section>
+
+<footer>
+  <p>Community Resource Hub © 2026</p>
+</footer>
+
+<script>
+  const resources = [
+    { name: "Community Food Pantry", category: "Food", description: "Free groceries for families." },
+    { name: "Youth Learning Center", category: "Education", description: "Tutoring and mentoring programs." },
+    { name: "Health & Wellness Clinic", category: "Healthcare", description: "Affordable health services." },
+    { name: "Community Events Program", category: "Events", description: "Local festivals and workshops." }
+  ];
+
+  const resourceList = document.getElementById("resourceList");
+  const searchInput = document.getElementById("searchInput");
+  const categoryFilter = document.getElementById("categoryFilter");
+
+  function displayResources(list) {
+    resourceList.innerHTML = "";
+    list.forEach(resource => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <h3>${resource.name}</h3>
+        <p>${resource.description}</p>
+        <span>Category:</span> ${resource.category}
+      `;
+      resourceList.appendChild(card);
+    });
+  }
+
+  function filterResources() {
+    const search = searchInput.value.toLowerCase();
+    const category = categoryFilter.value;
+
+    const filtered = resources.filter(r => {
+      const matchesSearch = r.name.toLowerCase().includes(search);
+      const matchesCategory = category === "all" || r.category === category;
+      return matchesSearch && matchesCategory;
+    });
+
+    displayResources(filtered);
+  }
+
+  searchInput.addEventListener("input", filterResources);
+  categoryFilter.addEventListener("change", filterResources);
+
+  document.getElementById("resourceForm").addEventListener("submit", e => {
+    e.preventDefault();
+    const newResource = {
+      name: document.getElementById("name").value,
+      category: document.getElementById("category").value,
+      description: document.getElementById("description").value
+    };
+    resources.push(newResource);
+    displayResources(resources);
+    e.target.reset();
+    alert("Thank you for submitting a resource!");
+  });
+
+  displayResources(resources);
+</script>
+
 </body>
 </html>  
