@@ -59,7 +59,14 @@ header:not(.hero) {
 .btm:hover {
   background-color: #45a049;
 }
-
+.card{
+  backround-color:white;
+  padding:20px;
+  border-radius:8px;
+  box-shadow:0 2px 5px rgba(0,0,0,0,1)
+  border:3px solid transparent;
+  border-image:Linear gradient(to bottom right,rgba(0,51,102,0.4),rgba(0,102,204,0,4))1;
+}
 
 
 header p {
