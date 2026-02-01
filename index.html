@@ -57,16 +57,17 @@
   <div class="directory-content">
     <h2>Community Resource Directory</h2>
 
-    <div class="controls">
-      <input type="text" placeholder="Search resources...">
-      <select>
-        <option>All Categories</option>
-        <option>Food Assistance</option>
-        <option>Education</option>
-        <option>Healthcare</option>
-        <option>Community Events</option>
-      </select>
-    </div>
+   <div class="controls">
+  <input type="text" id="searchInput" placeholder="Search resources...">
+  <select id="categoryFilter">
+    <option value="all">All Categories</option>
+    <option value="Food">Food Assistance</option>
+    <option value="Education">Education</option>
+    <option value="Healthcare">Healthcare</option>
+    <option value="Events">Community Events</option>
+  </select>
+  </div>
+
 
     <div class="mini-resources">
       <div class="mini-card">
@@ -95,20 +96,28 @@
     </div>
   </div>
 </section>
-
-
-
-
+<section>
   <div class="resources" id="resourceList"></div>
 </section>
 
-<section>
+
+ <section>
   <h2>Submit a New Community Resource</h2>
   <form id="resourceForm">
     <input type="text" id="name" placeholder="Resource Name" required><br><br>
-    <input type="text" id="category" placeholder="Category" required><br><br>
+
+    <select id="category" required>
+      <option value="">Select Category</option>
+      <option value="Food">Food Assistance</option>
+      <option value="Education">Education</option>
+      <option value="Healthcare">Healthcare</option>
+      <option value="Events">Community Events</option>
+    </select><br><br>
+
     <textarea id="description" placeholder="Description" required></textarea><br><br>
     <button type="submit">Submit Resource</button>
+
+
   </form>
 </section>
 
