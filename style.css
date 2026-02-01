@@ -13,19 +13,19 @@ p {
   line-height: 1.6;
 }
 
-/* remove any old solid header color */
+
 header {
   color: white;
   padding: 20px;
   text-align: center;
 }
 
-/* apply solid blue only to non‑hero headers */
+
 header:not(.hero) {
   background-color: #2c6bed;
 }
 
-/* THIS is the gradient hero we want */
+
 .hero {
   background: linear-gradient(to bottom, #ADD8E6, #ffffff);
   padding: 60px 20px;
@@ -59,13 +59,19 @@ header:not(.hero) {
 .btm:hover {
   background-color: #45a049;
 }
-.card{
-  backround-color:white;
-  padding:20px;
-  border-radius:8px;
-  box-shadow:0 2px 5px rgba(0,0,0,0,1)
-  border:3px solid transparent;
-  border-image:Linear gradient(to bottom right,rgba(0,51,102,0.4),rgba(0,102,204,0,4))1;
+card {
+  background-color: white;         
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+
+  border: 3px solid;            
+  border-image: linear-gradient(
+    to bottom right,
+    rgba(0, 51, 102, 0.4),
+    rgba(0, 102, 204, 0.4)
+  ) 1;
 }
 
 
