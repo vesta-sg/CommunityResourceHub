@@ -134,7 +134,19 @@ footer {
   top: 0;
   z-index: 1000;
 }
-
+.btm{
+  display:inline-block;
+  backround color:#4CAF50;
+  color:white;
+  padding:10px 18px;
+  border-radius:5x;
+  text-decoration:none;
+  font-size:16px;
+  transition:backround-color 0.3s ease;
+}
+.btn:hover{
+  backround-color:#45a049;
+  }
 .nav-links{
   color: white;
   text-decoration: none;
