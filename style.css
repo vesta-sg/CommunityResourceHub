@@ -19,11 +19,6 @@ header {
   text-align: center;
 }
 
-header:not(.hero) {
-  background-color: #2c6bed;
-}
-
-
 .hero {
   background: linear-gradient(to bottom, #ADD8E6, #ffffff); 
   padding: 60px 20px;
