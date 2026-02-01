@@ -104,23 +104,16 @@ section li {
   margin-top: 15px;
 }
 
-.card {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
 .gradient-card {
   background: linear-gradient(
     to bottom right,
     rgba(0, 51, 102, 0.3),
     rgba(0, 102, 204, 0.3)
   );
-  padding: 3px; 
+  padding: 4px;
   border-radius: 10px;
+  margin-bottom: 20px;
 }
-
 
 .card-content {
   background-color: white;
@@ -128,6 +121,7 @@ section li {
   padding: 20px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+
 
 
 .card h3 {
