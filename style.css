@@ -46,14 +46,14 @@ header:not(.hero) {
   display: inline-block;
   background-color: #4CAF50;
   color: white;
-  padding: 12px 22px;
+  padding: 10px 18px;
   border-radius: 5px;
   text-decoration: none;
   font-size: 16px;
   transition: background-color 0.3s ease;
 }
 
-.hero .btn:hover {
+.hero .btm:hover {
   background-color: #45a049;
 }
 
