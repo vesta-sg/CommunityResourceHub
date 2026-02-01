@@ -13,12 +13,8 @@ p {
   line-height: 1.6;
 }
 
-header {
-  background-color: #2c6bed;
-  color: white;
-  padding: 20px;
-  text-align: center;
-}
+
+
 .hero {
   background: linear-gradient(to bottom, #ADD8E6, #ffffff); 
   padding: 60px 20px;
