@@ -133,61 +133,66 @@
 <footer>
   <p>Community Resource Hub © 2026</p>
 </footer>
-
+<!-- Put this at the very bottom, just before </body> -->
 <script>
-  const resources = [
+const resources = [
   { name: "Community Food Pantry", category: "Food", description: "Free groceries for families.", page: "food-pantry.html" },
   { name: "Youth Learning Center", category: "Education", description: "Tutoring and mentoring programs.", page: "youth-learning.html" },
   { name: "Health & Wellness Clinic", category: "Healthcare", description: "Affordable health services.", page: "health-clinic.html" },
   { name: "Community Events Program", category: "Events", description: "Local festivals and workshops.", page: "events-program.html" }
 ];
 
-  const resourceList = document.getElementById("resourceList");
-  const searchInput = document.getElementById("searchInput");
-  const categoryFilter = document.getElementById("categoryFilter");
+const miniResources = document.querySelector(".mini-resources");
+const searchInput = document.getElementById("searchInput");
+const categoryFilter = document.getElementById("categoryFilter");
 
-  function displayResources(list) {
-    resourceList.innerHTML = "";
-    list.forEach(resource => {
-      const card = document.createElement("div");
-      card.className = "card";
-      card.innerHTML = `
-        <h3><a href="${resource.page}">${resource.name}</a></h3>
-        <p>${resource.description}</p>
-        <span>Category:</span> ${resource.category}
-      `;
-      resourceList.appendChild(card);
-    });
-  }
-
-  function filterResources() {
-    const search = searchInput.value.toLowerCase();
-    const category = categoryFilter.value;
-
-    const filtered = resources.filter(r => {
-      const matchesSearch = r.name.toLowerCase().includes(search);
-      const matchesCategory = category === "all" || r.category === category;
-      return matchesSearch && matchesCategory;
-    });
-
-    displayResources(filtered);
-  }
-
-  searchInput.addEventListener("input", filterResources);
-  categoryFilter.addEventListener("change", filterResources);
-
-  document.getElementById("resourceForm").addEventListener("submit", e => {
-    e.preventDefault();
-    const newResource = {
-      name: document.getElementById("name").value,
-      category: document.getElementById("category").value,
-      description: document.getElementById("description").value
-    };
-    resources.push(newResource);
-    displayResources(resources);
-    e.target.reset();
-    alert("Thank you for submitting a resource!");
+function displayMiniResources(list) {
+  miniResources.innerHTML = "";
+  list.forEach(resource => {
+    const card = document.createElement("div");
+    card.className = "mini-card";
+    card.innerHTML = `
+      <h3>${resource.page ? `<a href="${resource.page}">${resource.name}</a>` : resource.name}</h3>
+      <p>${resource.description}</p>
+      <span>Category: ${resource.category}</span>
+    `;
+    miniResources.appendChild(card);
   });
+}
+
+function filterResources() {
+  const search = searchInput.value.toLowerCase();
+  const category = categoryFilter.value;
+
+  const filtered = resources.filter(r => {
+    const matchesSearch = r.name.toLowerCase().includes(search);
+    const matchesCategory = category === "all" || r.category === category;
+    return matchesSearch && matchesCategory;
+  });
+
+  displayMiniResources(filtered);
+}
+
+searchInput.addEventListener("input", filterResources);
+categoryFilter.addEventListener("change", filterResources);
+
+document.getElementById("resourceForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const newResource = {
+    name: document.getElementById("name").value,
+    category: document.getElementById("category").value,
+    description: document.getElementById("description").value
+  };
+  resources.push(newResource);
+  displayMiniResources(resources);
+  e.target.reset();
+  alert("Thank you for submitting a resource!");
+});
+
+// Initial display
+displayMiniResources(resources);
+</script>
+
 
   displayResources(resources);
 </script>
