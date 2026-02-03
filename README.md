@@ -1,7 +1,10 @@
 Chattahoochee High School TSA 
-
-rename source page to resource page 
+change title, make a logo
 copyright checklist
 work log
+make prettier
+
 TSA chapter ID: 1368
+
 Arnav P. and Sagnik G.
+
