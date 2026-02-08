@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html> 
+<head>
+  <meta charset="UTF-8">
+  <title>Resource Map</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  L.titleLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{
+    attribution: '&copy; OpenStreetMap'
+  }).addTo(map);
+
+   <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<h1>Community Resource Map</h1>
+<a href="index.html">Back</a>
+
+<div id="map"></div> 
+  
+<script>
+  var locations = [
+  ["ex",x,x],
+  ["ex",x,x],
+  ["ex",x,x]
+  ];
+  locations.forEach(function(loc){
+    L.marker([loc[1],loc[2]])
+      .addto(map)
+      .bindPopup("<b>+loc[0]+"</b>");
+});
+</script>
+  
+<head>
+</html>
