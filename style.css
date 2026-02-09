@@ -1,83 +1,145 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  min-height: 100vh;
-  background: linear-gradient(to bottom, #ADD8E6 0%, #ffffff 100%);
-  color: #333;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Community Resource Hub</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(to bottom, #ADD8E6 0%, #ffffff 100%);
+      color: #333;
+    }
 
-.hero {
-  padding: 60px 20px;
-  text-align: center;
-  color: #004080;
-}
+    .hero {
+      padding: 60px 20px;
+      text-align: center;
+      color: #004080;
+    }
 
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
 
-.hero p {
-  font-size: 1.3rem;
-  color: #333;
-  margin-bottom: 20px;
-}
+    .hero p {
+      font-size: 1.3rem;
+      color: #333;
+      margin-bottom: 20px;
+    }
 
-section {
-  padding: 30px;
-  max-width: 1100px;
-  margin: auto;
-  background: transparent;
-}
+    section {
+      padding: 30px;
+      max-width: 1100px;
+      margin: auto;
+      background: transparent;
+    }
 
-.gradient-card, .card-content, .mini-card {
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 8px;
-  padding: 15px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  text-align: center;
-}
+    .gradient-card, .card-content, .mini-card {
+      background-color: rgba(255, 255, 255, 0.85);
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
 
-.mini-resources {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 15px;
-  margin-top: 15px;
-}
+    .mini-resources {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
 
-.mini-card h3 {
-  font-size: 1rem;
-  margin-bottom: 6px;
-  color: #008080;
-}
+    .mini-card h3 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+      color: #008080;
+    }
 
-.mini-card p {
-  font-size: 0.85rem;
-  margin-bottom: 6px;
-}
+    .mini-card p {
+      font-size: 0.85rem;
+      margin-bottom: 6px;
+    }
 
-.mini-card span {
-  font-size: 0.8rem;
-  font-weight: bold;
-  color: teal;
-}
+    .mini-card span {
+      font-size: 0.8rem;
+      font-weight: bold;
+      color: teal;
+    }
 
-.mini-card:hover {
-  transform: scale(1.03);
-}
+    .mini-card:hover {
+      transform: scale(1.03);
+    }
 
-#map {
-  height: 500px;
-  width: 100%;
-  margin-top: 20px;
-  border: 2px solid #333;
-  border-radius: 8px;
-}
+    #map {
+      height: 500px;
+      width: 100%;
+      margin-top: 20px;
+      border: 2px solid #333;
+      border-radius: 8px;
+    }
 
-footer {
-  background-color: #222;
-  color: white;
-  text-align: center;
-  padding: 15px;
-  margin-top: 30px;
-}
+    a, .btm {
+      display: block;
+      text-align: center;
+      margin: 10px 0;
+      text-decoration: none;
+      color: #007bff;
+    }
+
+    a:hover, .btm:hover {
+      text-decoration: underline;
+      background-color: #45a049;
+    }
+
+    .btm {
+      display: inline-block;
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 600px) {
+      header, section {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <h1>Community Resource Hub</h1>
+    <p>Connecting residents to local support, services, and opportunities</p>
+    <a href="sources.html" class="btm">View Sources</a>
+    <a href="map.html" class="btm">View Map</a>
+  </header>
+
+  <section>
+    <h2>Featured Community Resources</h2>
+    <div class="mini-resources">
+      <div class="mini-card">
+        <h3>Community Food Pantry</h3>
+        <p>Provides free groceries to families in need.</p>
+        <span>Category: Food Assistance</span>
+      </div>
+      <div class="mini-card">
+        <h3>Youth Learning Center</h3>
+        <p>Offers tutoring, mentoring, and after-school programs.</p>
+        <span>Category: Education</span>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
