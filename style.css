@@ -1,168 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Community Resource Hub</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      min-height: 100vh;
-      background: linear-gradient(to bottom, #ADD8E6 0%, #ffffff 100%);
-      color: #333;
-    }
+<meta charset="UTF-8">
+<title>Community Resource Hub</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100%;
+    background: linear-gradient(to bottom, #ADD8E6 0%, #ffffff 100%);
+    color: #333;
+  }
 
-    .hero {
-      padding: 60px 20px;
-      text-align: center;
-      color: #004080;
-    }
+  header.hero {
+    padding: 60px 20px;
+    text-align: center;
+    color: #004080;
+  }
 
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
+  header.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
 
-    .hero p {
-      font-size: 1.3rem;
-      margin-bottom: 20px;
-    }
+  header.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
 
-    section {
-      padding: 30px;
-      max-width: 1100px;
-      margin: auto;
-      background: transparent;
-    }
+  .btm {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+  }
 
-    .mini-resources, .gradient-card-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 15px;
-      margin-top: 15px;
-    }
+  .btm:hover {
+    background-color: #45a049;
+  }
 
-    .mini-card, .gradient-card {
-      background-color: rgba(255, 255, 255, 0.9);
-      border-radius: 10px;
+  section {
+    padding: 30px;
+    max-width: 1100px;
+    margin: auto;
+    background: transparent;
+  }
+
+  .mini-resources, .gradient-card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .mini-card, .gradient-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    text-align: center;
+    transition: transform 0.2s ease;
+  }
+
+  .mini-card:hover, .gradient-card:hover {
+    transform: scale(1.03);
+  }
+
+  .mini-card h3, .gradient-card h3 {
+    color: #008080;
+    margin-bottom: 6px;
+  }
+
+  .mini-card p, .gradient-card p {
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+  }
+
+  .mini-card span, .gradient-card span {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: teal;
+  }
+
+  #map {
+    height: 500px;
+    width: 100%;
+    margin-top: 20px;
+    border: 2px solid #333;
+    border-radius: 8px;
+  }
+
+  footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+  }
+
+  @media (max-width: 600px) {
+    header.hero, section {
       padding: 20px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      text-align: center;
-      transition: transform 0.2s ease;
     }
-
-    .mini-card:hover, .gradient-card:hover {
-      transform: scale(1.03);
-    }
-
-    .mini-card h3, .gradient-card h3 {
-      color: #008080;
-      margin-bottom: 6px;
-    }
-
-    .mini-card p, .gradient-card p {
-      font-size: 0.85rem;
-      margin-bottom: 6px;
-    }
-
-    .mini-card span, .gradient-card span {
-      font-size: 0.8rem;
-      font-weight: bold;
-      color: teal;
-    }
-
-    #map {
-      height: 500px;
-      width: 100%;
-      margin-top: 20px;
-      border: 2px solid #333;
-      border-radius: 8px;
-    }
-
-    a, .btm {
-      display: block;
-      text-align: center;
-      margin: 10px 0;
-      text-decoration: none;
-      color: #007bff;
-    }
-
-    .btm {
-      display: inline-block;
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 18px;
-      border-radius: 5px;
-      font-size: 16px;
-      transition: background-color 0.3s ease;
-    }
-
-    .btm:hover {
-      background-color: #45a049;
-    }
-
-    footer {
-      background-color: #222;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 30px;
-    }
-
-    @media (max-width: 600px) {
-      header, section {
-        padding: 20px;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
-  <header class="hero">
-    <h1>Community Resource Hub</h1>
-    <p>Connecting residents to local support, services, and opportunities</p>
-    <a href="sources.html" class="btm">View Sources</a>
-    <a href="map.html" class="btm">View Map</a>
-  </header>
+<header class="hero">
+  <h1>Community Resource Hub</h1>
+  <p>Connecting residents to local support, services, and opportunities</p>
+  <a href="sources.html" class="btm">View Sources</a>
+  <a href="map.html" class="btm">View Map</a>
+</header>
 
-  <section>
-    <h2>Featured Community Resources</h2>
-    <div class="mini-resources">
-      <div class="mini-card">
-        <h3>Community Food Pantry</h3>
-        <p>Provides free groceries to families in need.</p>
-        <span>Category: Food Assistance</span>
-      </div>
-      <div class="mini-card">
-        <h3>Youth Learning Center</h3>
-        <p>Offers tutoring, mentoring, and after-school programs.</p>
-        <span>Category: Education</span>
-      </div>
-      <div class="mini-card">
-        <h3>Health & Wellness Clinic</h3>
-        <p>Low-cost medical and mental health services.</p>
-        <span>Category: Healthcare</span>
-      </div>
+<section>
+  <h2>Featured Community Resources</h2>
+  <div class="mini-resources">
+    <div class="mini-card">
+      <h3>Community Food Pantry</h3>
+      <p>Provides free groceries to families in need.</p>
+      <span>Category: Food Assistance</span>
     </div>
-  </section>
-
-  <section>
-    <h2>Resource Page</h2>
-    <div class="gradient-card-container">
-      <div class="gradient-card">
-        <h3>Community Events Program</h3>
-        <p>Local festivals, workshops, and activities.</p>
-        <span>Category: Community Events</span>
-      </div>
-      <div class="gradient-card">
-        <h3>Senior Support Center</h3>
-        <p>Programs and support for older adults.</p>
-        <span>Category: Social Support</span>
-      </div>
+    <div class="mini-card">
+      <h3>Youth Learning Center</h3>
+      <p>Offers tutoring, mentoring, and after-school programs.</p>
+      <span>Category: Education</span>
     </div>
-  </section>
+    <div class="mini-card">
+      <h3>Health & Wellness Clinic</h3>
+      <p>Low-cost medical and mental health services.</p>
+      <span>Category: Healthcare</span>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    Community Resource Hub © 2026
-  </footer>
+<section>
+  <h2>Resource Page</h2>
+  <div class="gradient-card-container">
+    <div class="gradient-card">
+      <h3>Community Events Program</h3>
+      <p>Local festivals, workshops, and activities.</p>
+      <span>Category: Community Events</span>
+    </div>
+    <div class="gradient-card">
+      <h3>Senior Support Center</h3>
+      <p>Programs and support for older adults.</p>
+      <span>Category: Social Support</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Community Resource Hub © 2026
+</footer>
 </body>
 </html>
