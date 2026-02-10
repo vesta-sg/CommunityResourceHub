@@ -1,219 +1,160 @@
+/* General Body */
 body {
   margin: 0;
-  padding: 0;
+  padding: 0 20px;
   font-family: Arial, sans-serif;
   background-color: black;
   color: white;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.featured-container .featured-box {
-  background-color: black;
-  color: white;
-  border: 3px solid rgba(0, 153, 255, 0.7); 
-  border-radius: 10px;
-  padding: 20px;
-  text-align: center;
-  max-width: 300px;
-  margin: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-  display: inline-block;
-  vertical-align: top;
+/* Navbar */
+.topnav {
+  background-color: #111;
+  padding: 20px 0;
 }
 
-.featured-container .featured-box h3 {
-  margin-top: 0;
-}
-
-.featured-container .featured-box a.featured-btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 20px;
-  background-color: #4CAF50;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.featured-container .featured-box a.featured-btn:hover {
-  background-color: #45a049;
-}
-
-
-.submit-section .submit-box {
-  background-color: black;
-  color: white;
-  border: 3px solid orange; 
-  border-radius: 10px;
-  padding: 25px;
-  text-align: center;
-  max-width: 400px;
-  margin: 30px auto;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-}
-
-.submit-section .submit-box a {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 12px 25px;
-  background-color: #4CAF50;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.submit-section .submit-box a:hover {
-  background-color: #45a049;
-}
-/* Purpose Section */
-.purpose-section {
-  margin: 60px 0; /* Space above and below the section */
-  padding: 0 40px; /* Horizontal padding */
-  text-align: center;
-}
-
-.purpose-section .purpose-title {
-  font-size: 2.2rem;
-  color: cyan;
-  margin-bottom: 50px; /* Space between title and boxes */
-}
-
-.purpose-container {
+.nav-container {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 60px; /* Space between boxes */
+  gap: 50px;
 }
 
-.purpose-box {
-  background-color: black;
+.nav-links a {
   color: white;
-  border: 3px solid rgba(0, 153, 255, 0.7); /* Blue transparent outline */
-  border-radius: 15px;
-  padding: 35px 25px; /* Bigger padding inside boxes */
-  max-width: 350px;
-  flex: 1 1 300px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-  transition: transform 0.3s ease;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
 }
 
-.purpose-box:hover {
-  transform: translateY(-8px);
+.nav-links a:hover {
+  color: cyan;
 }
 
-.purpose-box h3 {
-  margin-top: 0;
-  margin-bottom: 20px;
-  font-size: 1.4rem;
+/* Hero Section */
+.home-hero {
+  position: relative;
+  width: 100%;
+  min-height: 450px;
+  background-image: url('https://www.crwflags.com/fotw/images/u/us-gajnc2.gif'); /* Replace with your image */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-.purpose-box p {
-  margin: 0;
-  font-size: 1.05rem;
-  line-height: 1.6;
-}
-/* Fade in for the whole page on load */
-body {
-  opacity: 0;
-  animation: fadeInBody 1s forwards;
+.home-hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 0;
 }
 
-@keyframes fadeInBody {
-  to { opacity: 1; }
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
 }
 
-/* Featured Community Resources boxes */
-.featured-box {
-  transform: translateY(20px);
-  opacity: 0;
-  animation: fadeUp 0.8s forwards;
-  animation-delay: 0.2s;
+.home-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  font-weight: bold;
 }
 
-.featured-container .featured-box:nth-child(1) { animation-delay: 0.2s; }
-.featured-container .featured-box:nth-child(2) { animation-delay: 0.4s; }
-.featured-container .featured-box:nth-child(3) { animation-delay: 0.6s; }
-.featured-container .featured-box:nth-child(4) { animation-delay: 0.8s; }
-
-@keyframes fadeUp {
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+.home-hero p {
+  font-size: 1.3rem;
+  line-height: 1.5;
 }
 
-/* Submit Resource box */
-.submit-box {
-  transform: scale(0.95);
-  opacity: 0;
-  animation: popIn 0.6s forwards;
-  animation-delay: 1s;
+/* Featured Section */
+.featured-section {
+  padding: 40px 0;
+  text-align: center;
 }
 
-@keyframes popIn {
-  0% { transform: scale(0.95); opacity: 0; }
-  50% { transform: scale(1.02); opacity: 0.7; }
-  100% { transform: scale(1); opacity: 1; }
-}
-
-/* Hover effect for Featured Boxes */
-.featured-box:hover {
-  transform: translateY(-5px) scale(1.02);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-}
-
-/* Hover effect for Submit box */
-.submit-box:hover {
-  transform: scale(1.03);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 10px 20px rgba(255,165,0,0.5); /* orange shadow */
-}
-
-
-/* Featured Community Resources */
 .featured-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 40px; /* More space between featured boxes */
-  margin: 40px 20px;
+  gap: 30px;
 }
 
 .featured-box {
   background-color: black;
   color: white;
-  border: 3px solid rgba(255, 165, 0, 0.8); /* Orange outline for submit box or adjust for featured */
+  border: 3px solid rgba(0,153,255,0.7);
   border-radius: 12px;
-  padding: 35px 30px;
-  max-width: 350px;
-  flex: 1 1 320px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+  padding: 30px;
+  width: 320px;
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .featured-box:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0,0,255,0.4);
 }
 
 .featured-box h3 {
   margin-top: 0;
-  margin-bottom: 20px;
-  font-size: 1.5rem;
+  margin-bottom: 15px;
 }
 
 .featured-box p {
-  margin: 0;
-  font-size: 1.05rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.5;
 }
-/* Purpose Section Styles */
-.purpose-section {
+
+.featured-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 15px;
+  background-color: rgba(0,153,255,0.7);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.featured-btn:hover {
+  background-color: rgba(0,153,255,1);
+}
+
+/* Submit Box */
+.submit-box {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 25px;
   background-color: black;
+  border: 3px solid orange;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.submit-box a {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 25px;
+  background-color: orange;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.submit-box a:hover {
+  background-color: darkorange;
+}
+
+/* Purpose Section */
+.purpose-section {
   padding: 60px 20px;
   text-align: center;
 }
@@ -226,9 +167,9 @@ body {
 
 .purpose-container {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 40px; /* space between boxes */
+  justify-content: center;
+  gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -236,247 +177,27 @@ body {
 .purpose-box {
   background-color: black;
   border: 2px solid cyan;
-  border-radius: 10px;
+  border-radius: 12px;
   padding: 30px;
-  flex: 1 1 250px; /* makes boxes responsive */
   min-width: 250px;
   max-width: 350px;
+  flex: 1 1 300px;
   color: white;
-  font-size: 1.1em;
-  transform: translateY(20px);
-  opacity: 0;
-  animation: fadeUp 0.8s forwards;
+  transition: transform 0.3s ease;
 }
 
-.purpose-box:nth-child(1) { animation-delay: 0.2s; }
-.purpose-box:nth-child(2) { animation-delay: 0.4s; }
-.purpose-box:nth-child(3) { animation-delay: 0.6s; }
-
-@keyframes fadeUp {
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+.purpose-box:hover {
+  transform: translateY(-8px);
 }
 
-
-/* Make homepage stretch a bit more for spacing */
-body {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.topnav {
-  background-color: #111;
-  padding: 15px;
-}
-
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  margin-left: 20px;
-}
-
-.nav-links a:hover {
-  color: cyan;
-}
-.home-hero {
-  height: 450px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  position: relative;
-  background-image: url('https://www.crwflags.com/fotw/images/u/us-gajnc2.gif');
-  background-size: cover;
-  background-position: center;
-}
-
-.home-hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.5);
-  z-index: 0;
-}
-
-.home-hero .hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 900px;
-  padding: 20px;
-}
-
-.home-hero h1 {
-  font-size: 3rem;
-  margin-bottom: 15px;
-  font-weight: bold;
-}
-
-.home-hero p {
-  font-size: 1.3rem;
-  margin-bottom: 25px;
-  line-height: 1.5;
-}
-
-.home-hero .btm {
-  display: inline-block;
-  background-color: #4CAF50;
-  color: white;
-  padding: 12px 25px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-size: 16px;
-  margin: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.home-hero .btm:hover {
-  background-color: #45a049;
-}
-
-.submit-section .submit-box {
-  background-color: black;
-  color: white;
-  border-radius: 10px;
-  padding: 25px;
-  text-align: center;
-  max-width: 400px;
-  margin: 20px auto;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-}
-
-.submit-section .submit-box a {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 12px 25px;
-  background-color: #4CAF50;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.submit-section .submit-box a:hover {
-  background-color: #45a049;
-}
-
-
-
-.overview-header {
-  font-size: 2.5rem;
-  color: cyan;
-  text-align: center;
-  margin: 20px 0 40px 0;
-  font-weight: bold;
-}
-
-.flip-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px 20px;
-  justify-content: center;
-  margin-top: 30px;
-}
-
-.flip-card {
-  background-color: transparent;
-  perspective: 1000px;
-  cursor: pointer;
-}
-
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 200px;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 200px;
-  backface-visibility: hidden;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 15px;
-  border: 3px solid cyan;
-  font-weight: bold;
-  font-size: 1.1rem;
-}
-
-.flip-card-front {
-  background-color: black;
-  color: white;
-}
-
-.flip-card-back {
-  background-color: black;
-  color: white;
-  transform: rotateY(180deg);
-  font-weight: normal;
-}
-body {
-  background-color: black;
-  color: white;
-}
-
-.featured-section {
-  padding: 40px 20px;
-}
-
-.featured-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.featured-box {
-  background-color: white;  
-  color: black;             
-  padding: 20px;
-  border-radius: 10px;
-  width: 250px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-  text-align: center;
-}
-
-.featured-box h3 {
+.purpose-box h3 {
   margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
 }
 
-.featured-btn {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 15px;
-  background-color: #4CAF50;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.featured-btn:hover {
-  background-color: #45a049;
+.purpose-box p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.4;
 }
