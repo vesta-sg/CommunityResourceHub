@@ -215,6 +215,43 @@ document.getElementById("resourceForm").addEventListener("submit", e => {
 });
 
 displayMiniResources(resources);
+<script>
+// Get the container where resources will go
+const miniResources = document.getElementById("miniResourcesContainer");
+
+// Load resources from localStorage
+let resources = JSON.parse(localStorage.getItem("communityResources")) || [];
+
+// Example of predefined resources (optional, can remove if you only want submitted ones)
+const predefinedResources = [
+  { name: "Community Food Pantry", category: "Food", description: "Free groceries for families.", page: "food-pantry.html" },
+  { name: "Youth Learning Center", category: "Education", description: "Tutoring and mentoring programs.", page: "youth-learning.html" },
+  { name: "Health & Wellness Clinic", category: "Healthcare", description: "Affordable health services.", page: "health-clinic.html" },
+  { name: "Community Events Program", category: "Events", description: "Local festivals and workshops.", page: "events-program.html" }
+];
+
+// Combine predefined and submitted resources
+resources = predefinedResources.concat(resources);
+
+// Function to display resources
+function displayResources(list) {
+  miniResources.innerHTML = "";
+  list.forEach(resource => {
+    const card = document.createElement("div");
+    card.className = "mini-card";
+    card.innerHTML = `
+      <h3>${resource.page ? `<a href="${resource.page}">${resource.name}</a>` : resource.name}</h3>
+      <p>${resource.description}</p>
+      <span>Category: ${resource.category}</span>
+    `;
+    miniResources.appendChild(card);
+  });
+}
+
+// Display all resources on page load
+displayResources(resources);
+</script>
+
 </script>
 
 </body>
