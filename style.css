@@ -68,6 +68,45 @@ body {
 .submit-section .submit-box a:hover {
   background-color: #45a049;
 }
+/* Purpose Section Boxes */
+.purpose-section {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.purpose-section .purpose-title {
+  font-size: 2rem;
+  color: cyan;
+  margin-bottom: 25px;
+}
+
+.purpose-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.purpose-box {
+  background-color: black;
+  color: white;
+  border: 3px solid rgba(0, 153, 255, 0.7); /* Blue transparent outline */
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 300px;
+  flex: 1 1 250px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+.purpose-box h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.purpose-box p {
+  margin: 0;
+}
 
 
 .topnav {
