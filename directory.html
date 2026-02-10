@@ -1,219 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Community Resource Directory</title>
-  <meta name="description" content="Chattahoochee Community Resource Hub Directory">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    /* ===== GENERAL BODY ===== */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background-color: black;
-      color: white;
-      font-family: Arial, sans-serif;
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 20px;
-      overflow-x: hidden;
-      opacity: 0;
-      animation: fadeInBody 1s forwards ease-out;
-    }
+<meta charset="UTF-8">
+<title>Community Resource Directory</title>
+<meta name="description" content="Chattahoochee Community Resource Hub Directory">
 
-    @keyframes fadeInBody {
-      to { opacity: 1; }
-    }
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
 
-    /* ===== NAVBAR ===== */
-    .topnav {
-      background-color: #111;
-      padding: 20px;
-      border-radius: 8px;
-      margin: 20px 0;
-    }
-    .nav-container {
-      display: flex;
-      justify-content: center;
-      gap: 50px;
-    }
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 18px;
-    }
-    .nav-links a:hover { color: cyan; }
+body{
+  background:black;
+  color:white;
+  font-family:Arial;
+  max-width:1400px;
+  margin:0 auto;
+  padding:0 20px;
+  overflow-x:hidden;
+  opacity:0;
+  animation:fadeInBody 1s forwards;
+}
+@keyframes fadeInBody{to{opacity:1}}
 
-    /* ===== HERO ===== */
-    .home-hero {
-      position: relative;
-      width: 100%;
-      min-height: 450px;
-      background: url('https://www.crwflags.com/fotw/images/u/us-gajnc2.gif') no-repeat center center;
-      background-size: cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-      border-radius: 10px;
-      margin: 20px auto;
-      overflow: hidden;
-    }
-    .home-hero::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.5);
-      z-index: 1;
-    }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 900px;
-      padding: 20px;
-      transform: translateY(30px);
-      opacity: 0;
-      animation: heroFadeIn 1s forwards ease-out 0.2s;
-    }
-    @keyframes heroFadeIn {
-      to { transform: translateY(0); opacity: 1; }
-    }
-    .home-hero h1 {
-      font-size: 3rem;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
-    .home-hero p {
-      font-size: 1.3rem;
-      margin-bottom: 25px;
-      line-height: 1.5;
-    }
+.topnav{
+  background:#111;
+  padding:20px;
+  border-radius:8px;
+  margin:20px 0;
+}
+.nav-container{
+  display:flex;
+  justify-content:center;
+  gap:50px;
+  align-items:center;
+}
+.nav-links a{
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+  font-size:18px;
+}
+.nav-links a:hover{color:cyan}
 
-    /* ===== FEATURED / PRESENT CARDS ===== */
-    .featured-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin: 40px auto;
-    }
+.home-hero{
+  position:relative;
+  width:100%;
+  min-height:450px;
+  background:url('https://www.crwflags.com/fotw/images/u/us-gajnc2.gif') center/cover no-repeat;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  border-radius:10px;
+  margin:20px auto;
+  overflow:hidden;
+}
+.home-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.5);
+}
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:900px;
+  padding:20px;
+  transform:translateY(30px);
+  opacity:0;
+  animation:heroFade 1s forwards .2s;
+}
+@keyframes heroFade{to{transform:translateY(0);opacity:1}}
 
-    .featured-box {
-      background-color: black;
-      color: white;
-      border: 3px solid rgba(0,153,255,0.7);
-      border-radius: 12px;
-      padding: 30px;
-      width: 320px;
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      transform: translateY(20px);
-      opacity: 0;
-      animation: fadeUp 0.8s forwards ease-out;
-    }
-    .featured-box:nth-child(1) { animation-delay: 0.2s; }
-    .featured-box:nth-child(2) { animation-delay: 0.4s; }
-    .featured-box:nth-child(3) { animation-delay: 0.6s; }
-    .featured-box:nth-child(4) { animation-delay: 0.8s; }
+.home-hero h1{font-size:3rem;margin-bottom:15px}
+.home-hero p{font-size:1.3rem;margin-bottom:25px}
 
-    @keyframes fadeUp {
-      from { transform: translateY(20px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
+.featured-container{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:30px;
+  margin:40px auto;
+}
 
-    .featured-box:hover {
-      transform: translateY(-5px) scale(1.03);
-      box-shadow: 0 10px 20px rgba(0,0,255,0.4);
-    }
+.featured-box{
+  background:black;
+  border:3px solid rgba(0,153,255,.7);
+  border-radius:12px;
+  padding:30px;
+  width:320px;
+  text-align:center;
+  transition:.3s;
+  transform:translateY(20px);
+  opacity:0;
+  animation:fadeUp .8s forwards;
+}
+.featured-box:nth-child(1){animation-delay:.2s}
+.featured-box:nth-child(2){animation-delay:.4s}
+.featured-box:nth-child(3){animation-delay:.6s}
+.featured-box:nth-child(4){animation-delay:.8s}
 
-    .featured-box h3 {
-      margin-top: 0;
-      margin-bottom: 15px;
-    }
-    .featured-box p {
-      font-size: 1rem;
-      line-height: 1.5;
-    }
+@keyframes fadeUp{
+  from{transform:translateY(20px);opacity:0}
+  to{transform:translateY(0);opacity:1}
+}
 
-   
+.featured-box:hover{
+  transform:translateY(-5px) scale(1.03);
+  box-shadow:0 10px 20px rgba(0,0,255,.4);
+}
 
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 1000px) {
-      .home-hero { height: 350px; }
-      .home-hero h1 { font-size: 2.2rem; }
-      .home-hero p { font-size: 1rem; }
-      .featured-box { width: 90%; max-width: 320px; }
-      .purpose-box { width: 90%; max-width: 350px; }
-    }
-  </style>
+.btm{
+  display:block;
+  text-align:center;
+  margin:40px auto;
+  color:cyan;
+  font-weight:bold;
+  text-decoration:none;
+}
+.btm:hover{color:white}
+</style>
 </head>
+
 <body>
 
 <nav class="topnav">
-  <div class="nav-container">
-    <div class="logo">Community Hub</div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="map.html">Map</a>
-      <a href="submit.html">Submit Resource</a>
-    </div>
-  </div>
+<div class="nav-container">
+<div class="logo">Community Hub</div>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="map.html">Map</a>
+<a href="submit.html">Submit Resource</a>
+</div>
+</div>
 </nav>
 
 <div class="home-hero">
-  <div class="hero-content">
-    <h1>Community Resource Directory</h1>
-    <p>Discover and share local community resources to strengthen our neighborhood.</p>
-  </div>
+<div class="hero-content">
+<h1>Community Resource Directory</h1>
+<p>Discover and share local community resources to strengthen our neighborhood.</p>
+</div>
 </div>
 
-<!-- ===== FEATURED CARDS / PRESENT CARDS ===== -->
 <div class="featured-container" id="featuredContainer">
-  <div class="featured-box">
-    <h3>Food Bank</h3>
-    <p>Provides free food to families in need.</p>
-  </div>
-  <div class="featured-box">
-    <h3>Community Library</h3>
-    <p>Access books, study spaces, and local programs.</p>
-  </div>
-  <div class="featured-box">
-    <h3>After-School Program</h3>
-    <p>Safe activities and tutoring for kids after school.</p>
-  </div>
-  <div class="featured-box">
-    <h3>Health Clinic</h3>
-    <p>Free or low-cost healthcare services for locals.</p>
-  </div>
+<div class="featured-box">
+<h3>Food Bank</h3>
+<p>Provides free food to families in need.</p>
 </div>
 
-<!-- ===== PURPOSE SECTION ===== -->
-<div class="purpose-section">
-  <h2 class="section-title">Purpose of This Hub</h2>
-  <div class="purpose-container">
-    <div class="purpose-box">
-      <h3>Connect Communities</h3>
-      <p>Help locals find and share valuable community resources.</p>
-    </div>
-    <div class="purpose-box">
-      <h3>Support Growth</h3>
-      <p>Encourage development and awareness within neighborhoods.</p>
-    </div>
-    <div class="purpose-box">
-      <h3>Share Knowledge</h3>
-      <p>Provide a space for all resources to be accessible and transparent.</p>
-    </div>
-  </div>
+<div class="featured-box">
+<h3>Community Library</h3>
+<p>Access books, study spaces, and local programs.</p>
 </div>
- 
-<!-- ===== SOURCES LINK ===== -->
+
+<div class="featured-box">
+<h3>After-School Program</h3>
+<p>Safe activities and tutoring for kids after school.</p>
+</div>
+
+<div class="featured-box">
+<h3>Health Clinic</h3>
+<p>Free or low-cost healthcare services for locals.</p>
+</div>
+</div>
+
 <a href="sources.html" class="btm">View Sources</a>
-
-<script>
-  // You can add sessionStorage dynamic card loading here if needed
-</script>
 
 </body>
 </html>
