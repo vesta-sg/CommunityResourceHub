@@ -2,88 +2,103 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Community Resource Hub</title>
-  <meta name="description" content="Chattahoochee Community Resource Hub">
+  <title>Community Resource Directory</title>
+  <meta name="description" content="Chattahoochee Community Resource Hub Directory">
   <link rel="stylesheet" href="style.css">
   <style>
-    .directory-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh;
-      padding: 50px 20px;
-      box-sizing: border-box;
+    body {
+      background-color: #000;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
     }
 
-    .directory-section .overview-header {
-      font-size: 3rem;
-      margin-bottom: 40px;
-      text-align: center;
+    .topnav {
+      background-color: #111;
+      padding: 15px;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+
+    .nav-links a:hover {
       color: cyan;
     }
 
-    .controls {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
+    h1 {
+      text-align: center;
+      margin-top: 30px;
       margin-bottom: 30px;
-    }
-
-    .controls input, .controls select {
-      padding: 10px;
-      font-size: 1rem;
-      border-radius: 5px;
-      border: 2px solid cyan;
-      background-color: black;
-      color: white;
+      color: cyan;
     }
 
     .mini-resources {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 20px;
-      width: 100%;
+      padding: 20px;
       max-width: 1200px;
+      margin: 0 auto 50px auto;
     }
 
     .mini-card {
-      background-color: #111;
-      padding: 20px;
+      background-color: rgba(0,0,0,0.9);
+      border: 2px solid rgba(0, 123, 255, 0.7); /* blue outline with transparency */
       border-radius: 10px;
-      border: 2px solid cyan;
+      width: 250px;
+      padding: 20px;
       text-align: center;
-      transition: transform 0.3s ease;
+      transition: transform 0.2s;
     }
 
     .mini-card:hover {
       transform: scale(1.05);
+      border-color: rgba(0, 123, 255, 1);
     }
 
-    .mini-card a {
-      color: cyan;
-      text-decoration: none;
-    }
-
-    .mini-card a:hover {
-      color: #4CAF50;
-    }
-
-    .home-btn {
-      display: inline-block;
-      margin-bottom: 40px;
-      padding: 12px 25px;
-      background-color: #4CAF50;
+    .mini-card h3 {
+      margin-top: 0;
       color: white;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 16px;
-      transition: background-color 0.3s ease;
     }
 
-    .home-btn:hover {
-      background-color: #45a049;
+    .mini-card p {
+      color: white;
+      font-size: 14px;
+    }
+
+    .mini-card span {
+      display: block;
+      margin-top: 10px;
+      font-size: 12px;
+      color: #ccc;
+    }
+
+    .btm {
+      display: block;
+      text-align: center;
+      margin: 20px auto;
+      width: 150px;
+      padding: 10px 0;
+      background-color: #ff6600;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .btm:hover {
+      background-color: #e65c00;
     }
   </style>
 </head>
@@ -93,136 +108,29 @@
   <div class="nav-container">
     <div class="logo">Community Hub</div>
     <div class="nav-links">
-      <a href="welcome.html">Welcome</a>
       <a href="index.html">Home</a>
       <a href="map.html">Map</a>
-      <a href="sources.html">Sources</a>
-      <a href="directory.html">Directory</a>
-      <a href="#submit">Submit</a>
+      <a href="submit.html">Submit Resource</a>
     </div>
   </div>
 </nav>
 
-<section class="directory-section">
-  <a href="index.html" class="home-btn">🏠 Home</a>
-  <h1 class="overview-header">Community Resource Directory</h1>
+<h1>Community Resource Directory</h1>
 
-  <div class="controls">
-    <input type="text" id="searchInput" placeholder="Search resources...">
-    <select id="categoryFilter">
-      <option value="all">All Categories</option>
-      <option value="Food">Food Assistance</option>
-      <option value="Education">Education</option>
-      <option value="Healthcare">Healthcare</option>
-      <option value="Events">Community Events</option>
-    </select>
-  </div>
+<div class="mini-resources" id="miniResourcesContainer">
+  <!-- Resources will be dynamically added here -->
+</div>
 
-  <div class="mini-resources">
-    <div class="mini-card">
-      <h3><a href="food-pantry.html">Community Food Pantry</a></h3>
-      <p>Free groceries for families in need.</p>
-      <span>Category: Food Assistance</span>
-    </div>
-
-    <div class="mini-card">
-      <h3><a href="youth-learning.html">Youth Learning Center</a></h3>
-      <p>Tutoring, mentoring, and after-school programs.</p>
-      <span>Category: Education</span>
-    </div>
-
-    <div class="mini-card">
-      <h3><a href="health-clinic.html">Health & Wellness Clinic</a></h3>
-      <p>Affordable medical and mental health services.</p>
-      <span>Category: Healthcare</span>
-    </div>
-
-    <div class="mini-card">
-      <h3><a href="events-program.html">Community Events Program</a></h3>
-      <p>Local festivals, workshops, and activities.</p>
-      <span>Category: Community Events</span>
-    </div>
-  </div>
-</section>
-
-<section id="submit">
-  <h2>Submit a New Community Resource</h2>
-  <form id="resourceForm">
-    <input type="text" id="name" placeholder="Resource Name" required><br><br>
-    <select id="category" required>
-      <option value="">Select Category</option>
-      <option value="Food">Food Assistance</option>
-      <option value="Education">Education</option>
-      <option value="Healthcare">Healthcare</option>
-      <option value="Events">Community Events</option>
-    </select><br><br>
-    <textarea id="description" placeholder="Description" required></textarea><br><br>
-    <button type="submit">Submit Resource</button>
-  </form>
-</section>
-
-<footer>
-  <p>Community Resource Hub © 2026</p>
-</footer>
+<a href="index.html" class="btm">Back to Home</a>
 
 <script>
-const resources = [
-  { name: "Community Food Pantry", category: "Food", description: "Free groceries for families.", page: "food-pantry.html" },
-  { name: "Youth Learning Center", category: "Education", description: "Tutoring and mentoring programs.", page: "youth-learning.html" },
-  { name: "Health & Wellness Clinic", category: "Healthcare", description: "Affordable health services.", page: "health-clinic.html" },
-  { name: "Community Events Program", category: "Events", description: "Local festivals and workshops.", page: "events-program.html" }
-];
-
-const miniResources = document.querySelector(".mini-resources");
-const searchInput = document.getElementById("searchInput");
-const categoryFilter = document.getElementById("categoryFilter");
-
-function displayMiniResources(list) {
-  miniResources.innerHTML = "";
-  list.forEach(resource => {
-    const card = document.createElement("div");
-    card.className = "mini-card";
-    card.innerHTML = `
-      <h3>${resource.page ? `<a href="${resource.page}">${resource.name}</a>` : resource.name}</h3>
-      <p>${resource.description}</p>
-      <span>Category: ${resource.category}</span>
-    `;
-    miniResources.appendChild(card);
-  });
-}
-
-function filterResources() {
-  const search = searchInput.value.toLowerCase();
-  const category = categoryFilter.value;
-  const filtered = resources.filter(r => r.name.toLowerCase().includes(search) && (category === "all" || r.category === category));
-  displayMiniResources(filtered);
-}
-
-searchInput.addEventListener("input", filterResources);
-categoryFilter.addEventListener("change", filterResources);
-
-document.getElementById("resourceForm").addEventListener("submit", e => {
-  e.preventDefault();
-  const newResource = {
-    name: document.getElementById("name").value,
-    category: document.getElementById("category").value,
-    description: document.getElementById("description").value
-  };
-  resources.push(newResource);
-  displayMiniResources(resources);
-  e.target.reset();
-  alert("Thank you for submitting a resource!");
-});
-
-displayMiniResources(resources);
-<script>
-// Get the container where resources will go
+// Container
 const miniResources = document.getElementById("miniResourcesContainer");
 
-// Load resources from localStorage
-let resources = JSON.parse(localStorage.getItem("communityResources")) || [];
+// Load submitted resources from localStorage
+let submittedResources = JSON.parse(localStorage.getItem("communityResources")) || [];
 
-// Example of predefined resources (optional, can remove if you only want submitted ones)
+// Predefined resources (optional)
 const predefinedResources = [
   { name: "Community Food Pantry", category: "Food", description: "Free groceries for families.", page: "food-pantry.html" },
   { name: "Youth Learning Center", category: "Education", description: "Tutoring and mentoring programs.", page: "youth-learning.html" },
@@ -230,17 +138,17 @@ const predefinedResources = [
   { name: "Community Events Program", category: "Events", description: "Local festivals and workshops.", page: "events-program.html" }
 ];
 
-// Combine predefined and submitted resources
-resources = predefinedResources.concat(resources);
+// Combine predefined and submitted
+const resources = predefinedResources.concat(submittedResources);
 
-// Function to display resources
+// Display function
 function displayResources(list) {
   miniResources.innerHTML = "";
   list.forEach(resource => {
     const card = document.createElement("div");
     card.className = "mini-card";
     card.innerHTML = `
-      <h3>${resource.page ? `<a href="${resource.page}">${resource.name}</a>` : resource.name}</h3>
+      <h3>${resource.page ? `<a href="${resource.page}" style="color:white;text-decoration:none;">${resource.name}</a>` : resource.name}</h3>
       <p>${resource.description}</p>
       <span>Category: ${resource.category}</span>
     `;
@@ -248,10 +156,8 @@ function displayResources(list) {
   });
 }
 
-// Display all resources on page load
+// Show all on load
 displayResources(resources);
-</script>
-
 </script>
 
 </body>
