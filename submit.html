@@ -125,19 +125,28 @@
 </section>
 
 <script>
-const resources = [];
+const resourceForm = document.getElementById("resourceForm");
 
-document.getElementById("resourceForm").addEventListener("submit", e => {
+resourceForm.addEventListener("submit", e => {
   e.preventDefault();
+
+  // Load existing submissions from localStorage
+  const stored = JSON.parse(localStorage.getItem("communityResources")) || [];
+
+  // Create new resource object
   const newResource = {
     name: document.getElementById("name").value,
     category: document.getElementById("category").value,
     description: document.getElementById("description").value
   };
-  resources.push(newResource);
-  e.target.reset();
+
+  stored.push(newResource);
+
+  // Save back to localStorage
+  localStorage.setItem("communityResources", JSON.stringify(stored));
+
   alert("Thank you for submitting a resource!");
-  console.log(resources); // optional: see new submissions in console
+  resourceForm.reset();
 });
 </script>
 
