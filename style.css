@@ -37,6 +37,109 @@ body {
   opacity: 0;
   animation: fadeUp 0.8s forwards ease-out;
 }
+/* ===== GLOBAL RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: Arial, sans-serif;
+  max-width: 1400px; /* max width of page */
+  margin: 0 auto;    /* center page */
+  padding: 0 20px;   /* side padding */
+  overflow-x: hidden; /* prevent horizontal scroll */
+}
+
+/* ===== NAVBAR ===== */
+.topnav {
+  background-color: #fff; /* white top bar */
+  padding: 20px 40px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  border-radius: 8px;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links a {
+  color: black;
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  color: cyan;
+}
+
+/* ===== HERO ===== */
+.home-hero {
+  height: 450px;
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+  text-align: center;
+  position: relative;
+  background-image: url('https://www.crwflags.com/fotw/images/u/us-gajnc2.gif');
+  background-size: cover;      /* make image cover entire hero */
+  background-position: center; /* center image */
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  margin: 20px auto; /* center with space top/bottom */
+  overflow: hidden;
+}
+
+.home-hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 0;
+}
+
+.home-hero .hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  padding: 20px;
+}
+
+/* ===== CENTER CONTENT SECTIONS ===== */
+section, .featured-container, .purpose-container, .submit-section {
+  display: flex;
+  justify-content: center; /* center horizontally */
+  flex-wrap: wrap;
+  margin: 40px auto;
+}
+
+/* ===== FIX HERO RESPONSIVENESS ===== */
+@media (max-width: 1000px) {
+  .home-hero {
+    height: 350px;
+  }
+  .home-hero h1 {
+    font-size: 2.2rem;
+  }
+  .home-hero p {
+    font-size: 1rem;
+  }
+}
+
+/* ===== REMOVE EXTRA PAGE STRETCH ===== */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 
 .featured-container .featured-box:nth-child(1) { animation-delay: 0.2s; }
 .featured-container .featured-box:nth-child(2) { animation-delay: 0.4s; }
