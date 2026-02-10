@@ -5,6 +5,87 @@
   <title>Community Resource Hub</title>
   <meta name="description" content="Chattahoochee Community Resource Hub">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .directory-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 50px 20px;
+      box-sizing: border-box;
+    }
+
+    .directory-section .overview-header {
+      font-size: 3rem;
+      margin-bottom: 40px;
+      text-align: center;
+      color: cyan;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .controls input, .controls select {
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: 2px solid cyan;
+      background-color: black;
+      color: white;
+    }
+
+    .mini-resources {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .mini-card {
+      background-color: #111;
+      padding: 20px;
+      border-radius: 10px;
+      border: 2px solid cyan;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .mini-card:hover {
+      transform: scale(1.05);
+    }
+
+    .mini-card a {
+      color: cyan;
+      text-decoration: none;
+    }
+
+    .mini-card a:hover {
+      color: #4CAF50;
+    }
+
+    .home-btn {
+      display: inline-block;
+      margin-bottom: 40px;
+      padding: 12px 25px;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .home-btn:hover {
+      background-color: #45a049;
+    }
+  </style>
 </head>
 <body>
 
@@ -23,6 +104,7 @@
 </nav>
 
 <section class="directory-section">
+  <a href="index.html" class="home-btn">🏠 Home</a>
   <h1 class="overview-header">Community Resource Directory</h1>
 
   <div class="controls">
@@ -67,7 +149,6 @@
   <h2>Submit a New Community Resource</h2>
   <form id="resourceForm">
     <input type="text" id="name" placeholder="Resource Name" required><br><br>
-
     <select id="category" required>
       <option value="">Select Category</option>
       <option value="Food">Food Assistance</option>
@@ -75,7 +156,6 @@
       <option value="Healthcare">Healthcare</option>
       <option value="Events">Community Events</option>
     </select><br><br>
-
     <textarea id="description" placeholder="Description" required></textarea><br><br>
     <button type="submit">Submit Resource</button>
   </form>
@@ -114,13 +194,7 @@ function displayMiniResources(list) {
 function filterResources() {
   const search = searchInput.value.toLowerCase();
   const category = categoryFilter.value;
-
-  const filtered = resources.filter(r => {
-    const matchesSearch = r.name.toLowerCase().includes(search);
-    const matchesCategory = category === "all" || r.category === category;
-    return matchesSearch && matchesCategory;
-  });
-
+  const filtered = resources.filter(r => r.name.toLowerCase().includes(search) && (category === "all" || r.category === category));
   displayMiniResources(filtered);
 }
 
