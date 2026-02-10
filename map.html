@@ -61,33 +61,33 @@
   }).addTo(map);
 
   var locations = [
-var locations = [
 
-  ["Post Consumer Brands Food Access", 34.0489, -84.1746],
-  ["Stella Love Nonprofit", 33.9295, -84.3796],
+    ["Post Consumer Brands Food Access", 34.0489, -84.1746, "https://www.postconsumerbrands.com/responsibility/community-impact/food-accessibility/"],
+    ["Stella Love Nonprofit", 33.9295, -84.3796, "https://iamstellalove.com/"],
 
-  ["Americas Youth In Motion", 34.0733, -84.2941],
-  ["North Fulton Young Life", 34.0754, -84.2941],
+    ["Americas Youth In Motion", 34.0733, -84.2941, "https://americasyouthinmotion.org/"],
+    ["North Fulton Young Life", 34.0754, -84.2941, "https://northfulton.younglife.org/"],
 
-  ["Best Brains Alpharetta", 34.0703, -84.2747],
-  ["East Cobb Tutoring Center", 34.0406, -84.4700],
+    ["Best Brains Alpharetta", 34.0703, -84.2747, "https://bestbrains.com/alpharetta"],
+    ["East Cobb Tutoring Center", 34.0406, -84.4700, "https://eastcobbtutoringcenter.com/"],
 
-  ["Merely Players Theater", 34.0739, -84.2941],
-  ["Act1 Theater", 34.0804, -84.3617],
+    ["Merely Players Theater", 34.0739, -84.2941, "https://www.merelyplayerspresents.com/"],
+    ["Act1 Theater", 34.0804, -84.3617, "https://act1theater.org/contact-us"],
 
-  ["Childrens Healthcare Volunteer", 33.7936, -84.3224],
-  ["Open Hand Atlanta", 33.8090, -84.3900],
+    ["Childrens Healthcare Volunteer", 33.7936, -84.3224, "https://www.childrn.org/volunteer/"],
+    ["Open Hand Atlanta", 33.8090, -84.3900, "https://www.openhandatlanta.org/"],
 
-  ["Goodman Dermatology", 34.0750, -84.2940],
-  ["Southeast Medical Group", 34.0665, -84.2877]
-
-];
-
+    ["Goodman Dermatology", 34.0750, -84.2940, "https://www.goodmandermatology.com/"],
+    ["Southeast Medical Group", 34.0665, -84.2877, "https://mysemg.com/"]
+  ];
 
   locations.forEach(function(loc){
     L.marker([loc[1], loc[2]])
       .addTo(map)
-      .bindPopup("<b>" + loc[0] + "</b>");
+      .bindPopup(
+        "<b>" + loc[0] + "</b><br><br>" +
+        "<a href='" + loc[3] + "' target='_blank'>Visit Website</a>"
+      );
   });
 </script>
 
