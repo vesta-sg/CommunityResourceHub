@@ -232,6 +232,64 @@ footer {
 .nav-links a:hover {
   color: #4fc3f7;
 }
+.topnav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #0b1f3a;
+  z-index: 9999;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.logo {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.nav-links a:hover {
+  color: #4fc3f7;
+}
+
+.welcome-hero {
+  padding-top: 140px;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.welcome-hero.full {
+  height: 100vh;
+}
+
+.welcome-content h1 {
+  font-size: 48px;
+  color: #003366;
+}
+
+.welcome-content p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
 
 
 
