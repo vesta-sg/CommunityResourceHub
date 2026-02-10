@@ -129,26 +129,27 @@ const resourceForm = document.getElementById("resourceForm");
 
 resourceForm.addEventListener("submit", e => {
   e.preventDefault();
-
-  // Load existing submissions from localStorage
-  const stored = JSON.parse(localStorage.getItem("communityResources")) || [];
-
+  
+  // Get existing submissions from sessionStorage (not localStorage)
+  const stored = JSON.parse(sessionStorage.getItem("communityResources")) || [];
+  
   // Create new resource object
   const newResource = {
     name: document.getElementById("name").value,
     category: document.getElementById("category").value,
     description: document.getElementById("description").value
   };
-
+  
   stored.push(newResource);
-
-  // Save back to localStorage
-  localStorage.setItem("communityResources", JSON.stringify(stored));
-
+  
+  // Save back to sessionStorage
+  sessionStorage.setItem("communityResources", JSON.stringify(stored));
+  
   alert("Thank you for submitting a resource!");
   resourceForm.reset();
 });
 </script>
+
 
 </body>
 </html>
