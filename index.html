@@ -6,7 +6,6 @@
   <meta name="description" content="Chattahoochee Community Resource Hub">
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Global styles */
     body, html {
       margin: 0;
       padding: 0;
@@ -14,7 +13,6 @@
       background-color: black;
       color: white;
       width: 100%;
-      overflow-x: hidden;
     }
 
     /* Navigation */
@@ -42,8 +40,8 @@
 
     /* Hero section */
     .home-hero {
-      background: url('images/hero.jpg') center/cover no-repeat;
-      min-height: 500px;
+      background: url('images/hero.jpg') center center/cover no-repeat;
+      height: 350px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -51,43 +49,42 @@
     }
 
     .hero-content h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
+      font-size: 2.5rem;
+      margin: 0;
       text-shadow: 2px 2px 5px #000;
     }
 
     .hero-content p {
-      font-size: 1.5rem;
-      max-width: 900px;
-      margin: 0 auto;
+      font-size: 1.2rem;
+      margin-top: 10px;
       text-shadow: 1px 1px 3px #000;
     }
 
     /* Featured Community Resources */
     .featured-section {
-      padding: 50px 20px;
+      padding: 40px 20px;
       text-align: center;
     }
 
     .featured-title {
-      font-size: 2.5rem;
-      margin-bottom: 40px;
+      font-size: 2rem;
+      margin-bottom: 30px;
     }
 
     .featured-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 25px;
+      gap: 20px;
     }
 
     .featured-box {
-      background-color: rgba(0, 0, 0, 0.8);
-      border: 3px solid rgba(0, 0, 255, 0.6);
+      background-color: rgba(0,0,0,0.85);
+      border: 3px solid rgba(0,0,255,0.6);
       border-radius: 15px;
-      padding: 30px;
-      width: 280px;
-      min-height: 200px;
+      padding: 25px;
+      width: 260px;
+      min-height: 180px;
       color: white;
       transition: transform 0.3s ease;
     }
@@ -98,13 +95,13 @@
 
     .featured-box h3 {
       margin-top: 0;
-      font-size: 1.5rem;
       margin-bottom: 15px;
+      font-size: 1.3rem;
     }
 
     .featured-box p {
       font-size: 1rem;
-      line-height: 1.5;
+      line-height: 1.4;
     }
 
     /* Submit a Resource Box */
@@ -112,19 +109,15 @@
       background-color: black;
       border: 3px solid orange;
       border-radius: 15px;
-      padding: 40px;
-      margin: 60px auto;
-      width: 350px;
+      padding: 35px;
+      margin: 50px auto;
+      width: 300px;
       text-align: center;
     }
 
     .submit-box h2 {
-      margin-bottom: 25px;
-      color: orange;
-    }
-
-    .submit-box p {
       margin-bottom: 20px;
+      color: orange;
     }
 
     .submit-box a {
@@ -132,7 +125,7 @@
       text-decoration: none;
       color: white;
       border: 2px solid orange;
-      padding: 12px 25px;
+      padding: 12px 20px;
       border-radius: 8px;
       font-weight: bold;
       transition: background-color 0.3s ease, color 0.3s ease;
@@ -148,8 +141,8 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 30px;
-      padding: 50px 20px;
+      gap: 20px;
+      padding: 40px 20px;
       text-align: center;
     }
 
@@ -157,11 +150,11 @@
       background-color: black;
       border: 2px solid cyan;
       border-radius: 12px;
-      padding: 25px;
-      width: 250px;
-      min-height: 150px;
+      padding: 20px;
+      width: 220px;
+      min-height: 120px;
       color: white;
-      font-size: 1.1rem;
+      font-size: 1rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -169,13 +162,13 @@
 
     /* Tips Section */
     .tips-section {
-      padding: 50px 20px;
+      padding: 40px 20px;
       text-align: center;
     }
 
     .tips-section h2 {
-      margin-bottom: 30px;
-      font-size: 2rem;
+      margin-bottom: 25px;
+      font-size: 1.8rem;
     }
 
     .tips-section ul {
@@ -184,8 +177,8 @@
       margin: 0 auto;
       text-align: left;
       padding-left: 20px;
-      font-size: 1.1rem;
-      line-height: 1.6;
+      font-size: 1.05rem;
+      line-height: 1.5;
     }
 
     /* Footer */
@@ -246,7 +239,7 @@
 <!-- Submit Box -->
 <section class="submit-box">
   <h2>Submit a New Community Resource</h2>
-  <p>Click below to add a new resource to the Directory</p>
+  <p>Add a resource to the Directory</p>
   <a href="submit.html">Submit a Resource</a>
 </section>
 
