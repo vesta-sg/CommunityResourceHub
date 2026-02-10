@@ -124,41 +124,34 @@
 <a href="index.html" class="btm">Back to Home</a>
 
 <script>
-// Container
-const miniResources = document.getElementById("miniResourcesContainer");
+// Grab the container where resources will appear
+const directoryContainer = document.getElementById("directoryContainer");
 
-// Load submitted resources from localStorage
-let submittedResources = JSON.parse(localStorage.getItem("communityResources")) || [];
+// Function to display resources
+function displayResources() {
+  // Get submissions from sessionStorage
+  const storedResources = JSON.parse(sessionStorage.getItem("communityResources")) || [];
 
-// Predefined resources (optional)
-const predefinedResources = [
-  { name: "Community Food Pantry", category: "Food", description: "Free groceries for families.", page: "food-pantry.html" },
-  { name: "Youth Learning Center", category: "Education", description: "Tutoring and mentoring programs.", page: "youth-learning.html" },
-  { name: "Health & Wellness Clinic", category: "Healthcare", description: "Affordable health services.", page: "health-clinic.html" },
-  { name: "Community Events Program", category: "Events", description: "Local festivals and workshops.", page: "events-program.html" }
-];
+  // Clear container first
+  directoryContainer.innerHTML = "";
 
-// Combine predefined and submitted
-const resources = predefinedResources.concat(submittedResources);
-
-// Display function
-function displayResources(list) {
-  miniResources.innerHTML = "";
-  list.forEach(resource => {
-    const card = document.createElement("div");
-    card.className = "mini-card";
-    card.innerHTML = `
-      <h3>${resource.page ? `<a href="${resource.page}" style="color:white;text-decoration:none;">${resource.name}</a>` : resource.name}</h3>
-      <p>${resource.description}</p>
-      <span>Category: ${resource.category}</span>
+  // Loop through each resource and create a box
+  storedResources.forEach((res, index) => {
+    const box = document.createElement("div");
+    box.classList.add("featured-box"); // reuse your featured-box styles
+    box.innerHTML = `
+      <h3>${res.name}</h3>
+      <p><strong>Category:</strong> ${res.category}</p>
+      <p>${res.description}</p>
     `;
-    miniResources.appendChild(card);
+    directoryContainer.appendChild(box);
   });
 }
 
-// Show all on load
-displayResources(resources);
+// Run on page load
+displayResources();
 </script>
+
 
 </body>
 </html>
