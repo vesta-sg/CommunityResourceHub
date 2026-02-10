@@ -85,6 +85,32 @@ body {
   background-color: #45a049;
 }
 
+.submit-section .submit-box {
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  padding: 25px;
+  text-align: center;
+  max-width: 400px;
+  margin: 20px auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.submit-section .submit-box a {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 25px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.submit-section .submit-box a:hover {
+  background-color: #45a049;
+}
 
 
 
