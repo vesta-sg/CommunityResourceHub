@@ -33,18 +33,17 @@ body {
   color: cyan;
 }
 
-/* Hero Section */
 .home-hero {
   position: relative;
   width: 100%;
   min-height: 450px;
-  background-image: url('https://www.crwflags.com/fotw/images/u/us-gajnc2.gif'); /* Replace with your image */
+  background: url('https://www.crwflags.com/fotw/images/u/us-gajnc2.gif') no-repeat center center;
   background-size: cover;
-  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  color: white;
 }
 
 .home-hero::before {
@@ -52,26 +51,17 @@ body {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background-color: rgba(0,0,0,0.5);
-  z-index: 0;
+  background-color: rgba(0,0,0,0.5); /* dark overlay so text pops */
+  z-index: 1;
 }
 
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2; /* make sure text is above overlay */
   max-width: 900px;
+  padding: 20px;
 }
 
-.home-hero h1 {
-  font-size: 3rem;
-  margin-bottom: 15px;
-  font-weight: bold;
-}
-
-.home-hero p {
-  font-size: 1.3rem;
-  line-height: 1.5;
-}
 
 /* Featured Section */
 .featured-section {
