@@ -45,9 +45,10 @@ header:not(.hero) {
 }
 
 .hero {
-  padding: 60px 20px;
+  padding: 120px 20px 60px;
   text-align: center;
 }
+
 
 .hero h1 {
   font-size: 3rem;
@@ -200,6 +201,39 @@ footer {
   top: 0;
   z-index: 1000;
 }
+.topnav{
+  position:fixed;
+  top:0;
+  width: 100%;
+  backround:#0b1f3a;
+  z-index:9999;
+}
+.nav-container{
+  max-width:1200px;
+  margin:auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+.logo{
+  color:white;
+  font-weight:bold;
+  font-size:18px;
+}
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.nav-links a:hover {
+  color: #4fc3f7;
+}
+
+
 
 .nav-links {
   color: white;
