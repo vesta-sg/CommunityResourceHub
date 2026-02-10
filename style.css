@@ -156,9 +156,10 @@ input, select, textarea {
 
 .flip-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px; /* space between cards horizontally and vertically */
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  gap: 30px 20px; /* 30px vertical gap, 20px horizontal gap */
 }
+
 
 .flip-card {
   background-color: transparent;
