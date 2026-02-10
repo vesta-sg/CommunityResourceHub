@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Community Resource Hub</title>
+  <title>Directory - Community Resource Hub</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,7 +13,7 @@
     <div class="nav-links">
       <a href="welcome.html">Welcome</a>
       <a href="index.html">Home</a>
-      <a href="map.html">Map</a>F
+      <a href="map.html">Map</a>
       <a href="sources.html">Sources</a>
       <a href="directory.html">Directory</a>
       <a href="#submit">Submit</a>
@@ -21,101 +21,46 @@
   </div>
 </nav>
 
-<header class="hero home-hero">
-  <div class="hero-content">
-    <h1>Community Resource Hub</h1>
-    <p>Connecting residents to local support, services, and opportunities</p>
-    <a href="sources.html" class="btm">View Sources</a>
-    <a href="map.html" class="btm">View Map</a>
+<section class="directory-section">
+  <h1 class="overview-header">Community Resource Directory</h1>
+
+  <div class="controls">
+    <input type="text" id="searchInput" placeholder="Search resources...">
+    <select id="categoryFilter">
+      <option value="all">All Categories</option>
+      <option value="Food">Food Assistance</option>
+      <option value="Education">Education</option>
+      <option value="Healthcare">Healthcare</option>
+      <option value="Events">Community Events</option>
+    </select>
   </div>
-</header>
 
-
-
-<section>
-  <h2>About Our Community</h2>
-  <p>
-    This Community Resource Hub is designed to help residents easily discover
-    local non-profits, support services, and community programs that improve
-    quality of life and promote well-being.
-  </p>
-</section>
-
-<section class="highlight">
-  <h2>Featured Community Resources</h2>
-
-  <div class="gradient-card">
-    <div class="card-content">
+  <div class="mini-resources">
+    <div class="mini-card">
       <h3><a href="food-pantry.html">Community Food Pantry</a></h3>
-      <p>Provides free groceries to families in need.</p>
+      <p>Free groceries for families in need.</p>
       <span>Category: Food Assistance</span>
     </div>
-  </div>
 
-  <div class="gradient-card">
-    <div class="card-content">
+    <div class="mini-card">
       <h3><a href="youth-learning.html">Youth Learning Center</a></h3>
-      <p>Offers tutoring, mentoring, and after-school programs.</p>
+      <p>Tutoring, mentoring, and after-school programs.</p>
       <span>Category: Education</span>
     </div>
-  </div>
 
-  <div class="gradient-card">
-    <div class="card-content">
+    <div class="mini-card">
       <h3><a href="health-clinic.html">Health & Wellness Clinic</a></h3>
-      <p>Low-cost medical and mental health services.</p>
+      <p>Affordable medical and mental health services.</p>
       <span>Category: Healthcare</span>
     </div>
-  </div>
-</section>
 
-<section class="-gradient" id="directory">
-  <div class="directory-content">
-    <h2>Resource Page</h2>
-
-   <div class="controls">
-  <input type="text" id="searchInput" placeholder="Search resources...">
-  <select id="categoryFilter">
-    <option value="all">All Categories</option>
-    <option value="Food">Food Assistance</option>
-    <option value="Education">Education</option>
-    <option value="Healthcare">Healthcare</option>
-    <option value="Events">Community Events</option>
-  </select>
-  </div>
-
-
-    <div class="mini-resources">
-      <div class="mini-card">
-        <h3><a href="food-pantry.html">Community Food Pantry</a></h3>
-        <p>Free groceries for families in need.</p>
-        <span>Category: Food Assistance</span>
-      </div>
-
-      <div class="mini-card">
-        <h3><a href="youth-learning.html">Youth Learning Center</a></h3>
-        <p>Tutoring, mentoring, and after-school programs.</p>
-        <span>Category: Education</span>
-      </div>
-
-      <div class="mini-card">
-        <h3><a href="health-clinic.html">Health & Wellness Clinic</a></h3>
-        <p>Affordable medical and mental health services.</p>
-        <span>Category: Healthcare</span>
-      </div>
-
-      <div class="mini-card">
-        <h3><a href="events-program.html">Community Events Program</a></h3>
-        <p>Local festivals, workshops, and activities.</p>
-        <span>Category: Community Events</span>
-      </div>
+    <div class="mini-card">
+      <h3><a href="events-program.html">Community Events Program</a></h3>
+      <p>Local festivals, workshops, and activities.</p>
+      <span>Category: Community Events</span>
     </div>
   </div>
 </section>
-<section>
-  <div class="resources" id="resourceList"></div>
-</section>
-
 
 <section id="submit">
   <h2>Submit a New Community Resource</h2>
@@ -132,24 +77,13 @@
 
     <textarea id="description" placeholder="Description" required></textarea><br><br>
     <button type="submit">Submit Resource</button>
-
-
   </form>
-</section>
-
-<section>
-  <h2>Tips for Using This Hub</h2>
-  <ul>
-    <li>Use the search bar to quickly find services you need</li>
-    <li>Filter by category to narrow results</li>
-    <li>Submit new resources to help support the community</li>
-  </ul>
 </section>
 
 <footer>
   <p>Community Resource Hub © 2026</p>
 </footer>
-<!-- Put this at the very bottom, just before </body> -->
+
 <script>
 const resources = [
   { name: "Community Food Pantry", category: "Food", description: "Free groceries for families.", page: "food-pantry.html" },
@@ -205,8 +139,8 @@ document.getElementById("resourceForm").addEventListener("submit", e => {
   alert("Thank you for submitting a resource!");
 });
 
-// Initial display
 displayMiniResources(resources);
 </script>
+
 </body>
-</html>  
+</html>
