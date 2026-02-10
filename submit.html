@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Submit a New Community Resource</title>
+  <meta name="description" content="Submit a new resource to the Chattahoochee Community Hub">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .topnav {
+      background-color: #111;
+      padding: 15px;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+
+    .nav-links a:hover {
+      color: cyan;
+    }
+
+    section {
+      max-width: 700px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #111;
+      border-radius: 10px;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: cyan;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .btm {
+      display: inline-block;
+      margin-top: 20px;
+      text-align: center;
+      color: white;
+      text-decoration: none;
+      background-color: #4CAF50;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+
+    .btm:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="nav-container">
+    <div class="logo">Community Hub</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="map.html">Map</a>
+      <a href="directory.html">Directory</a>
+    </div>
+  </div>
+</nav>
+
+<section>
+  <h1>Submit a New Community Resource</h1>
+  <form id="resourceForm">
+    <input type="text" id="name" placeholder="Resource Name" required>
+
+    <select id="category" required>
+      <option value="">Select Category</option>
+      <option value="Food">Food Assistance</option>
+      <option value="Education">Education</option>
+      <option value="Healthcare">Healthcare</option>
+      <option value="Events">Community Events</option>
+    </select>
+
+    <textarea id="description" placeholder="Description" required></textarea>
+
+    <button type="submit">Submit Resource</button>
+  </form>
+
+  <a href="index.html" class="btm">Back to Home</a>
+</section>
+
+<script>
+const resources = [];
+
+document.getElementById("resourceForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const newResource = {
+    name: document.getElementById("name").value,
+    category: document.getElementById("category").value,
+    description: document.getElementById("description").value
+  };
+  resources.push(newResource);
+  e.target.reset();
+  alert("Thank you for submitting a resource!");
+  console.log(resources); // optional: see new submissions in console
+});
+</script>
+
+</body>
+</html>
