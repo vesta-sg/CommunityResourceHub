@@ -54,7 +54,7 @@
 
     .mini-card {
       background-color: rgba(0,0,0,0.9);
-      border: 2px solid rgba(0, 123, 255, 0.7); /* blue outline with transparency */
+      border: 2px solid rgba(0, 123, 255, 0.7);
       border-radius: 10px;
       width: 250px;
       padding: 20px;
@@ -75,13 +75,6 @@
     .mini-card p {
       color: white;
       font-size: 14px;
-    }
-
-    .mini-card span {
-      display: block;
-      margin-top: 10px;
-      font-size: 12px;
-      color: #ccc;
     }
 
     .btm {
@@ -118,40 +111,35 @@
 <h1>Community Resource Directory</h1>
 
 <div class="mini-resources" id="miniResourcesContainer">
-  <!-- Resources will be dynamically added here -->
+  <!-- Resources will appear here -->
 </div>
 
 <a href="index.html" class="btm">Back to Home</a>
 
 <script>
-// Grab the container where resources will appear
-const directoryContainer = document.getElementById("directoryContainer");
+  // Grab container
+  const directoryContainer = document.getElementById("miniResourcesContainer");
 
-// Function to display resources
-function displayResources() {
-  // Get submissions from sessionStorage
-  const storedResources = JSON.parse(sessionStorage.getItem("communityResources")) || [];
+  // Function to display resources from sessionStorage
+  function displayResources() {
+    const storedResources = JSON.parse(sessionStorage.getItem("communityResources")) || [];
+    directoryContainer.innerHTML = ""; // clear first
 
-  // Clear container first
-  directoryContainer.innerHTML = "";
+    storedResources.forEach(res => {
+      const box = document.createElement("div");
+      box.classList.add("mini-card");
+      box.innerHTML = `
+        <h3>${res.name}</h3>
+        <p><strong>Category:</strong> ${res.category}</p>
+        <p>${res.description}</p>
+      `;
+      directoryContainer.appendChild(box);
+    });
+  }
 
-  // Loop through each resource and create a box
-  storedResources.forEach((res, index) => {
-    const box = document.createElement("div");
-    box.classList.add("featured-box"); // reuse your featured-box styles
-    box.innerHTML = `
-      <h3>${res.name}</h3>
-      <p><strong>Category:</strong> ${res.category}</p>
-      <p>${res.description}</p>
-    `;
-    directoryContainer.appendChild(box);
-  });
-}
-
-// Run on page load
-displayResources();
+  // Display resources on page load
+  displayResources();
 </script>
-
 
 </body>
 </html>
