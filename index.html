@@ -17,20 +17,22 @@
     /* Navbar */
     .topnav {
       background-color: #111;
-      padding: 15px;
+      padding: 20px;
     }
 
     .nav-container {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 30px;
+      gap: 50px;
     }
 
     .nav-links a {
       color: white;
       text-decoration: none;
       font-weight: bold;
+      font-size: 18px;
+      transition: color 0.3s;
     }
 
     .nav-links a:hover {
@@ -40,32 +42,30 @@
     /* Hero Section */
     .hero {
       position: relative;
-      background-image: url('your-image.jpg'); /* <-- Replace with your image path */
+      background-image: url('your-image.jpg'); /* Replace with your image path */
       background-size: cover;
       background-position: center;
       width: 100%;
-      min-height: 400px;
+      min-height: 500px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center;
       padding: 50px 20px;
       box-sizing: border-box;
+      color: white;
     }
 
     .hero h1 {
       font-size: 3rem;
       margin: 0;
-      color: white;
       text-shadow: 2px 2px 5px black;
     }
 
     .hero p {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       max-width: 800px;
       margin-top: 20px;
-      color: white;
       text-shadow: 1px 1px 4px black;
     }
 
@@ -82,9 +82,8 @@
       background-color: rgba(0,0,0,0.85);
       border: 2px solid rgba(0,0,255,0.6);
       border-radius: 10px;
-      width: 300px;
-      padding: 20px;
-      box-sizing: border-box;
+      width: 320px;
+      padding: 25px;
       text-align: center;
       transition: transform 0.3s ease;
     }
@@ -93,12 +92,7 @@
       transform: scale(1.05);
     }
 
-    .featured-box h3 {
-      color: white;
-      margin-bottom: 15px;
-    }
-
-    .featured-box p {
+    .featured-box h3, .featured-box p {
       color: white;
       margin-bottom: 15px;
     }
@@ -180,11 +174,13 @@
   <!-- Navbar -->
   <nav class="topnav">
     <div class="nav-container">
-      <a href="welcome.html">Welcome</a>
-      <a href="index.html">Home</a>
-      <a href="map.html">Map</a>
-      <a href="sources.html">Sources</a>
-      <a href="directory.html">Directory</a>
+      <div class="nav-links">
+        <a href="welcome.html">Welcome</a>
+        <a href="index.html">Home</a>
+        <a href="map.html">Map</a>
+        <a href="sources.html">Sources</a>
+        <a href="directory.html">Directory</a>
+      </div>
     </div>
   </nav>
 
