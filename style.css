@@ -70,44 +70,52 @@ body {
 }
 /* Purpose Section Boxes */
 .purpose-section {
-  margin: 40px 0;
+  margin: 50px 0; /* More space above and below */
   text-align: center;
+  padding: 0 20px; /* Add some horizontal breathing room */
 }
 
 .purpose-section .purpose-title {
   font-size: 2rem;
   color: cyan;
-  margin-bottom: 25px;
+  margin-bottom: 35px; /* More space below the title */
 }
 
 .purpose-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 40px; /* Increased gap between boxes */
 }
 
 .purpose-box {
   background-color: black;
   color: white;
   border: 3px solid rgba(0, 153, 255, 0.7); /* Blue transparent outline */
-  border-radius: 10px;
-  padding: 20px;
-  max-width: 300px;
-  flex: 1 1 250px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  border-radius: 12px;
+  padding: 25px; /* More inner padding for breathing room */
+  max-width: 320px;
+  flex: 1 1 280px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.5);
   text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.purpose-box:hover {
+  transform: translateY(-5px); /* subtle hover lift */
 }
 
 .purpose-box h3 {
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
 }
 
 .purpose-box p {
   margin: 0;
+  line-height: 1.5;
+  font-size: 1rem;
 }
-
 
 .topnav {
   background-color: #111;
