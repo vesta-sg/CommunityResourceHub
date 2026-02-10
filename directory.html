@@ -6,42 +6,105 @@
   <meta name="description" content="Chattahoochee Community Resource Hub Directory">
   <link rel="stylesheet" href="style.css">
   <style>
+    /* ===== GENERAL BODY ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      background-color: #000;
+      background-color: black;
       color: white;
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+      overflow-x: hidden;
+      opacity: 0;
+      animation: fadeInBody 1s forwards ease-out;
     }
 
+    @keyframes fadeInBody {
+      to { opacity: 1; }
+    }
+
+    /* ===== NAVBAR ===== */
     .topnav {
       background-color: #111;
-      padding: 15px;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
     }
-
     .nav-container {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      justify-content: center;
+      gap: 50px;
     }
-
     .nav-links a {
       color: white;
       text-decoration: none;
-      margin-left: 20px;
+      font-weight: bold;
+      font-size: 18px;
     }
+    .nav-links a:hover { color: cyan; }
 
-    .nav-links a:hover {
-      color: cyan;
-    }
-
-    h1 {
+    /* ===== HERO ===== */
+    .home-hero {
+      position: relative;
+      width: 100%;
+      min-height: 450px;
+      background: url('https://www.crwflags.com/fotw/images/u/us-gajnc2.gif') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      margin-top: 30px;
-      margin-bottom: 30px;
-      color: cyan;
+      color: white;
+      border-radius: 10px;
+      margin: 20px auto;
+      overflow: hidden;
+    }
+    .home-hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      padding: 20px;
+      transform: translateY(30px);
+      opacity: 0;
+      animation: heroFadeIn 1s forwards ease-out 0.2s;
+    }
+    @keyframes heroFadeIn {
+      to { transform: translateY(0); opacity: 1; }
     }
 
+    .home-hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    .home-hero p {
+      font-size: 1.3rem;
+      margin-bottom: 25px;
+      line-height: 1.5;
+    }
+    .btm {
+      display: inline-block;
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 16px;
+      margin: 5px;
+      transition: background-color 0.3s ease;
+    }
+    .btm:hover { background-color: #45a049; }
+
+    /* ===== FEATURED / MINI BOXES ===== */
     .mini-resources {
       display: flex;
       flex-wrap: wrap;
@@ -51,7 +114,6 @@
       max-width: 1200px;
       margin: 0 auto 50px auto;
     }
-
     .mini-card {
       background-color: rgba(0,0,0,0.9);
       border: 2px solid rgba(0, 123, 255, 0.7);
@@ -61,37 +123,89 @@
       text-align: center;
       transition: transform 0.2s;
     }
-
     .mini-card:hover {
       transform: scale(1.05);
       border-color: rgba(0, 123, 255, 1);
     }
+    .mini-card h3 { margin-top: 0; color: white; }
+    .mini-card p { color: white; font-size: 14px; }
+    .mini-card span { display: block; margin-top: 10px; font-size: 12px; color: #ccc; }
 
-    .mini-card h3 {
-      margin-top: 0;
-      color: white;
-    }
-
-    .mini-card p {
-      color: white;
-      font-size: 14px;
-    }
-
-    .btm {
-      display: block;
+    /* ===== SUBMIT BOX ===== */
+    .submit-box {
+      max-width: 400px;
+      margin: 40px auto;
+      padding: 25px;
+      background-color: black;
+      border: 3px solid orange;
+      border-radius: 12px;
       text-align: center;
-      margin: 20px auto;
-      width: 150px;
-      padding: 10px 0;
-      background-color: #ff6600;
+      transform: scale(0.95);
+      opacity: 0;
+      animation: popIn 0.6s forwards ease-out 1s;
+    }
+    @keyframes popIn {
+      0% { transform: scale(0.95); opacity: 0; }
+      50% { transform: scale(1.03); opacity: 0.7; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .submit-box a {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 25px;
+      background-color: orange;
       color: white;
       text-decoration: none;
-      border-radius: 5px;
-      font-size: 16px;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    .submit-box a:hover { background-color: darkorange; }
+
+    /* ===== PURPOSE SECTION ===== */
+    .purpose-section { padding: 60px 20px; text-align: center; }
+    .section-title { font-size: 2em; color: cyan; margin-bottom: 40px; }
+    .purpose-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .purpose-box {
+      background-color: black;
+      border: 2px solid cyan;
+      border-radius: 12px;
+      padding: 30px;
+      min-width: 250px;
+      max-width: 350px;
+      flex: 1 1 300px;
+      color: white;
+      transition: transform 0.3s ease;
+      transform: translateY(30px);
+      opacity: 0;
+      animation: fadeUp 0.8s forwards ease-out;
+    }
+    .purpose-box:nth-child(1) { animation-delay: 0.2s; }
+    .purpose-box:nth-child(2) { animation-delay: 0.4s; }
+    .purpose-box:nth-child(3) { animation-delay: 0.6s; }
+    .purpose-box:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 10px 20px rgba(0,153,255,0.5);
+    }
+    .purpose-box h3 { margin-top: 0; margin-bottom: 15px; font-size: 1.2rem; }
+    .purpose-box p { margin: 0; font-size: 1rem; line-height: 1.4; }
+
+    @keyframes fadeUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
 
-    .btm:hover {
-      background-color: #e65c00;
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1000px) {
+      .home-hero { height: 350px; }
+      .home-hero h1 { font-size: 2.2rem; }
+      .home-hero p { font-size: 1rem; }
     }
   </style>
 </head>
@@ -108,21 +222,25 @@
   </div>
 </nav>
 
-
-<h1>Community Resource Directory</h1>
+<div class="home-hero">
+  <div class="hero-content">
+    <h1>Community Resource Directory</h1>
+    <p>Discover and submit local community resources to help your neighborhood.</p>
+    <a href="submit.html" class="btm">Submit a Resource</a>
+  </div>
+</div>
 
 <div class="mini-resources" id="miniResourcesContainer">
-  <!-- Resources will appear here -->
+  <!-- Submitted resources will appear here -->
 </div>
 
 <a href="index.html" class="btm">Back to Home</a>
 
 <script>
-  // Grab container
   const directoryContainer = document.getElementById("miniResourcesContainer");
 
-  // Function to display resources from sessionStorage
   function displayResources() {
+    // Get resources from sessionStorage (clears on tab close)
     const storedResources = JSON.parse(sessionStorage.getItem("communityResources")) || [];
     directoryContainer.innerHTML = ""; // clear first
 
@@ -138,7 +256,7 @@
     });
   }
 
-  // Display resources on page load
+  // Run on page load
   displayResources();
 </script>
 
