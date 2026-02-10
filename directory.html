@@ -80,7 +80,6 @@
     @keyframes heroFadeIn {
       to { transform: translateY(0); opacity: 1; }
     }
-
     .home-hero h1 {
       font-size: 3rem;
       font-weight: bold;
@@ -91,75 +90,52 @@
       margin-bottom: 25px;
       line-height: 1.5;
     }
-    .btm {
-      display: inline-block;
-      background-color: #4CAF50;
-      color: white;
-      padding: 12px 25px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 16px;
-      margin: 5px;
-      transition: background-color 0.3s ease;
-    }
-    .btm:hover { background-color: #45a049; }
 
-    /* ===== FEATURED / MINI BOXES ===== */
-    .mini-resources {
+    /* ===== FEATURED / PRESENT CARDS ===== */
+    .featured-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
-      padding: 20px;
-      max-width: 1200px;
-      margin: 0 auto 50px auto;
-    }
-    .mini-card {
-      background-color: rgba(0,0,0,0.9);
-      border: 2px solid rgba(0, 123, 255, 0.7);
-      border-radius: 10px;
-      width: 250px;
-      padding: 20px;
-      text-align: center;
-      transition: transform 0.2s;
-    }
-    .mini-card:hover {
-      transform: scale(1.05);
-      border-color: rgba(0, 123, 255, 1);
-    }
-    .mini-card h3 { margin-top: 0; color: white; }
-    .mini-card p { color: white; font-size: 14px; }
-    .mini-card span { display: block; margin-top: 10px; font-size: 12px; color: #ccc; }
-
-    /* ===== SUBMIT BOX ===== */
-    .submit-box {
-      max-width: 400px;
+      gap: 30px;
       margin: 40px auto;
-      padding: 25px;
+    }
+
+    .featured-box {
       background-color: black;
-      border: 3px solid orange;
-      border-radius: 12px;
-      text-align: center;
-      transform: scale(0.95);
-      opacity: 0;
-      animation: popIn 0.6s forwards ease-out 1s;
-    }
-    @keyframes popIn {
-      0% { transform: scale(0.95); opacity: 0; }
-      50% { transform: scale(1.03); opacity: 0.7; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-    .submit-box a {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 12px 25px;
-      background-color: orange;
       color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
+      border: 3px solid rgba(0,153,255,0.7);
+      border-radius: 12px;
+      padding: 30px;
+      width: 320px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeUp 0.8s forwards ease-out;
     }
-    .submit-box a:hover { background-color: darkorange; }
+    .featured-box:nth-child(1) { animation-delay: 0.2s; }
+    .featured-box:nth-child(2) { animation-delay: 0.4s; }
+    .featured-box:nth-child(3) { animation-delay: 0.6s; }
+    .featured-box:nth-child(4) { animation-delay: 0.8s; }
+
+    @keyframes fadeUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .featured-box:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 10px 20px rgba(0,0,255,0.4);
+    }
+
+    .featured-box h3 {
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+    .featured-box p {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
 
     /* ===== PURPOSE SECTION ===== */
     .purpose-section { padding: 60px 20px; text-align: center; }
@@ -186,9 +162,6 @@
       opacity: 0;
       animation: fadeUp 0.8s forwards ease-out;
     }
-    .purpose-box:nth-child(1) { animation-delay: 0.2s; }
-    .purpose-box:nth-child(2) { animation-delay: 0.4s; }
-    .purpose-box:nth-child(3) { animation-delay: 0.6s; }
     .purpose-box:hover {
       transform: translateY(-8px) scale(1.03);
       box-shadow: 0 10px 20px rgba(0,153,255,0.5);
@@ -196,16 +169,13 @@
     .purpose-box h3 { margin-top: 0; margin-bottom: 15px; font-size: 1.2rem; }
     .purpose-box p { margin: 0; font-size: 1rem; line-height: 1.4; }
 
-    @keyframes fadeUp {
-      from { transform: translateY(20px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
     /* ===== RESPONSIVE ===== */
     @media (max-width: 1000px) {
       .home-hero { height: 350px; }
       .home-hero h1 { font-size: 2.2rem; }
       .home-hero p { font-size: 1rem; }
+      .featured-box { width: 90%; max-width: 320px; }
+      .purpose-box { width: 90%; max-width: 350px; }
     }
   </style>
 </head>
@@ -225,39 +195,54 @@
 <div class="home-hero">
   <div class="hero-content">
     <h1>Community Resource Directory</h1>
-    <p>Discover and submit local community resources to help your neighborhood.</p>
-    <a href="submit.html" class="btm">Submit a Resource</a>
+    <p>Discover and share local community resources to strengthen our neighborhood.</p>
   </div>
 </div>
 
-<div class="mini-resources" id="miniResourcesContainer">
-  <!-- Submitted resources will appear here -->
+<!-- ===== FEATURED CARDS / PRESENT CARDS ===== -->
+<div class="featured-container" id="featuredContainer">
+  <div class="featured-box">
+    <h3>Food Bank</h3>
+    <p>Provides free food to families in need.</p>
+  </div>
+  <div class="featured-box">
+    <h3>Community Library</h3>
+    <p>Access books, study spaces, and local programs.</p>
+  </div>
+  <div class="featured-box">
+    <h3>After-School Program</h3>
+    <p>Safe activities and tutoring for kids after school.</p>
+  </div>
+  <div class="featured-box">
+    <h3>Health Clinic</h3>
+    <p>Free or low-cost healthcare services for locals.</p>
+  </div>
 </div>
 
-<a href="index.html" class="btm">Back to Home</a>
+<!-- ===== PURPOSE SECTION ===== -->
+<div class="purpose-section">
+  <h2 class="section-title">Purpose of This Hub</h2>
+  <div class="purpose-container">
+    <div class="purpose-box">
+      <h3>Connect Communities</h3>
+      <p>Help locals find and share valuable community resources.</p>
+    </div>
+    <div class="purpose-box">
+      <h3>Support Growth</h3>
+      <p>Encourage development and awareness within neighborhoods.</p>
+    </div>
+    <div class="purpose-box">
+      <h3>Share Knowledge</h3>
+      <p>Provide a space for all resources to be accessible and transparent.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SOURCES LINK ===== -->
+<a href="sources.html" class="btm">View Sources</a>
 
 <script>
-  const directoryContainer = document.getElementById("miniResourcesContainer");
-
-  function displayResources() {
-    // Get resources from sessionStorage (clears on tab close)
-    const storedResources = JSON.parse(sessionStorage.getItem("communityResources")) || [];
-    directoryContainer.innerHTML = ""; // clear first
-
-    storedResources.forEach(res => {
-      const box = document.createElement("div");
-      box.classList.add("mini-card");
-      box.innerHTML = `
-        <h3>${res.name}</h3>
-        <p><strong>Category:</strong> ${res.category}</p>
-        <p>${res.description}</p>
-      `;
-      directoryContainer.appendChild(box);
-    });
-  }
- 
-  // Run on page load
-  displayResources();
+  // You can add sessionStorage dynamic card loading here if needed
 </script>
 
 </body>
