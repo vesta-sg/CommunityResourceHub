@@ -6,17 +6,21 @@
   <meta name="description" content="Chattahoochee Community Resource Hub">
   <link rel="stylesheet" href="style.css">
   <style>
-    body {
-      background-color: black;
-      color: white;
-      font-family: Arial, sans-serif;
+    /* Global styles */
+    body, html {
       margin: 0;
       padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: black;
+      color: white;
+      width: 100%;
+      overflow-x: hidden;
     }
 
+    /* Navigation */
     .topnav {
       background-color: #111;
-      padding: 15px;
+      padding: 15px 30px;
     }
 
     .nav-container {
@@ -29,139 +33,109 @@
       color: white;
       text-decoration: none;
       margin-left: 20px;
+      font-size: 16px;
     }
 
     .nav-links a:hover {
       color: cyan;
     }
 
+    /* Hero section */
     .home-hero {
-      background: url('your-image.jpg') center/cover no-repeat;
-      padding: 80px 20px;
+      background: url('images/hero.jpg') center/cover no-repeat;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
     }
 
-    .home-hero h1 {
-      font-size: 3em;
-      color: cyan;
+    .hero-content h1 {
+      font-size: 3rem;
       margin-bottom: 20px;
+      text-shadow: 2px 2px 5px #000;
     }
 
-    .home-hero p {
-      font-size: 1.2em;
-      margin-bottom: 30px;
-    }
-
-    .btm {
-      display: inline-block;
-      margin: 5px 10px;
-      text-align: center;
-      color: white;
-      text-decoration: none;
-      background-color: #4CAF50;
-      padding: 12px 30px;
-      border-radius: 5px;
-      font-size: 16px;
-      transition: background-color 0.3s ease;
-    }
-
-    .btm:hover {
-      background-color: #45a049;
+    .hero-content p {
+      font-size: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+      text-shadow: 1px 1px 3px #000;
     }
 
     /* Featured Community Resources */
     .featured-section {
-      padding: 60px 20px;
+      padding: 50px 20px;
       text-align: center;
     }
 
     .featured-title {
-      font-size: 2em;
+      font-size: 2.5rem;
       margin-bottom: 40px;
-      color: cyan;
     }
 
     .featured-container {
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
-      gap: 40px;
+      justify-content: center;
+      gap: 25px;
     }
 
     .featured-box {
-      background-color: black;
-      border: 2px solid rgba(0, 0, 255, 0.7);
+      background-color: rgba(0, 0, 0, 0.8);
+      border: 3px solid rgba(0, 0, 255, 0.6);
       border-radius: 15px;
-      padding: 40px;
-      flex: 1 1 250px;
-      max-width: 400px;
-      min-width: 280px;
+      padding: 30px;
+      width: 280px;
+      min-height: 200px;
       color: white;
-      font-size: 1.1em;
-      transition: transform 0.3s;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp 0.8s forwards;
+      transition: transform 0.3s ease;
     }
-
-    .featured-box:nth-child(1) { animation-delay: 0.2s; }
-    .featured-box:nth-child(2) { animation-delay: 0.4s; }
-    .featured-box:nth-child(3) { animation-delay: 0.6s; }
-    .featured-box:nth-child(4) { animation-delay: 0.8s; }
 
     .featured-box:hover {
-      transform: translateY(-10px);
+      transform: scale(1.05);
     }
 
-    .featured-btn {
-      display: block;
-      margin-top: 20px;
-      text-decoration: none;
-      color: white;
-      border: 2px solid rgba(0, 0, 255, 0.7);
-      padding: 10px 20px;
-      border-radius: 5px;
-      transition: background 0.3s;
+    .featured-box h3 {
+      margin-top: 0;
+      font-size: 1.5rem;
+      margin-bottom: 15px;
     }
 
-    .featured-btn:hover {
-      background-color: rgba(0, 0, 255, 0.3);
+    .featured-box p {
+      font-size: 1rem;
+      line-height: 1.5;
     }
 
-    @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Submit Box */
+    /* Submit a Resource Box */
     .submit-box {
       background-color: black;
-      border: 2px solid orange;
+      border: 3px solid orange;
       border-radius: 15px;
-      padding: 50px;
+      padding: 40px;
       margin: 60px auto;
-      max-width: 500px;
+      width: 350px;
       text-align: center;
-      font-size: 1.2em;
-      color: white;
-      transition: transform 0.3s;
     }
 
-    .submit-box:hover {
-      transform: translateY(-10px);
+    .submit-box h2 {
+      margin-bottom: 25px;
+      color: orange;
+    }
+
+    .submit-box p {
+      margin-bottom: 20px;
     }
 
     .submit-box a {
       display: inline-block;
-      margin-top: 20px;
       text-decoration: none;
       color: white;
       border: 2px solid orange;
-      padding: 12px 30px;
-      border-radius: 5px;
-      transition: background 0.3s;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     .submit-box a:hover {
@@ -171,60 +145,60 @@
 
     /* Purpose Section */
     .purpose-section {
-      background-color: black;
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    .purpose-section .section-title {
-      font-size: 2em;
-      color: cyan;
-      margin-bottom: 40px;
-    }
-
-    .purpose-container {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 40px;
-      max-width: 1200px;
-      margin: 0 auto;
+      gap: 30px;
+      padding: 50px 20px;
+      text-align: center;
     }
 
     .purpose-box {
       background-color: black;
       border: 2px solid cyan;
-      border-radius: 10px;
-      padding: 30px;
-      flex: 1 1 250px;
-      min-width: 250px;
-      max-width: 350px;
+      border-radius: 12px;
+      padding: 25px;
+      width: 250px;
+      min-height: 150px;
       color: white;
-      font-size: 1.1em;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp 0.8s forwards;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-
-    .purpose-box:nth-child(1) { animation-delay: 0.2s; }
-    .purpose-box:nth-child(2) { animation-delay: 0.4s; }
-    .purpose-box:nth-child(3) { animation-delay: 0.6s; }
 
     /* Tips Section */
-    section.tips {
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 0 20px;
+    .tips-section {
+      padding: 50px 20px;
+      text-align: center;
     }
 
-    section.tips ul li {
-      margin-bottom: 10px;
-      font-size: 1.1em;
+    .tips-section h2 {
+      margin-bottom: 30px;
+      font-size: 2rem;
+    }
+
+    .tips-section ul {
+      list-style-type: disc;
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
+      padding-left: 20px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    footer {
+      padding: 20px;
+      text-align: center;
+      background-color: #111;
     }
   </style>
 </head>
 <body>
 
+<!-- Navigation -->
 <nav class="topnav">
   <div class="nav-container">
     <div class="logo">Community Hub</div>
@@ -238,21 +212,13 @@
   </div>
 </nav>
 
+<!-- Hero -->
 <header class="home-hero">
   <div class="hero-content">
     <h1>Community Resource Hub</h1>
     <p>Connecting residents to local support, services, and opportunities</p>
-    <a href="sources.html" class="btm">View Sources</a>
-    <a href="map.html" class="btm">View Map</a>
   </div>
 </header>
-
-<section>
-  <h2>About Our Community</h2>
-  <p>
-    This Community Resource Hub helps residents easily discover local non-profits, support services, and community programs.
-  </p>
-</section>
 
 <!-- Featured Community Resources -->
 <section class="featured-section">
@@ -261,45 +227,38 @@
     <div class="featured-box">
       <h3>Food Bank</h3>
       <p>Find local food assistance programs and meal support for families in the community.</p>
-      <a href="map.html" class="featured-btn">View on Map</a>
     </div>
     <div class="featured-box">
       <h3>Tutoring Center</h3>
       <p>Access tutoring and academic help for students of all grade levels.</p>
-      <a href="map.html" class="featured-btn">View on Map</a>
     </div>
     <div class="featured-box">
       <h3>Youth Programs</h3>
       <p>After-school programs, mentorship, and leadership opportunities for teens.</p>
-      <a href="map.html" class="featured-btn">View on Map</a>
     </div>
     <div class="featured-box">
       <h3>Health Clinic</h3>
       <p>Nearby clinics and healthcare services for physical and mental wellness.</p>
-      <a href="map.html" class="featured-btn">View on Map</a>
     </div>
   </div>
 </section>
 
 <!-- Submit Box -->
-<div class="submit-box">
-  <h2>Submit a Community Resource</h2>
-  <p>Help your organization or share a resource with the community!</p>
-  <a href="submit.html">Submit Here</a>
-</div>
+<section class="submit-box">
+  <h2>Submit a New Community Resource</h2>
+  <p>Click below to add a new resource to the Directory</p>
+  <a href="submit.html">Submit a Resource</a>
+</section>
 
 <!-- Purpose Section -->
 <section class="purpose-section">
-  <h2 class="section-title">Purpose of This Website</h2>
-  <div class="purpose-container">
-    <div class="purpose-box">To help local organizations gain more popularity</div>
-    <div class="purpose-box">To provide places for people to go</div>
-    <div class="purpose-box">To help people in need</div>
-  </div>
+  <div class="purpose-box">To help local organizations gain more popularity</div>
+  <div class="purpose-box">To provide places for people to go</div>
+  <div class="purpose-box">To help people in need</div>
 </section>
 
 <!-- Tips Section -->
-<section class="tips">
+<section class="tips-section">
   <h2>Tips for Using This Hub</h2>
   <ul>
     <li>Use the search bar to quickly find services you need</li>
@@ -308,6 +267,7 @@
   </ul>
 </section>
 
+<!-- Footer -->
 <footer>
   <p>Community Resource Hub © 2026</p>
 </footer>
