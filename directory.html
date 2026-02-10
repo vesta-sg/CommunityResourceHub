@@ -4,87 +4,159 @@
   <meta charset="UTF-8">
   <title>Community Resource Directory</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: black;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .topnav {
+      width: 100%;
+      background-color: #111;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+
+    .nav-links a:hover {
+      color: cyan;
+    }
+
+    .directory-section {
+      max-width: 1200px;
+      width: 90%;
+      margin: 40px auto;
+      text-align: center;
+    }
+
+    .directory-section h1 {
+      font-size: 3rem;
+      margin-bottom: 40px;
+      color: cyan;
+    }
+
+    .controls {
+      margin-bottom: 30px;
+    }
+
+    .controls input, .controls select {
+      padding: 10px;
+      margin: 5px;
+      border-radius: 5px;
+      border: none;
+      font-size: 1rem;
+    }
+
+    .mini-resources {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      justify-items: center;
+    }
+
+    .mini-card {
+      background-color: #111;
+      border: 3px solid cyan;
+      border-radius: 10px;
+      padding: 20px;
+      width: 100%;
+      max-width: 350px;
+      transition: transform 0.3s;
+    }
+
+    .mini-card:hover {
+      transform: scale(1.05);
+    }
+
+    .mini-card h3 a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .mini-card h3 a:hover {
+      color: cyan;
+    }
+
+    .home-button {
+      display: inline-block;
+      margin-bottom: 30px;
+      padding: 12px 25px;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .home-button:hover {
+      background-color: #45a049;
+    }
+  </style>
 </head>
 <body>
 
 <nav class="topnav">
-  <div class="nav-container">
-    <div class="logo">Community Hub</div>
-    <div class="nav-links">
-      <a href="welcome.html">Welcome</a>
-      <a href="index.html">Home</a>
-      <a href="map.html">Map</a>
-      <a href="sources.html">Sources</a>
-      <a href="directory.html">Directory</a>
-      <a href="#submit">Submit</a>
-    </div>
+  <div class="logo">Community Hub</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
   </div>
 </nav>
 
-<section class="directory-gradient" id="directory">
-  <div class="directory-content">
-    <h2>Resource Page</h2>
+<section class="directory-section">
+  <a href="index.html" class="home-button">Home</a>
+  <h1>Community Resource Directory</h1>
 
-    <div class="controls">
-      <input type="text" id="searchInput" placeholder="Search resources...">
-      <select id="categoryFilter">
-        <option value="all">All Categories</option>
-        <option value="Food">Food Assistance</option>
-        <option value="Education">Education</option>
-        <option value="Healthcare">Healthcare</option>
-        <option value="Events">Community Events</option>
-      </select>
-    </div>
-
-    <div class="mini-resources">
-      <div class="mini-card">
-        <h3><a href="food-pantry.html">Community Food Pantry</a></h3>
-        <p>Free groceries for families in need.</p>
-        <span>Category: Food Assistance</span>
-      </div>
-
-      <div class="mini-card">
-        <h3><a href="youth-learning.html">Youth Learning Center</a></h3>
-        <p>Tutoring, mentoring, and after-school programs.</p>
-        <span>Category: Education</span>
-      </div>
-
-      <div class="mini-card">
-        <h3><a href="health-clinic.html">Health & Wellness Clinic</a></h3>
-        <p>Affordable medical and mental health services.</p>
-        <span>Category: Healthcare</span>
-      </div>
-
-      <div class="mini-card">
-        <h3><a href="events-program.html">Community Events Program</a></h3>
-        <p>Local festivals, workshops, and activities.</p>
-        <span>Category: Community Events</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="submit">
-  <h2>Submit a New Community Resource</h2>
-  <form id="resourceForm">
-    <input type="text" id="name" placeholder="Resource Name" required><br><br>
-
-    <select id="category" required>
-      <option value="">Select Category</option>
+  <div class="controls">
+    <input type="text" id="searchInput" placeholder="Search resources...">
+    <select id="categoryFilter">
+      <option value="all">All Categories</option>
       <option value="Food">Food Assistance</option>
       <option value="Education">Education</option>
       <option value="Healthcare">Healthcare</option>
       <option value="Events">Community Events</option>
-    </select><br><br>
+    </select>
+  </div>
 
-    <textarea id="description" placeholder="Description" required></textarea><br><br>
-    <button type="submit">Submit Resource</button>
-  </form>
+  <div class="mini-resources">
+    <div class="mini-card">
+      <h3><a href="food-pantry.html">Community Food Pantry</a></h3>
+      <p>Free groceries for families in need.</p>
+      <span>Category: Food Assistance</span>
+    </div>
+
+    <div class="mini-card">
+      <h3><a href="youth-learning.html">Youth Learning Center</a></h3>
+      <p>Tutoring, mentoring, and after-school programs.</p>
+      <span>Category: Education</span>
+    </div>
+
+    <div class="mini-card">
+      <h3><a href="health-clinic.html">Health & Wellness Clinic</a></h3>
+      <p>Affordable medical and mental health services.</p>
+      <span>Category: Healthcare</span>
+    </div>
+
+    <div class="mini-card">
+      <h3><a href="events-program.html">Community Events Program</a></h3>
+      <p>Local festivals, workshops, and activities.</p>
+      <span>Category: Community Events</span>
+    </div>
+  </div>
 </section>
-
-<footer>
-  <p>Community Resource Hub © 2026</p>
-</footer>
 
 <script>
 const resources = [
@@ -128,19 +200,7 @@ function filterResources() {
 searchInput.addEventListener("input", filterResources);
 categoryFilter.addEventListener("change", filterResources);
 
-document.getElementById("resourceForm").addEventListener("submit", e => {
-  e.preventDefault();
-  const newResource = {
-    name: document.getElementById("name").value,
-    category: document.getElementById("category").value,
-    description: document.getElementById("description").value
-  };
-  resources.push(newResource);
-  displayMiniResources(resources);
-  e.target.reset();
-  alert("Thank you for submitting a resource!");
-});
-
+// Initial display
 displayMiniResources(resources);
 </script>
 
