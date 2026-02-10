@@ -68,53 +68,97 @@ body {
 .submit-section .submit-box a:hover {
   background-color: #45a049;
 }
-/* Purpose Section Boxes */
+/* Purpose Section */
 .purpose-section {
-  margin: 50px 0; /* More space above and below */
+  margin: 60px 0; /* Space above and below the section */
+  padding: 0 40px; /* Horizontal padding */
   text-align: center;
-  padding: 0 20px; /* Add some horizontal breathing room */
 }
 
 .purpose-section .purpose-title {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: cyan;
-  margin-bottom: 35px; /* More space below the title */
+  margin-bottom: 50px; /* Space between title and boxes */
 }
 
 .purpose-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 40px; /* Increased gap between boxes */
+  gap: 60px; /* Space between boxes */
 }
 
 .purpose-box {
   background-color: black;
   color: white;
   border: 3px solid rgba(0, 153, 255, 0.7); /* Blue transparent outline */
-  border-radius: 12px;
-  padding: 25px; /* More inner padding for breathing room */
-  max-width: 320px;
-  flex: 1 1 280px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.5);
-  text-align: center;
+  border-radius: 15px;
+  padding: 35px 25px; /* Bigger padding inside boxes */
+  max-width: 350px;
+  flex: 1 1 300px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
   transition: transform 0.3s ease;
 }
 
 .purpose-box:hover {
-  transform: translateY(-5px); /* subtle hover lift */
+  transform: translateY(-8px);
 }
 
 .purpose-box h3 {
   margin-top: 0;
-  margin-bottom: 15px;
-  font-size: 1.3rem;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
 }
 
 .purpose-box p {
   margin: 0;
-  line-height: 1.5;
-  font-size: 1rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Featured Community Resources */
+.featured-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px; /* More space between featured boxes */
+  margin: 40px 20px;
+}
+
+.featured-box {
+  background-color: black;
+  color: white;
+  border: 3px solid rgba(255, 165, 0, 0.8); /* Orange outline for submit box or adjust for featured */
+  border-radius: 12px;
+  padding: 35px 30px;
+  max-width: 350px;
+  flex: 1 1 320px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.featured-box:hover {
+  transform: translateY(-5px);
+}
+
+.featured-box h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.featured-box p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Make homepage stretch a bit more for spacing */
+body {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .topnav {
