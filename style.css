@@ -271,25 +271,7 @@ body {
   line-height: 1.4;
 }
 
-.pdf-section {
-  margin: 40px auto;
-  text-align: center;
-}
 
-.pdf-section iframe {
-  width: 90%;
-  max-width: 1400px;
-  height: 800px;
-  display: block;
-  margin: 0 auto;
-  border: none;
-}
-
-/* pdf anim */
-.fade-box {
-  opacity: 0;
-  animation: fadeIn 1s forwards;
-}
 
 /* ===== MEDIA QUERIES ===== */
 @media (max-width: 1000px) {
