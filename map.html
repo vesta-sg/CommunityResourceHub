@@ -8,12 +8,11 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background-color: #000; /* match hub pages */
+      background-color: #000;
       color: #fff;
       text-align: center;
     }
 
-    /* Top Navigation Bar */
     nav.topnav {
       background-color: #fff;
       padding: 15px 0;
@@ -33,101 +32,4 @@
     }
 
     nav.topnav .nav-links a:hover {
-      text-decoration: underline;
-    }
-
-    h1 {
-      text-align: center;
-      margin-top: 20px;
-      color: #4CAF50;
-    }
-
-    .btm {
-      display: block;
-      text-align: center;
-      margin: 20px auto;
-      width: 120px;
-      padding: 10px 0;
-      background-color: #4CAF50;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-size: 16px;
-    }
-
-    .btm:hover {
-      background-color: #45a049;
-    }
-
-    #map {
-      height: 500px;
-      width: 90%;
-      max-width: 900px;
-      margin: 20px auto 60px;
-      border: 2px solid #333;
-      border-radius: 8px;
-      display: block;
-    }
-
-    /* Leaflet Popup Link Colors */
-    .leaflet-popup-content a {
-      color: #4CAF50;
-      text-decoration: underline;
-    }
-    .leaflet-popup-content a:hover {
-      color: #45a049;
-    }
-  </style>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-</head>
-<body>
-
-<!-- Top Navigation -->
-<nav class="topnav">
-  <div class="nav-container">
-    <div class="logo">Community Hub</div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="directory.html">Directory</a>
-      <a href="submit.html">Submit</a>
-    </div>
-  </div>
-</nav>
-
-<h1>Community Resource Map</h1>
-<a href="index.html" class="btm">Back</a>
-
-<div id="map"></div>
-
-<script>
-  // Initialize Leaflet Map
-  var map = L.map('map').setView([34.0522, -84.2805], 11);
-
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap contributors'
-  }).addTo(map);
-
-  // Coordinates for community resources
-  var locations = [
-    ["Post Consumer Brands Food Accessibility (Atlanta)", 33.753746, -84.386330, "https://www.postconsumerbrands.com/responsibility/community-impact/food-accessibility/"],
-    ["Stella Love Nonprofit (Roswell)", 34.027660, -84.314370, "https://iamstellalove.com/"],  /* approximate Roswell location */
-    ["America's Youth In Motion (Alpharetta)", 34.096500, -84.297000, "https://americasyouthinmotion.org/"], /* Est. center of Alpharetta */
-    ["North Fulton Young Life (Roswell/Alpharetta)", 34.023000, -84.360000, "https://northfulton.younglife.org/"], /* general North Fulton */
-    ["Best Brains Alpharetta", 34.068500, -84.294000, "https://bestbrains.com/alpharetta"], /* near 11675 Century Dr, Alpharetta */:contentReference[oaicite:0]{index=0}
-    ["East Cobb Tutoring Center (Marietta)", 33.944600, -84.511000, "https://eastcobbtutoringcenter.com/"], /* Marietta area */
-    ["Merely Players Presents (Alpharetta)", 34.105000, -84.297500, "https://www.merelyplayerspresents.com/"], /* Est. near downtown Alpharetta */
-    ["Act1 Theater (Roswell)", 34.038000, -84.361700, "https://act1theater.org/contact-us"], /* Roswell area */
-    ["Children's Healthcare Volunteer (Marietta)", 33.950000, -84.550000, "https://www.childrn.org/volunteer/"], /* estimated Marietta location */
-    ["Open Hand Atlanta", 33.809000, -84.390000, "https://www.openhandatlanta.org/"], /* Atlanta area */:contentReference[oaicite:1]{index=1}
-    ["Goodman Dermatology (Atlanta)", 33.786000, -84.387000, "https://www.goodmandermatology.com/"], /* approximate area */ 
-    ["Southeast Medical Group (Roswell)", 34.034000, -84.364000, "https://mysemg.com/"] /* approximate Roswell area */
-  ];
-
-  locations.forEach(function(loc){
-    L.marker([loc[1], loc[2]]).addTo(map)
-      .bindPopup("<b>" + loc[0] + "</b><br><a href='" + loc[3] + "' target='_blank'>Visit Website</a>");
-  });
-</script>
-
-</body>
-</html>
+      text-decoration: underline
