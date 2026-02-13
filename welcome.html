@@ -6,11 +6,11 @@
 <style>
   body {
     font-family: Arial, sans-serif;
-    background: #f5f5f5;
-    color: #333;
-    text-align: center;
     margin: 0;
     padding: 0;
+    text-align: center;
+    background-color: #000; /* Default page background black for the bottom */
+    color: #fff;            /* White text for readability */
   }
 
   nav {
@@ -31,6 +31,7 @@
     font-size: 16px;
   }
 
+  /* Hero section stays blue */
   .welcome-hero {
     padding: 60px 20px 40px 20px;
     background: #3498db;
@@ -55,14 +56,12 @@
     animation-delay: 0.8s;
   }
 
-  /* Bottom section with black background */
+  /* Overview section fills rest of page in black */
   .welcome-overview {
-    padding: 40px 20px;
+    padding: 60px 20px;
     max-width: 900px;
     margin: 0 auto;
-    background-color: #000;  /* Black background */
-    color: #fff;             /* White text */
-    border-radius: 10px;
+    background: none; /* No extra box background, inherit black from body */
   }
 
   .welcome-overview h2,
@@ -72,6 +71,7 @@
     animation: fadeIn 1s forwards;
   }
 
+  /* Fade-in animation delays */
   .welcome-overview h2 { animation-delay: 1.3s; }
   .welcome-overview h3:nth-of-type(1) { animation-delay: 1.6s; }
   .welcome-overview p:nth-of-type(1) { animation-delay: 1.9s; }
