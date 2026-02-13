@@ -2,27 +2,27 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Youth Learning Center</title>
+<title>Community Directory</title>
 <style>
   body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    text-align: center;
-    background-color: #000; /* black bottom section */
+    background-color: #000; /* black background */
     color: #fff;
+    text-align: center;
   }
 
   /* Top Navigation Bar */
   nav.topnav {
-    background: #fff; /* solid white */
+    background: #fff;
     padding: 15px 0;
   }
 
   nav.topnav .logo {
     font-size: 24px;
     font-weight: bold;
-    color: #000; /* black text */
+    color: #000;
   }
 
   nav.topnav .nav-links a {
@@ -36,9 +36,9 @@
     text-decoration: underline;
   }
 
-  /* Header Section */
+  /* Page Header */
   header {
-    background-color: #3498db; /* blue header */
+    background-color: #3498db; /* blue hero area */
     padding: 60px 20px;
   }
 
@@ -60,7 +60,7 @@
     animation-delay: 0.8s;
   }
 
-  /* Section content */
+  /* Directory Section */
   section {
     padding: 60px 20px;
     max-width: 900px;
@@ -81,15 +81,12 @@
     line-height: 1.8;
   }
 
-  img {
-    margin: 40px 0;
-    width: 400px;
-    height: 200px;
-    opacity: 0;
-    animation: fadeIn 1s forwards;
-    animation-delay: 2.0s;
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
+  /* Navigation at bottom */
   nav.page-nav {
     margin: 40px 0;
     display: flex;
@@ -111,12 +108,6 @@
   nav.page-nav a:hover {
     color: #1d6fa5;
   }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
 </style>
 </head>
 <body>
@@ -124,7 +115,7 @@
 <!-- Top Navigation -->
 <nav class="topnav">
   <div class="nav-container">
-    <div class="logo">Youth Learning Center</div>
+    <div class="logo">Community Directory</div>
     <div class="nav-links">
       <a href="welcome.html">Welcome</a>
       <a href="index.html">Home</a>
@@ -136,38 +127,37 @@
   </div>
 </nav>
 
-<!-- Header Section -->
+<!-- Page Header -->
 <header>
-  <h1>Youth Learning Center</h1>
-  <p>Providing tutoring, mentoring, and after-school programs to empower students academically, socially, and personally.</p>
+  <h1>Community Resources Directory</h1>
+  <p>Explore a variety of local programs, services, and organizations to support residents of all ages.</p>
 </header>
 
-<!-- Main Section -->
+<!-- Directory Content -->
 <section>
-  <h2>About Our Programs</h2>
-  <p>
-    The Youth Learning Center is dedicated to helping students thrive both in and out of the classroom. Through personalized tutoring, mentorship programs, and enrichment activities, children of all ages can develop critical academic skills and strong social confidence.
-  </p>
+  <h2>Food Assistance</h2>
+  <p>Local food banks and nonprofit programs help families access nutritious meals. Services include pantry distributions, meal deliveries, and community food drives to support those in need.</p>
 
-  <h2>Recommended Resources</h2>
-  <p>
-    We recommend two key programs for youth in the area. First, <strong>America's Youth in Motion</strong> offers abundant activities such as Youth Leadership Development, Basketball Skills Clinics, and Volunteer Opportunities. The Youth Leadership Development program helps young children build motivation, confidence, and positive behaviors. Second, <strong>North Fulton YoungLife</strong> empowers older children to live life to the fullest through grade-specific camps and inclusive activities. YoungLife also emphasizes volunteering and leadership development, equipping teens with valuable life skills. Overall, America's Youth in Motion is excellent for younger children, while YoungLife is ideal for older youth.
-  </p>
+  <h2>Youth Programs</h2>
+  <p>Youth programs provide mentorship, after-school activities, and leadership opportunities. These initiatives foster social development, academic growth, and physical activity for children and teens.</p>
 
-  <h2>Benefits</h2>
-  <p>
-    Participation in these programs strengthens both academic performance and personal growth. Students develop leadership abilities, teamwork skills, and a sense of community responsibility. By combining structured learning with engaging recreational opportunities, the Youth Learning Center ensures that every child can reach their full potential.
-  </p>
+  <h2>Tutoring & Academic Support</h2>
+  <p>Centers provide tutoring, test prep, and study skills programs. They aim to strengthen learning in subjects like math, science, and language arts for all grade levels.</p>
+
+  <h2>Community Arts & Events</h2>
+  <p>Theaters, music, and arts organizations offer workshops, performances, and cultural events. Residents of all ages can engage creatively and socially through community arts.</p>
+
+  <h2>Volunteering Opportunities</h2>
+  <p>Organizations offer chances to give back, build skills, and gain experience. Volunteers can assist with events, education, and social programs in the community.</p>
+
+  <h2>Healthcare Services</h2>
+  <p>Local clinics provide routine and specialized healthcare, patient education, and wellness resources. These programs ensure access to quality medical services for residents.</p>
 </section>
 
-<!-- Logo Image -->
-<img src="https://dpbvj4a9anukr.cloudfront.net/846b4004-7989-4e48-9cf3-aa3dca341f35/f2a981f0-227c-4bad-854d-7bf68bced5ef/3fadd0f5c55f5a76aa613bf1db0be44f/Asset-1.svg"
-     alt="Logo">
-
-<!-- Navigation Links -->
+<!-- Bottom Navigation -->
 <nav class="page-nav">
-  <a href="food-pantry.html">⬅ Previous</a>
-  <a href="health-clinic.html">Next ➡</a>
+  <a href="submit.html">⬅ Submit</a>
+  <a href="index.html">Home ➡</a>
 </nav>
 
 </body>
