@@ -271,6 +271,12 @@ body {
   line-height: 1.4;
 }
 
+/* pdf anim */
+.fade-box {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
 /* ===== MEDIA QUERIES ===== */
 @media (max-width: 1000px) {
   .home-hero {
@@ -292,3 +298,5 @@ body {
     width: 90%;
   }
 }
+
+
