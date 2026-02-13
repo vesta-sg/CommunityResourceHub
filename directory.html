@@ -8,7 +8,7 @@
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #000; /* black background */
+    background-color: #000;
     color: #fff;
     text-align: center;
   }
@@ -38,47 +38,58 @@
 
   /* Page Header */
   header {
-    background-color: #3498db; /* blue hero area */
-    padding: 60px 20px;
-  }
-
-  header h1 {
-    font-size: 42px;
-    margin-bottom: 20px;
+    background-color: #3498db;
+    padding: 40px 20px;
     opacity: 0;
     animation: fadeIn 1s forwards;
     animation-delay: 0.3s;
   }
 
+  header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+
   header p {
-    font-size: 20px;
+    font-size: 18px;
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.6;
-    opacity: 0;
-    animation: fadeIn 1s forwards;
-    animation-delay: 0.8s;
   }
 
-  /* Directory Section */
-  section {
-    padding: 60px 20px;
-    max-width: 900px;
-    margin: 0 auto;
-    opacity: 0;
-    animation: fadeIn 1s forwards;
-    animation-delay: 1.3s;
+  /* Directory Boxes */
+  .directory-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 40px 0;
+    gap: 20px;
+  }
+
+  .directory-box {
+    background-color: #111;
+    border-radius: 10px;
+    padding: 25px;
+    width: 250px;
     text-align: left;
+    cursor: pointer;
+    transition: transform 0.3s;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
   }
 
-  section h2 {
-    font-size: 28px;
-    margin-bottom: 15px;
+  .directory-box:hover {
+    transform: scale(1.05);
   }
 
-  section p {
-    font-size: 18px;
-    line-height: 1.8;
+  .directory-box h3 {
+    color: #4CAF50;
+    margin-bottom: 10px;
+  }
+
+  .directory-box p {
+    font-size: 16px;
+    line-height: 1.5;
   }
 
   @keyframes fadeIn {
@@ -86,28 +97,6 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* Navigation at bottom */
-  nav.page-nav {
-    margin: 40px 0;
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    opacity: 0;
-    animation: fadeIn 1s forwards;
-    animation-delay: 2.5s;
-  }
-
-  nav.page-nav a {
-    text-decoration: none;
-    color: #3498db;
-    font-weight: bold;
-    font-size: 18px;
-    transition: color 0.3s;
-  }
-
-  nav.page-nav a:hover {
-    color: #1d6fa5;
-  }
 </style>
 </head>
 <body>
@@ -117,48 +106,59 @@
   <div class="nav-container">
     <div class="logo">Community Directory</div>
     <div class="nav-links">
-      <a href="welcome.html">Welcome</a>
       <a href="index.html">Home</a>
       <a href="map.html">Map</a>
-      <a href="sources.html">Sources</a>
       <a href="submit.html">Submit</a>
-      <a href="directory.html">Directory</a>
     </div>
   </div>
 </nav>
 
-<!-- Page Header -->
+<!-- Header -->
 <header>
   <h1>Community Resources Directory</h1>
-  <p>Explore a variety of local programs, services, and organizations to support residents of all ages.</p>
+  <p>Click a box to learn more about each resource. Newly submitted resources appear below as cards.</p>
 </header>
 
-<!-- Directory Content -->
-<section>
-  <h2>Food Assistance</h2>
-  <p>Local food banks and nonprofit programs help families access nutritious meals. Services include pantry distributions, meal deliveries, and community food drives to support those in need.</p>
+<!-- Directory Boxes -->
+<div class="directory-container" id="directoryContainer">
 
-  <h2>Youth Programs</h2>
-  <p>Youth programs provide mentorship, after-school activities, and leadership opportunities. These initiatives foster social development, academic growth, and physical activity for children and teens.</p>
+  <!-- Pre-made Boxes -->
+  <div class="directory-box" style="animation-delay: 0.3s;" onclick="location.href='youth-learning.html'">
+    <h3>Youth Learning Center</h3>
+    <p>Tutoring, mentoring, and after-school programs for students of all ages.</p>
+  </div>
 
-  <h2>Tutoring & Academic Support</h2>
-  <p>Centers provide tutoring, test prep, and study skills programs. They aim to strengthen learning in subjects like math, science, and language arts for all grade levels.</p>
+  <div class="directory-box" style="animation-delay: 0.6s;" onclick="location.href='health-clinic.html'">
+    <h3>Health Clinic</h3>
+    <p>Provides general healthcare, screenings, and wellness resources for the community.</p>
+  </div>
 
-  <h2>Community Arts & Events</h2>
-  <p>Theaters, music, and arts organizations offer workshops, performances, and cultural events. Residents of all ages can engage creatively and socially through community arts.</p>
+  <div class="directory-box" style="animation-delay: 0.9s;" onclick="location.href='food-pantry.html'">
+    <h3>Food Pantry</h3>
+    <p>Nonprofit programs offering food assistance to families in need.</p>
+  </div>
 
-  <h2>Volunteering Opportunities</h2>
-  <p>Organizations offer chances to give back, build skills, and gain experience. Volunteers can assist with events, education, and social programs in the community.</p>
+  <div class="directory-box" style="animation-delay: 1.2s;" onclick="location.href='events-program.html'">
+    <h3>Community Events & Programs</h3>
+    <p>Local arts, events, and activities that engage residents of all ages.</p>
+  </div>
 
-  <h2>Healthcare Services</h2>
-  <p>Local clinics provide routine and specialized healthcare, patient education, and wellness resources. These programs ensure access to quality medical services for residents.</p>
-</section>
+</div>
 
-<!-- Bottom Navigation -->
-<nav class="page-nav">
-  <a href="submit.html">⬅ Submit</a>
-  <a href="index.html">Home ➡</a>
-</nav>
+<script>
+  // Dynamically add submitted resources from sessionStorage
+  const storedResources = JSON.parse(sessionStorage.getItem("communityResources")) || [];
+  const container = document.getElementById("directoryContainer");
+
+  storedResources.forEach((resource, index) => {
+    const box = document.createElement("div");
+    box.className = "directory-box";
+    box.style.animationDelay = `${1.5 + index * 0.3}s`; // staggered animation
+    box.innerHTML = `<h3>${resource.name}</h3><p><strong>Category:</strong> ${resource.category}<br>${resource.description}</p>`;
+    // No link for submitted resources
+    container.appendChild(box);
+  });
+</script>
 
 </body>
 </html>
