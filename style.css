@@ -50,19 +50,20 @@ body {
 
 /* ===== HERO ===== */
 .home-hero {
-  position: relative;
-  width: 100%;
-  min-height: 450px;
-  background: url('https://www.crwflags.com/fotw/images/u/us-gajnc2.gif') no-repeat center center;
-  background-size: cover;
+  height: 450px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  border-radius: 10px;
-  margin: 20px auto;
-  overflow: hidden;
+  color: white;
+  position: relative;
+  background-image: url('images/header.jpg'); /* <-- local image */
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  margin-bottom: 50px;
 }
+
 
 .home-hero::before {
   content: "";
