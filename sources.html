@@ -1,90 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Community Resource Hub - Sources</title>
-  <meta name="description" content="Sources for the Chattahoochee Community Resource Hub project">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      background-color: black;
-      color: white;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+<meta charset="UTF-8">
+<title>Community Resource Hub - Sources</title>
+<meta name="description" content="Sources for the Chattahoochee Community Resource Hub project">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+  }
 
-    .topnav {
-      background-color: #111;
-      padding: 15px;
-    }
+  /* Top Navigation Bar */
+  nav.topnav {
+    background-color: #fff;
+    padding: 15px 0;
+  }
 
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+  nav.topnav .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+  }
 
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-    }
+  nav.topnav .nav-links a {
+    color: #000;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+  }
 
-    .nav-links a:hover {
-      color: cyan;
-    }
+  nav.topnav .nav-links a:hover {
+    text-decoration: underline;
+  }
 
-    section {
-      max-width: 800px;
-      margin: 50px auto;
-      padding: 20px;
-      background-color: #111;
-      border-radius: 10px;
-    }
+  header {
+    background-color: #3498db;
+    padding: 40px 20px;
+  }
 
-    h1, h2 {
-      text-align: center;
-      color: cyan;
-    }
+  header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
 
-    ul {
-      list-style-type: none;
-      padding-left: 0;
-    }
+  header p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
 
-    li {
-      margin-bottom: 15px;
-    }
+  /* Boxes Container */
+  .sources-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 40px auto;
+    max-width: 1000px;
+  }
 
-    a {
-      color: orange;
-      text-decoration: underline;
-    }
+  .source-box {
+    background-color: #111;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    text-align: left;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    transition: transform 0.3s;
+  }
 
-    a:hover {
-      color: #ff9500;
-    }
+  .source-box:hover {
+    transform: scale(1.05);
+  }
 
-    .btm {
-      display: block;
-      width: 150px;
-      margin: 20px auto 0;
-      text-align: center;
-      color: white;
-      text-decoration: none;
-      background-color: #4CAF50;
-      padding: 10px;
-      border-radius: 5px;
-    }
+  .source-box h3 {
+    color: #4CAF50;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
 
-    .btm:hover {
-      background-color: #45a049;
-    }
-  </style>
+  .source-box a {
+    color: orange;
+    text-decoration: underline;
+    word-break: break-word;
+  }
+
+  .source-box a:hover {
+    color: #ff9500;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .btm {
+    display: inline-block;
+    margin: 40px auto 60px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    background-color: #4CAF50;
+    padding: 12px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+
+  .btm:hover {
+    background-color: #45a049;
+  }
+</style>
 </head>
 <body>
 
+<!-- Top Navigation -->
 <nav class="topnav">
   <div class="nav-container">
     <div class="logo">Community Hub</div>
@@ -92,37 +127,81 @@
       <a href="index.html">Home</a>
       <a href="map.html">Map</a>
       <a href="directory.html">Directory</a>
+      <a href="submit.html">Submit</a>
     </div>
   </div>
 </nav>
 
-<section>
-  <h1>Sources</h1>
-  <h2>References for Community Resources & Project Research</h2>
-  <ul>
-    <li><a href="https://www.postconsumerbrands.com/responsibility/community-impact/food-accessibility/?gad_source=5&gad_campaignid=22721460629" target="_blank">Post Consumer Brands - Food Accessibility</a></li>
-    <li><a href="https://iamstellalove.com/" target="_blank">Stella Love Nonprofit</a></li>
-    <li><a href="https://americasyouthinmotion.org/" target="_blank">Americas Youth In Motion</a></li>
-    <li><a href="https://northfulton.younglife.org/" target="_blank">North Fulton Young Life</a></li>
-    <li><a href="https://bestbrains.com/alpharetta" target="_blank">Best Brains Alpharetta</a></li>
-    <li><a href="https://eastcobbtutoringcenter.com/" target="_blank">East Cobb Tutoring Center</a></li>
-    <li><a href="https://www.merelyplayerspresents.com/" target="_blank">Merely Players Theater</a></li>
-    <li><a href="https://act1theater.org/contact-us" target="_blank">Act1 Theater</a></li>
-    <li><a href="https://www.childrn.org/volunteer/" target="_blank">Children's Healthcare Volunteer</a></li>
-    <li><a href="https://www.openhandatlanta.org/" target="_blank">Open Hand Atlanta</a></li>
-    <li><a href="https://www.goodmandermatology.com/" target="_blank">Goodman Dermatology</a></li>
-    <li><a href="https://mysemg.com/" target="_blank">Southeast Medical Group</a></li>
-    <section id="sources">
-  <h2 class="section-title">Sources</h2>
-  <div class="sources-container">
+<!-- Header -->
+<header>
+  <h1>Community Resource Hub - Sources</h1>
+  <p>These are the references and resources used for the Chattahoochee Community Hub project.</p>
+</header>
 
+<!-- Source Boxes -->
+<section class="sources-container" id="sourcesContainer">
+  <div class="source-box" style="animation-delay: 0.3s;">
+    <h3>Post Consumer Brands</h3>
+    <a href="https://www.postconsumerbrands.com/responsibility/community-impact/food-accessibility/?gad_source=5&gad_campaignid=22721460629" target="_blank">Food Accessibility</a>
+  </div>
+
+  <div class="source-box" style="animation-delay: 0.6s;">
+    <h3>Stella Love Nonprofit</h3>
+    <a href="https://iamstellalove.com/" target="_blank">Website</a>
+  </div>
+
+  <div class="source-box" style="animation-delay: 0.9s;">
+    <h3>Americas Youth In Motion</h3>
+    <a href="https://americasyouthinmotion.org/" target="_blank">Website</a>
+  </div>
+
+  <div class="source-box" style="animation-delay: 1.2s;">
+    <h3>North Fulton Young Life</h3>
+    <a href="https://northfulton.younglife.org/" target="_blank">Website</a>
+  </div>
+
+  <div class="source-box" style="animation-delay: 1.5s;">
+    <h3>Best Brains Alpharetta</h3>
+    <a href="https://bestbrains.com/alpharetta" target="_blank">Website</a>
+  </div>
+
+  <div class="source-box" style="animation-delay: 1.8s;">
+    <h3>East Cobb Tutoring Center</h3>
+    <a href="https://eastcobbtutoringcenter.com/" target="_blank">Website</a>
+  </div>
+
+  <div class="source-box" style="animation-delay: 2.1s;">
+    <h3>Merely Players Theater</h3>
+    <a href="https://www.merelyplayerspresents.com/" target="_blank">Website</a>
+  </div>
+
+  <div class="source-box" style="animation-delay: 2.4s;">
+    <h3>Act1 Theater</h3>
+    <a href="https://act1theater.org/contact-us" target="_blank">Website</a>
+  </div>
+
+  <div class="source-box" style="animation-delay: 2.7s;">
+    <h3>Children's Healthcare Volunteer</h3>
+    <a href="https://www.childrn.org/volunteer/" target="_blank">Website</a>
+  </div>
+
+  <div class="source-box" style="animation-delay: 3.0s;">
+    <h3>Open Hand Atlanta</h3>
+    <a href="https://www.openhandatlanta.org/" target="_blank">Website</a>
+  </div>
+
+  <div class="source-box" style="animation-delay: 3.3s;">
+    <h3>Goodman Dermatology</h3>
+    <a href="https://www.goodmandermatology.com/" target="_blank">Website</a>
+  </div>
+
+  <div class="source-box" style="animation-delay: 3.6s;">
+    <h3>Southeast Medical Group</h3>
+    <a href="https://mysemg.com/" target="_blank">Website</a>
   </div>
 </section>
 
-  </ul>
-
-  <a href="index.html" class="btm">Back to Home</a>
-</section>
+<a href="index.html" class="btm">Back to Home</a>
 
 </body>
 </html>
