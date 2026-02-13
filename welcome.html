@@ -9,12 +9,13 @@
     margin: 0;
     padding: 0;
     text-align: center;
-    background-color: #000; /* Default page background black for the bottom */
-    color: #fff;            /* White text for readability */
+    background-color: #000; /* Black bottom section */
+    color: #fff;
   }
 
+  /* Top navigation bar */
   nav {
-    background: #2c3e50;
+    background: #3498db; /* Blue bar */
     padding: 15px 0;
   }
 
@@ -29,6 +30,10 @@
     text-decoration: none;
     margin: 0 15px;
     font-size: 16px;
+  }
+
+  nav .nav-links a:hover {
+    text-decoration: underline;
   }
 
   /* Hero section stays blue */
@@ -56,12 +61,11 @@
     animation-delay: 0.8s;
   }
 
-  /* Overview section fills rest of page in black */
+  /* Overview section */
   .welcome-overview {
     padding: 60px 20px;
     max-width: 900px;
     margin: 0 auto;
-    background: none; /* No extra box background, inherit black from body */
   }
 
   .welcome-overview h2,
@@ -71,7 +75,7 @@
     animation: fadeIn 1s forwards;
   }
 
-  /* Fade-in animation delays */
+  /* Fade-in delays */
   .welcome-overview h2 { animation-delay: 1.3s; }
   .welcome-overview h3:nth-of-type(1) { animation-delay: 1.6s; }
   .welcome-overview p:nth-of-type(1) { animation-delay: 1.9s; }
@@ -91,10 +95,11 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
+  /* Button under last paragraph */
   .btm {
     display: inline-block;
     padding: 12px 25px;
-    margin-top: 60px;
+    margin-top: 20px; /* closer to text */
     background: #3498db;
     color: #fff;
     text-decoration: none;
@@ -118,6 +123,8 @@
       <a href="index.html">Home</a>
       <a href="map.html">Map</a>
       <a href="sources.html">Sources</a>
+      <a href="submit.html">Submit</a>
+      <a href="directory.html">Directory</a>
     </div>
   </div>
 </nav>
@@ -164,11 +171,9 @@
     Local clinics and medical providers offer a range of healthcare services, from routine check-ups to specialized treatments. Programs often include patient education, preventative care, and wellness resources. These services ensure that residents have access to quality healthcare and guidance to maintain a healthy lifestyle.
   </p>
 
-</section>
-
-<div style="text-align:center; margin: 60px 0;">
+  <!-- Button right under text -->
   <a href="index.html" class="btm">Home</a>
-</div>
+</section>
 
 </body>
 </html>
