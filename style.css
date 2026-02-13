@@ -277,10 +277,12 @@ body {
 }
 
 .pdf-section iframe {
-  width: 75%;
-  height: 600px;
+  width: 90%;
+  max-width: 1400px;
+  height: 800px;
   display: block;
   margin: 0 auto;
+  border: none;
 }
 
 /* pdf anim */
