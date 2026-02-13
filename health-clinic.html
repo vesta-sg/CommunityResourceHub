@@ -4,32 +4,138 @@
   <meta charset="UTF-8">
   <title>Health & Wellness Clinic</title>
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    header {
+      padding: 60px 20px 30px 20px;
+    }
+
+    header h1 {
+      color: cyan;
+      font-size: 36px;
+      margin-bottom: 10px;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    header p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 18px;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: .3s;
+    }
+
+    section {
+      max-width: 800px;
+      margin: 30px auto;
+      font-size: 17px;
+      line-height: 1.6;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    section:nth-of-type(2) { animation-delay: .6s; }
+    section:nth-of-type(3) { animation-delay: .9s; }
+
+    .info-box {
+      background-color: #111;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .page-nav {
+      margin: 50px 0;
+    }
+
+    .page-nav a {
+      color: white;
+      text-decoration: none;
+      background-color: #4CAF50;
+      padding: 10px 20px;
+      border-radius: 6px;
+      margin: 0 10px;
+      transition: background 0.3s;
+    }
+
+    .page-nav a:hover {
+      background-color: #45a049;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
 </head>
 <body>
 
 <header>
-  <h1>Health & Wellness Clinic</h1>
-  <p>.</p>
+  <h1>Health & Wellness Clinics</h1>
+  <p>
+    Access to reliable healthcare is an important part of any community.  
+    The following clinics provide professional medical services, preventative care,
+    and support for residents in the North Fulton and Atlanta areas.
+  </p>
 </header>
 
 <section>
-  <p>A really good clinic you should go to is the Goodman Dermatology.This many types of services with high ratings and the services were Cosmetic Dermatology,Medical Dermatology,Laser Treatments, and Ethnic Skin Care Center.They value giving patients the best expirence they can give and commitment to patient care and compassion.Then the second recomendation is SEMG and this a clinic for primary care.It is also very reputable due to it having the most awards in primary care.Both of these are good only differnce is the Goodman is more specififc</p>
+  <p>
+    One highly recommended provider is Goodman Dermatology. This clinic offers a wide range of
+    services including cosmetic dermatology, medical dermatology, laser treatments,
+    and specialized care for different skin types. The clinic focuses on providing
+    high-quality treatment while ensuring patients feel comfortable and supported.
+    Their commitment to patient care and strong reputation in the community make
+    them a trusted option for dermatology services.
+  </p>
+
+  <p>
+    Another excellent healthcare provider is Southeast Medical Group (SEMG).
+    This clinic focuses on primary care and general health services for patients of all ages.
+    SEMG is known for its experienced physicians, preventative care programs,
+    and strong reputation across the Atlanta area. Their goal is to provide
+    accessible and dependable healthcare for families and individuals.
+  </p>
+
+  <p>
+    Both clinics serve important roles in the community. Goodman Dermatology is ideal
+    for specialized skin care and treatment, while Southeast Medical Group provides
+    comprehensive primary care services. Together, they offer residents reliable
+    healthcare options close to home.
+  </p>
 </section>
 
-<section>
-Dermatology:
-2870 Ronald Reagan Blvd, Suite 103
-Cumming, GA 30041
+<section class="info-box">
+  <h3>Goodman Dermatology</h3>
+  <p>
+    2870 Ronald Reagan Blvd, Suite 103  
+    Cumming, GA 30041  
+    Phone: (470) 242-0715
+  </p>
+</section>
 
-Phone: (470) 242-0715
-Fax: (770) 755-5890
+<section class="info-box">
+  <h3>Southeast Medical Group</h3>
+  <p>
+    1110 West Peachtree Street NW, Suite 830  
+    Atlanta, GA 30309  
+  </p>
 </section>
-<section>
-  Mysem:1110 West Peachtree Street NW, 830, Atlanta, GA 30309
-</section>
+
 <nav class="page-nav">
-  <a class="nav-links" href="youth-learning.html">⬅ Previous</a>
-  <a class="nav-links" href="events-program.html">Next ➡</a>
+  <a href="youth-learning.html">⬅ Previous</a>
+  <a href="events-program.html">Next ➡</a>
 </nav>
 
 </body>
