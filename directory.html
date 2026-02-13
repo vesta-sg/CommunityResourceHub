@@ -2,169 +2,173 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Community Resource Directory</title>
-<meta name="description" content="Chattahoochee Community Resource Hub Directory">
-
+<title>Youth Learning Center</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #000; /* black bottom section */
+    color: #fff;
+  }
 
-body{
-  background:black;
-  color:white;
-  font-family:Arial;
-  max-width:1400px;
-  margin:0 auto;
-  padding:0 20px;
-  overflow-x:hidden;
-  opacity:0;
-  animation:fadeInBody 1s forwards;
-}
-@keyframes fadeInBody{to{opacity:1}}
+  /* Top Navigation Bar */
+  nav.topnav {
+    background: #fff; /* solid white */
+    padding: 15px 0;
+  }
 
-.topnav{
-  background:#111;
-  padding:20px;
-  border-radius:8px;
-  margin:20px 0;
-}
-.nav-container{
-  display:flex;
-  justify-content:center;
-  gap:50px;
-  align-items:center;
-}
-.nav-links a{
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
-  font-size:18px;
-}
-.nav-links a:hover{color:cyan}
+  nav.topnav .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000; /* black text */
+  }
 
-.home-hero{
-  position:relative;
-  width:100%;
-  min-height:450px;
-  background:url('https://www.crwflags.com/fotw/images/u/us-gajnc2.gif') center/cover no-repeat;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  border-radius:10px;
-  margin:20px auto;
-  overflow:hidden;
-}
-.home-hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,.5);
-}
-.hero-content{
-  position:relative;
-  z-index:2;
-  max-width:900px;
-  padding:20px;
-  transform:translateY(30px);
-  opacity:0;
-  animation:heroFade 1s forwards .2s;
-}
-@keyframes heroFade{to{transform:translateY(0);opacity:1}}
+  nav.topnav .nav-links a {
+    color: #000;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+  }
 
-.home-hero h1{font-size:3rem;margin-bottom:15px}
-.home-hero p{font-size:1.3rem;margin-bottom:25px}
+  nav.topnav .nav-links a:hover {
+    text-decoration: underline;
+  }
 
-.featured-container{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:30px;
-  margin:40px auto;
-}
+  /* Header Section */
+  header {
+    background-color: #3498db; /* blue header */
+    padding: 60px 20px;
+  }
 
-.featured-box{
-  background:black;
-  border:3px solid rgba(0,153,255,.7);
-  border-radius:12px;
-  padding:30px;
-  width:320px;
-  text-align:center;
-  transition:.3s;
-  transform:translateY(20px);
-  opacity:0;
-  animation:fadeUp .8s forwards;
-}
-.featured-box:nth-child(1){animation-delay:.2s}
-.featured-box:nth-child(2){animation-delay:.4s}
-.featured-box:nth-child(3){animation-delay:.6s}
-.featured-box:nth-child(4){animation-delay:.8s}
+  header h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 0.3s;
+  }
 
-@keyframes fadeUp{
-  from{transform:translateY(20px);opacity:0}
-  to{transform:translateY(0);opacity:1}
-}
+  header p {
+    font-size: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 0.8s;
+  }
 
-.featured-box:hover{
-  transform:translateY(-5px) scale(1.03);
-  box-shadow:0 10px 20px rgba(0,0,255,.4);
-}
+  /* Section content */
+  section {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 1.3s;
+    text-align: left;
+  }
 
-.btm{
-  display:block;
-  text-align:center;
-  margin:40px auto;
-  color:cyan;
-  font-weight:bold;
-  text-decoration:none;
-}
-.btm:hover{color:white}
+  section h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  section p {
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  img {
+    margin: 40px 0;
+    width: 400px;
+    height: 200px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 2.0s;
+  }
+
+  nav.page-nav {
+    margin: 40px 0;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 2.5s;
+  }
+
+  nav.page-nav a {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s;
+  }
+
+  nav.page-nav a:hover {
+    color: #1d6fa5;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
 </style>
 </head>
-
 <body>
 
+<!-- Top Navigation -->
 <nav class="topnav">
-<div class="nav-container">
-<div class="logo">Community Hub</div>
-<div class="nav-links">
-<a href="index.html">Home</a>
-<a href="map.html">Map</a>
-<a href="submit.html">Submit Resource</a>
-</div>
-</div>
+  <div class="nav-container">
+    <div class="logo">Youth Learning Center</div>
+    <div class="nav-links">
+      <a href="welcome.html">Welcome</a>
+      <a href="index.html">Home</a>
+      <a href="map.html">Map</a>
+      <a href="sources.html">Sources</a>
+      <a href="submit.html">Submit</a>
+      <a href="directory.html">Directory</a>
+    </div>
+  </div>
 </nav>
 
-<div class="home-hero">
-<div class="hero-content">
-<h1>Community Resource Directory</h1>
-<p>Discover and share local community resources to strengthen our neighborhood.</p>
-</div>
-</div>
+<!-- Header Section -->
+<header>
+  <h1>Youth Learning Center</h1>
+  <p>Providing tutoring, mentoring, and after-school programs to empower students academically, socially, and personally.</p>
+</header>
 
-<div class="featured-container" id="featuredContainer">
-<div class="featured-box">
-<h3>Food Bank</h3>
-<a href="food-pantry.html"></a>
-<p>Provides free food to families in need.</p>
-</div>
+<!-- Main Section -->
+<section>
+  <h2>About Our Programs</h2>
+  <p>
+    The Youth Learning Center is dedicated to helping students thrive both in and out of the classroom. Through personalized tutoring, mentorship programs, and enrichment activities, children of all ages can develop critical academic skills and strong social confidence.
+  </p>
 
-<div class="featured-box">
-<a href ="health-clinic.html"><h3>Health Clinic</h3></a>
-<p>Access books, study spaces, and local programs.</p>
-</div>
+  <h2>Recommended Resources</h2>
+  <p>
+    We recommend two key programs for youth in the area. First, <strong>America's Youth in Motion</strong> offers abundant activities such as Youth Leadership Development, Basketball Skills Clinics, and Volunteer Opportunities. The Youth Leadership Development program helps young children build motivation, confidence, and positive behaviors. Second, <strong>North Fulton YoungLife</strong> empowers older children to live life to the fullest through grade-specific camps and inclusive activities. YoungLife also emphasizes volunteering and leadership development, equipping teens with valuable life skills. Overall, America's Youth in Motion is excellent for younger children, while YoungLife is ideal for older youth.
+  </p>
 
-<div class="featured-box">
-<a href ="youth-learning.html"><<h3>Youth Learning</h3></a>
-<p>Safe activities and tutoring for kids after school.</p>
-</div>
+  <h2>Benefits</h2>
+  <p>
+    Participation in these programs strengthens both academic performance and personal growth. Students develop leadership abilities, teamwork skills, and a sense of community responsibility. By combining structured learning with engaging recreational opportunities, the Youth Learning Center ensures that every child can reach their full potential.
+  </p>
+</section>
 
-<div class="featured-box">
-<h3>Health Clinic</h3>
-<p>Free or low-cost healthcare services for locals.</p>
-</div>
-</div>
+<!-- Logo Image -->
+<img src="https://dpbvj4a9anukr.cloudfront.net/846b4004-7989-4e48-9cf3-aa3dca341f35/f2a981f0-227c-4bad-854d-7bf68bced5ef/3fadd0f5c55f5a76aa613bf1db0be44f/Asset-1.svg"
+     alt="Logo">
 
-<a href="sources.html" class="btm">View Sources</a>
+<!-- Navigation Links -->
+<nav class="page-nav">
+  <a href="food-pantry.html">⬅ Previous</a>
+  <a href="health-clinic.html">Next ➡</a>
+</nav>
 
 </body>
 </html>
