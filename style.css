@@ -271,6 +271,18 @@ body {
   line-height: 1.4;
 }
 
+.pdf-section {
+  margin: 40px auto;
+  text-align: center;
+}
+
+.pdf-section iframe {
+  width: 50%;
+  height: 600px;
+  display: block;
+  margin: 0 auto;
+}
+
 /* pdf anim */
 .fade-box {
   opacity: 0;
