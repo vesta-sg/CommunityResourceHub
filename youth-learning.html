@@ -4,126 +4,53 @@
   <meta charset="UTF-8">
   <title>Youth Learning Center</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #000; /* black background for contrast */
-      color: #fff;
-      text-align: center;
-    }
-
-    header {
-      background-color: #3498db; /* blue header */
-      padding: 60px 20px;
-    }
-
-    header h1 {
-      font-size: 42px;
-      margin-bottom: 20px;
-      opacity: 0;
-      animation: fadeIn 1s forwards;
-      animation-delay: 0.3s;
-    }
-
-    header p {
-      font-size: 20px;
-      max-width: 800px;
-      margin: 0 auto;
-      line-height: 1.6;
-      opacity: 0;
-      animation: fadeIn 1s forwards;
-      animation-delay: 0.8s;
-    }
-
-    section {
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: 0 auto;
-      opacity: 0;
-      animation: fadeIn 1s forwards;
-      animation-delay: 1.3s;
-      text-align: left;
-    }
-
-    section h2 {
-      font-size: 28px;
-      margin-bottom: 15px;
-    }
-
-    section p {
-      font-size: 18px;
-      line-height: 1.8;
-    }
-
-    img {
-      margin: 40px 0;
-      width: 400px;
-      height: 200px;
-      opacity: 0;
-      animation: fadeIn 1s forwards;
-      animation-delay: 2.0s;
-    }
-
-    nav.page-nav {
-      margin: 40px 0;
-      display: flex;
-      justify-content: center;
-      gap: 50px;
-      opacity: 0;
-      animation: fadeIn 1s forwards;
-      animation-delay: 2.5s;
-    }
-
-    nav.page-nav a {
-      text-decoration: none;
-      color: #3498db;
-      font-weight: bold;
-      font-size: 18px;
-      transition: color 0.3s;
-    }
-
-    nav.page-nav a:hover {
-      color: #1d6fa5;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #000; color: #fff; text-align: center; }
+    .topnav { background: #fff; display: flex; align-items: center; padding: 10px 20px; }
+    .nav-links { margin-left: auto; }
+    .nav-links a { text-decoration: none; color: #000; margin-left: 25px; font-weight: bold; font-size: 16px; }
+    .logo-link { display: flex; align-items: center; }
+    .logo-img { height: 40px; width: auto; border-radius: 5px; margin-right: 15px; transition: transform 0.2s; }
+    .logo-img:hover { transform: scale(1.05); }
+    header { background-color: #3498db; padding: 60px 20px; }
+    header h1 { font-size: 42px; margin-bottom: 20px; opacity: 0; animation: fadeIn 1s forwards; animation-delay: 0.3s; }
+    header p { font-size: 20px; max-width: 800px; margin: 0 auto; line-height: 1.6; opacity: 0; animation: fadeIn 1s forwards; animation-delay: 0.8s; }
+    section { padding: 60px 20px; max-width: 900px; margin: 0 auto; opacity: 0; animation: fadeIn 1s forwards; animation-delay: 1.3s; text-align: left; }
+    section h2 { font-size: 28px; margin-bottom: 15px; }
+    section p { font-size: 18px; line-height: 1.8; }
+    img { margin: 40px 0; width: 400px; height: 200px; opacity: 0; animation: fadeIn 1s forwards; animation-delay: 2.0s; }
+    nav.page-nav { margin: 40px 0; display: flex; justify-content: center; gap: 50px; opacity: 0; animation: fadeIn 1s forwards; animation-delay: 2.5s; }
+    nav.page-nav a { text-decoration: none; color: #3498db; font-weight: bold; font-size: 18px; transition: color 0.3s; }
+    nav.page-nav a:hover { color: #1d6fa5; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body>
-
+<nav class="topnav">
+  <a href="index.html" class="logo-link">
+    <img src="https://i.postimg.cc/0yCzGm7K/Screenshot-2026-02-13-190748.png" alt="Community Hub Logo" class="logo-img">
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="directory.html">Directory</a>
+    <a href="submit.html">Submit</a>
+  </div>
+</nav>
 <header>
   <h1>Youth Learning Center</h1>
   <p>Providing tutoring, mentoring, and after-school programs to empower students academically, socially, and personally.</p>
 </header>
-
 <section>
   <h2>About Our Programs</h2>
-  <p>
-    The Youth Learning Center is dedicated to helping students thrive both in and out of the classroom. Through personalized tutoring, mentorship programs, and enrichment activities, children of all ages can develop critical academic skills and strong social confidence.
-  </p>
-
+  <p>The Youth Learning Center is dedicated to helping students thrive both in and out of the classroom. Through personalized tutoring, mentorship programs, and enrichment activities, children of all ages can develop critical academic skills and strong social confidence.</p>
   <h2>Recommended Resources</h2>
-  <p>
-    We recommend two key programs for youth in the area. First, <strong>America's Youth in Motion</strong> offers abundant activities such as Youth Leadership Development, Basketball Skills Clinics, and Volunteer Opportunities. The Youth Leadership Development program helps young children build motivation, confidence, and positive behaviors. Second, <strong>North Fulton YoungLife</strong> empowers older children to live life to the fullest through grade-specific camps and inclusive activities. YoungLife also emphasizes volunteering and leadership development, equipping teens with valuable life skills. Overall, America's Youth in Motion is excellent for younger children, while YoungLife is ideal for older youth.
-  </p>
-
+  <p>We recommend two key programs for youth in the area. First, <strong>America's Youth in Motion</strong> offers activities such as Youth Leadership Development, Basketball Skills Clinics, and Volunteer Opportunities. Second, <strong>North Fulton YoungLife</strong> empowers older children to live life to the fullest through camps and inclusive activities. YoungLife emphasizes volunteering and leadership development. America's Youth in Motion is excellent for younger children, while YoungLife is ideal for older youth.</p>
   <h2>Benefits</h2>
-  <p>
-    Participation in these programs strengthens both academic performance and personal growth. Students develop leadership abilities, teamwork skills, and a sense of community responsibility. By combining structured learning with engaging recreational opportunities, the Youth Learning Center ensures that every child can reach their full potential.
-  </p>
+  <p>Participation in these programs strengthens both academic performance and personal growth. Students develop leadership abilities, teamwork skills, and a sense of community responsibility. By combining structured learning with engaging recreational opportunities, the Youth Learning Center ensures that every child can reach their full potential.</p>
 </section>
-
-<img src="https://dpbvj4a9anukr.cloudfront.net/846b4004-7989-4e48-9cf3-aa3dca341f35/f2a981f0-227c-4bad-854d-7bf68bced5ef/3fadd0f5c55f5a76aa613bf1db0be44f/Asset-1.svg"
-     alt="Logo">
-
+<img src="https://dpbvj4a9anukr.cloudfront.net/846b4004-7989-4e48-9cf3-aa3dca341f35/f2a981f0-227c-4bad-854d-7bf68bced5ef/3fadd0f5c55f5a76aa613bf1db0be44f/Asset-1.svg" alt="Logo">
 <nav class="page-nav">
   <a href="food-pantry.html">⬅ Previous</a>
   <a href="health-clinic.html">Next ➡</a>
 </nav>
-
 </body>
 </html>
