@@ -4,141 +4,61 @@
   <meta charset="UTF-8">
   <title>Community Events Program</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #000;
-      color: #fff;
-      text-align: center;
-    }
-
-    header {
-      background-color: #3498db;
-      padding: 60px 20px;
-    }
-
-    header h1 {
-      font-size: 42px;
-      margin-bottom: 20px;
-      opacity: 0;
-      animation: fadeIn 1s forwards;
-      animation-delay: 0.3s;
-    }
-
-    header p {
-      font-size: 20px;
-      max-width: 800px;
-      margin: 0 auto;
-      line-height: 1.6;
-      opacity: 0;
-      animation: fadeIn 1s forwards;
-      animation-delay: 0.8s;
-    }
-
-    section {
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: 0 auto;
-      opacity: 0;
-      animation: fadeIn 1s forwards;
-      animation-delay: 1.3s;
-      text-align: left;
-    }
-
-    section h2 {
-      font-size: 28px;
-      margin-bottom: 15px;
-    }
-
-    section p {
-      font-size: 18px;
-      line-height: 1.8;
-    }
-
-    .location-box {
-      background: #111;
-      padding: 25px;
-      margin: 25px 0;
-      border-left: 5px solid #3498db;
-      border-radius: 10px;
-    }
-
-    nav.page-nav {
-      margin: 40px 0;
-      display: flex;
-      justify-content: center;
-      gap: 50px;
-      opacity: 0;
-      animation: fadeIn 1s forwards;
-      animation-delay: 2.0s;
-    }
-
-    nav.page-nav a {
-      text-decoration: none;
-      color: #3498db;
-      font-weight: bold;
-      font-size: 18px;
-      transition: color 0.3s;
-    }
-
-    nav.page-nav a:hover {
-      color: #1d6fa5;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #000; color: #fff; text-align: center; }
+    .topnav { background: #fff; display: flex; align-items: center; padding: 10px 20px; }
+    .nav-links { margin-left: auto; }
+    .nav-links a { text-decoration: none; color: #000; margin-left: 25px; font-weight: bold; font-size: 16px; }
+    .logo-link { display: flex; align-items: center; }
+    .logo-img { height: 40px; width: auto; border-radius: 5px; margin-right: 15px; transition: transform 0.2s; }
+    .logo-img:hover { transform: scale(1.05); }
+    header { background-color: #3498db; padding: 60px 20px; }
+    header h1 { font-size: 42px; margin-bottom: 20px; opacity: 0; animation: fadeIn 1s forwards; animation-delay: 0.3s; }
+    header p { font-size: 20px; max-width: 800px; margin: 0 auto; line-height: 1.6; opacity: 0; animation: fadeIn 1s forwards; animation-delay: 0.8s; }
+    section { padding: 60px 20px; max-width: 900px; margin: 0 auto; opacity: 0; animation: fadeIn 1s forwards; animation-delay: 1.3s; text-align: left; }
+    section h2 { font-size: 28px; margin-bottom: 15px; }
+    section p { font-size: 18px; line-height: 1.8; }
+    .location-box { background: #111; padding: 25px; margin: 25px 0; border-left: 5px solid #3498db; border-radius: 10px; }
+    nav.page-nav { margin: 40px 0; display: flex; justify-content: center; gap: 50px; opacity: 0; animation: fadeIn 1s forwards; animation-delay: 2.0s; }
+    nav.page-nav a { text-decoration: none; color: #3498db; font-weight: bold; font-size: 18px; transition: color 0.3s; }
+    nav.page-nav a:hover { color: #1d6fa5; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body>
-
+<nav class="topnav">
+  <a href="index.html" class="logo-link">
+    <img src="https://i.postimg.cc/0yCzGm7K/Screenshot-2026-02-13-190748.png" alt="Community Hub Logo" class="logo-img">
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="directory.html">Directory</a>
+    <a href="submit.html">Submit</a>
+  </div>
+</nav>
 <header>
   <h1>Community Events Program</h1>
   <p>Local festivals, theater, and community activities that bring residents together and strengthen connections.</p>
 </header>
-
 <section>
   <h2>About Community Events</h2>
-  <p>
-    Community events help create stronger neighborhoods by bringing people together through shared experiences. Festivals, theater performances, and workshops allow residents to meet others, support local organizations, and participate in meaningful activities. These events encourage creativity, volunteering, and community pride while giving families and students safe and engaging things to do.
-  </p>
-
+  <p>Community events help create stronger neighborhoods by bringing people together through shared experiences. Festivals, theater performances, and workshops allow residents to meet others, support local organizations, and participate in meaningful activities. These events encourage creativity, volunteering, and community pride while giving families and students safe and engaging things to do.</p>
   <h2>Recommended Programs</h2>
-  <p>
-    One great local option is <strong>Act1 Theater</strong>, which offers affordable shows, volunteer opportunities, and productions such as <em>Tuck Everlasting</em>. It’s a great place for students and families to support the arts and get involved in the community. Another strong option is <strong>Merely Players</strong>, a theater group known for a wide variety of performances scheduled throughout the year. While Act1 Theater is typically more affordable and community-focused, Merely Players offers a broader range of productions and entertainment choices.
-  </p>
-
+  <p>One great local option is <strong>Act1 Theater</strong>, which offers affordable shows, volunteer opportunities, and productions such as <em>Tuck Everlasting</em>. It’s a great place for students and families to support the arts and get involved in the community. Another strong option is <strong>Merely Players</strong>, a theater group known for a wide variety of performances scheduled throughout the year. While Act1 Theater is typically more affordable and community-focused, Merely Players offers a broader range of productions and entertainment choices.</p>
   <h2>Event Locations</h2>
-
   <div class="location-box">
     <h3>Act1 Theater</h3>
-    <p>
-      180 Academy St<br>
-      Alpharetta, GA 30009<br>
-      Offers live theater shows, youth programs, and volunteer opportunities.
-    </p>
+    <p>180 Academy St<br>Alpharetta, GA 30009<br>Offers live theater shows, youth programs, and volunteer opportunities.</p>
   </div>
-
   <div class="location-box">
     <h3>Merely Players Presents</h3>
-    <p>
-      Various locations in North Fulton<br>
-      Known for diverse productions and seasonal performances throughout the year.
-    </p>
+    <p>Various locations in North Fulton<br>Known for diverse productions and seasonal performances throughout the year.</p>
   </div>
-
   <h2>Why It Matters</h2>
-  <p>
-    Participating in community events builds connections, supports local artists, and gives residents opportunities to learn new skills and enjoy shared experiences. These programs strengthen community engagement and create welcoming spaces for people of all ages. By promoting events like theater and workshops, the Community Resource Hub helps residents stay involved and connected.
-  </p>
+  <p>Participating in community events builds connections, supports local artists, and gives residents opportunities to learn new skills and enjoy shared experiences. These programs strengthen community engagement and create welcoming spaces for people of all ages. By promoting events like theater and workshops, the Community Resource Hub helps residents stay involved and connected.</p>
 </section>
-
 <nav class="page-nav">
   <a href="health-clinic.html">⬅ Previous</a>
   <a href="index.html">Home ➡</a>
 </nav>
-
 </body>
 </html>
