@@ -9,8 +9,8 @@
     margin: 0;
     padding: 0;
     text-align: center;
-    background-color: #000;
-    color: #fff;
+    background-color: #f9f9f9; /* light background for readability */
+    color: #000;               /* default text black */
   }
 
   /* Top Navigation */
@@ -18,7 +18,7 @@
     background-color: #fff;
     display: flex;
     align-items: center;
-    padding: 10px 20px; /* same as other pages */
+    padding: 10px 20px;
   }
 
   .logo {
@@ -27,7 +27,7 @@
   }
 
   .logo-img {
-    height: 30px; /* same size as other pages */
+    height: 30px;
     width: auto;
     margin-right: 10px;
   }
@@ -78,6 +78,9 @@
     padding: 60px 20px;
     max-width: 900px;
     margin: 0 auto;
+    background-color: #fff; /* white background for content */
+    color: #000; /* black text for readability */
+    border-radius: 10px;
   }
 
   .welcome-overview h2,
@@ -123,11 +126,71 @@
   .btm:hover {
     background: #2980b9;
   }
-
 </style>
 </head>
 <body>
 
 <!-- Top Navigation -->
 <nav class="topnav">
-  <a href="welcome.html" clas
+  <a href="welcome.html" class="logo">
+    <img src="https://i.postimg.cc/0yCzGm7K/Screenshot-2026-02-13-190748.png" alt="Community Hub Logo" class="logo-img">
+    Community Hub
+  </a>
+  <div class="nav-links">
+    <a href="welcome.html">Welcome</a>
+    <a href="index.html">Home</a>
+    <a href="map.html">Map</a>
+    <a href="sources.html">Sources</a>
+    <a href="submit.html">Submit</a>
+    <a href="directory.html">Directory</a>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="welcome-hero">
+  <h1>Welcome to the Chattahoochee Resource Hub</h1>
+  <p>
+    The location chosen for this project is Caswyck Trace in Johns Creek. This area was selected because it represents a real residential community with nearby schools, parks, and local services. By focusing on a specific neighborhood, the resource hub becomes more authentic and useful. The goal is to provide residents with accurate and relevant information about nearby resources they can realistically access.
+  </p>
+</section>
+
+<!-- Overview Section -->
+<section class="welcome-overview">
+  <h2>Community Resources</h2>
+
+  <h3>Food Assistance</h3>
+  <p>
+    Local organizations are working to ensure families have access to nutritious meals regardless of income. Programs focus on providing pantry items, meal deliveries, and community-based food drives to support those in need. Some initiatives also emphasize education about healthy eating and nutrition, helping residents make better choices for their families.
+  </p>
+
+  <h3>Youth Programs</h3>
+  <p>
+    Youth-focused programs provide mentorship, recreational activities, and leadership training for children and teens. They aim to develop social skills, confidence, and academic motivation in young people. Programs also offer safe spaces for after-school activities, promoting physical, emotional, and mental growth.
+  </p>
+
+  <h3>Tutoring & Academic Support</h3>
+  <p>
+    Tutoring centers in the area provide personalized academic support for students of all ages. Services include help with homework, test preparation, and study strategies designed to improve performance. These programs aim to reinforce learning in subjects like math, science, and language arts, ensuring students have the tools to succeed academically.
+  </p>
+
+  <h3>Community Arts & Events</h3>
+  <p>
+    Local theaters and performance groups host plays, concerts, and workshops to engage the community. Events are designed to foster creativity, encourage participation, and provide cultural experiences for all ages. These programs also allow residents to collaborate and build stronger social connections through the arts.
+  </p>
+
+  <h3>Volunteering Opportunities</h3>
+  <p>
+    Various organizations offer opportunities for residents to volunteer their time and skills to benefit the community. Volunteers can participate in food distribution, event organization, and educational programs. These experiences help individuals give back while also developing leadership, teamwork, and communication skills.
+  </p>
+
+  <h3>Healthcare Services</h3>
+  <p>
+    Local clinics and medical providers offer a range of healthcare services, from routine check-ups to specialized treatments. Programs often include patient education, preventative care, and wellness resources. These services ensure that residents have access to quality healthcare and guidance to maintain a healthy lifestyle.
+  </p>
+
+  <!-- Button right under text -->
+  <a href="index.html" class="btm">Home</a>
+</section>
+
+</body>
+</html>
