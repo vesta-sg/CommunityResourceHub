@@ -4,142 +4,61 @@
   <meta charset="UTF-8">
   <title>Health & Wellness Clinic</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #000;
-      color: #fff;
-      text-align: center;
-    }
-
-    header {
-      background-color: #3498db;
-      padding: 60px 20px;
-    }
-
-    header h1 {
-      font-size: 42px;
-      margin-bottom: 20px;
-      opacity: 0;
-      animation: fadeIn 1s forwards;
-      animation-delay: 0.3s;
-    }
-
-    header p {
-      font-size: 20px;
-      max-width: 800px;
-      margin: 0 auto;
-      line-height: 1.6;
-      opacity: 0;
-      animation: fadeIn 1s forwards;
-      animation-delay: 0.8s;
-    }
-
-    section {
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: 0 auto;
-      opacity: 0;
-      animation: fadeIn 1s forwards;
-      animation-delay: 1.3s;
-      text-align: left;
-    }
-
-    section h2 {
-      font-size: 28px;
-      margin-bottom: 15px;
-    }
-
-    section p {
-      font-size: 18px;
-      line-height: 1.8;
-    }
-
-    .location-box {
-      background: #111;
-      padding: 25px;
-      margin: 25px 0;
-      border-left: 5px solid #3498db;
-      border-radius: 10px;
-    }
-
-    nav.page-nav {
-      margin: 40px 0;
-      display: flex;
-      justify-content: center;
-      gap: 50px;
-      opacity: 0;
-      animation: fadeIn 1s forwards;
-      animation-delay: 2.0s;
-    }
-
-    nav.page-nav a {
-      text-decoration: none;
-      color: #3498db;
-      font-weight: bold;
-      font-size: 18px;
-      transition: color 0.3s;
-    }
-
-    nav.page-nav a:hover {
-      color: #1d6fa5;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #000; color: #fff; text-align: center; }
+    .topnav { background: #fff; display: flex; align-items: center; padding: 10px 20px; }
+    .nav-links { margin-left: auto; }
+    .nav-links a { text-decoration: none; color: #000; margin-left: 25px; font-weight: bold; font-size: 16px; }
+    .logo-link { display: flex; align-items: center; }
+    .logo-img { height: 40px; width: auto; border-radius: 5px; margin-right: 15px; transition: transform 0.2s; }
+    .logo-img:hover { transform: scale(1.05); }
+    header { background-color: #3498db; padding: 60px 20px; }
+    header h1 { font-size: 42px; margin-bottom: 20px; opacity: 0; animation: fadeIn 1s forwards; animation-delay: 0.3s; }
+    header p { font-size: 20px; max-width: 800px; margin: 0 auto; line-height: 1.6; opacity: 0; animation: fadeIn 1s forwards; animation-delay: 0.8s; }
+    section { padding: 60px 20px; max-width: 900px; margin: 0 auto; opacity: 0; animation: fadeIn 1s forwards; animation-delay: 1.3s; text-align: left; }
+    section h2 { font-size: 28px; margin-bottom: 15px; }
+    section p { font-size: 18px; line-height: 1.8; }
+    .location-box { background: #111; padding: 25px; margin: 25px 0; border-left: 5px solid #3498db; border-radius: 10px; }
+    nav.page-nav { margin: 40px 0; display: flex; justify-content: center; gap: 50px; opacity: 0; animation: fadeIn 1s forwards; animation-delay: 2.0s; }
+    nav.page-nav a { text-decoration: none; color: #3498db; font-weight: bold; font-size: 18px; transition: color 0.3s; }
+    nav.page-nav a:hover { color: #1d6fa5; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body>
-
+<nav class="topnav">
+  <a href="index.html" class="logo-link">
+    <img src="https://i.postimg.cc/0yCzGm7K/Screenshot-2026-02-13-190748.png" alt="Community Hub Logo" class="logo-img">
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="directory.html">Directory</a>
+    <a href="submit.html">Submit</a>
+  </div>
+</nav>
 <header>
   <h1>Health & Wellness Clinic</h1>
   <p>Connecting the community with trusted medical, dermatology, and primary care services in North Fulton and Atlanta.</p>
 </header>
-
 <section>
   <h2>About These Clinics</h2>
-  <p>
-    Access to reliable healthcare is essential for a strong community. The clinics listed here provide high-quality medical services, compassionate staff, and a commitment to patient wellness. Whether someone needs routine checkups, dermatology care, or specialized treatment, these clinics offer trusted options with excellent reputations and patient satisfaction.
-  </p>
-
+  <p>Access to reliable healthcare is essential for a strong community. The clinics listed here provide high-quality medical services, compassionate staff, and a commitment to patient wellness. Whether someone needs routine checkups, dermatology care, or specialized treatment, these clinics offer trusted options with excellent reputations and patient satisfaction.</p>
   <h2>Recommended Locations</h2>
-  <p>
-    One highly rated option is <strong>Goodman Dermatology</strong>, which specializes in cosmetic dermatology, medical dermatology, laser treatments, and ethnic skin care. Their team focuses on patient comfort, professionalism, and personalized treatment plans. Another strong option is <strong>SEMG (Southeast Medical Group)</strong>, a reputable primary care provider known for award-winning service and comprehensive health support. While Goodman Dermatology is more specialized, SEMG offers broader general healthcare services.
-  </p>
-
+  <p>One highly rated option is <strong>Goodman Dermatology</strong>, which specializes in cosmetic dermatology, medical dermatology, laser treatments, and ethnic skin care. Another strong option is <strong>SEMG (Southeast Medical Group)</strong>, a reputable primary care provider known for award-winning service and comprehensive health support.</p>
   <h2>Clinic Information</h2>
-
   <div class="location-box">
     <h3>Goodman Dermatology</h3>
-    <p>
-      2870 Ronald Reagan Blvd, Suite 103<br>
-      Cumming, GA 30041<br>
-      Phone: (470) 242-0715<br>
-      Fax: (770) 755-5890
-    </p>
+    <p>2870 Ronald Reagan Blvd, Suite 103<br>Cumming, GA 30041<br>Phone: (470) 242-0715<br>Fax: (770) 755-5890</p>
   </div>
-
   <div class="location-box">
     <h3>Southeast Medical Group (SEMG)</h3>
-    <p>
-      1110 West Peachtree St NW, Suite 830<br>
-      Atlanta, GA 30309
-    </p>
+    <p>1110 West Peachtree St NW, Suite 830<br>Atlanta, GA 30309</p>
   </div>
-
   <h2>Why These Matter</h2>
-  <p>
-    Having access to nearby healthcare improves quality of life and ensures community members can receive preventative care, treatment, and support when needed. These clinics help residents stay healthy, confident, and supported by experienced professionals. By connecting people to trusted healthcare providers, the Community Resource Hub strengthens overall community wellness.
-  </p>
+  <p>Having access to nearby healthcare improves quality of life and ensures community members can receive preventative care, treatment, and support when needed. These clinics help residents stay healthy, confident, and supported by experienced professionals. By connecting people to trusted healthcare providers, the Community Resource Hub strengthens overall community wellness.</p>
 </section>
-
 <nav class="page-nav">
   <a href="youth-learning.html">⬅ Previous</a>
   <a href="events-program.html">Next ➡</a>
 </nav>
-
 </body>
 </html>
