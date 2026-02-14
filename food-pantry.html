@@ -4,138 +4,61 @@
   <meta charset="UTF-8">
   <title>Community Food Pantry</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #000;
-      color: #fff;
-      text-align: center;
-    }
-
-    header {
-      background-color: #3498db;
-      padding: 60px 20px;
-    }
-
-    header h1 {
-      font-size: 42px;
-      margin-bottom: 20px;
-      opacity: 0;
-      animation: fadeIn 1s forwards;
-      animation-delay: 0.3s;
-    }
-
-    header p {
-      font-size: 20px;
-      max-width: 800px;
-      margin: 0 auto;
-      line-height: 1.6;
-      opacity: 0;
-      animation: fadeIn 1s forwards;
-      animation-delay: 0.8s;
-    }
-
-    section {
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: 0 auto;
-      opacity: 0;
-      animation: fadeIn 1s forwards;
-      animation-delay: 1.3s;
-      text-align: left;
-    }
-
-    section h2 {
-      font-size: 28px;
-      margin-bottom: 15px;
-    }
-
-    section p {
-      font-size: 18px;
-      line-height: 1.8;
-    }
-
-    .location-box {
-      background: #111;
-      padding: 25px;
-      margin: 25px 0;
-      border-left: 5px solid #3498db;
-      border-radius: 10px;
-    }
-
-    nav.page-nav {
-      margin: 40px 0;
-      display: flex;
-      justify-content: center;
-      gap: 50px;
-      opacity: 0;
-      animation: fadeIn 1s forwards;
-      animation-delay: 2.0s;
-    }
-
-    nav.page-nav a {
-      text-decoration: none;
-      color: #3498db;
-      font-weight: bold;
-      font-size: 18px;
-      transition: color 0.3s;
-    }
-
-    nav.page-nav a:hover {
-      color: #1d6fa5;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #000; color: #fff; text-align: center; }
+    .topnav { background: #fff; display: flex; align-items: center; padding: 10px 20px; }
+    .nav-links { margin-left: auto; }
+    .nav-links a { text-decoration: none; color: #000; margin-left: 25px; font-weight: bold; font-size: 16px; }
+    .logo-link { display: flex; align-items: center; }
+    .logo-img { height: 40px; width: auto; border-radius: 5px; margin-right: 15px; transition: transform 0.2s; }
+    .logo-img:hover { transform: scale(1.05); }
+    header { background-color: #3498db; padding: 60px 20px; }
+    header h1 { font-size: 42px; margin-bottom: 20px; opacity: 0; animation: fadeIn 1s forwards; animation-delay: 0.3s; }
+    header p { font-size: 20px; max-width: 800px; margin: 0 auto; line-height: 1.6; opacity: 0; animation: fadeIn 1s forwards; animation-delay: 0.8s; }
+    section { padding: 60px 20px; max-width: 900px; margin: 0 auto; opacity: 0; animation: fadeIn 1s forwards; animation-delay: 1.3s; text-align: left; }
+    section h2 { font-size: 28px; margin-bottom: 15px; }
+    section p { font-size: 18px; line-height: 1.8; }
+    .location-box { background: #111; padding: 25px; margin: 25px 0; border-left: 5px solid #3498db; border-radius: 10px; }
+    nav.page-nav { margin: 40px 0; display: flex; justify-content: center; gap: 50px; opacity: 0; animation: fadeIn 1s forwards; animation-delay: 2.0s; }
+    nav.page-nav a { text-decoration: none; color: #3498db; font-weight: bold; font-size: 18px; transition: color 0.3s; }
+    nav.page-nav a:hover { color: #1d6fa5; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body>
-
+<nav class="topnav">
+  <a href="index.html" class="logo-link">
+    <img src="https://i.postimg.cc/0yCzGm7K/Screenshot-2026-02-13-190748.png" alt="Community Hub Logo" class="logo-img">
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="directory.html">Directory</a>
+    <a href="submit.html">Submit</a>
+  </div>
+</nav>
 <header>
   <h1>Community Food Pantry</h1>
   <p>Providing free groceries and food support for families in need.</p>
 </header>
-
 <section>
   <h2>About Food Support Programs</h2>
-  <p>
-    Food pantries play an essential role in supporting families and individuals facing food insecurity. By providing free groceries and meal assistance, these organizations help ensure that everyone in the community has access to nutritious food. Food support programs also strengthen communities by reducing stress on families and creating opportunities for people to thrive.
-  </p>
-
+  <p>Food pantries play an essential role in supporting families and individuals facing food insecurity. By providing free groceries and meal assistance, these organizations help ensure that everyone in the community has access to nutritious food. Food support programs also strengthen communities by reducing stress on families and creating opportunities for people to thrive.</p>
   <h2>Recommended Organizations</h2>
-  <p>
-    Two strong food assistance organizations in the area are <strong>Post Consumer Brands Community Impact</strong> and <strong>Stella Love Nonprofit</strong>. Post Consumer Brands focuses on hunger relief by partnering with communities to make food accessible and improve quality of life. Their mission centers on ensuring that everyone has reliable access to nutritious meals. Stella Love is a nonprofit organization that supports individuals experiencing homelessness and families in need. In addition to food distribution, they offer community programs, activities for children, and outreach efforts both locally and internationally.
-  </p>
-
+  <p>Two strong food assistance organizations in the area are <strong>Post Consumer Brands Community Impact</strong> and <strong>Stella Love Nonprofit</strong>. Post Consumer Brands focuses on hunger relief by partnering with communities to make food accessible and improve quality of life. Stella Love supports individuals experiencing homelessness and families in need, providing community programs and outreach efforts.</p>
   <h2>Locations</h2>
-
   <div class="location-box">
     <h3>Post Consumer Brands Community Impact</h3>
-    <p>
-      Supports food accessibility initiatives and hunger-relief programs through community partnerships and outreach efforts.
-    </p>
+    <p>Supports food accessibility initiatives and hunger-relief programs through community partnerships and outreach efforts.</p>
   </div>
-
   <div class="location-box">
     <h3>Stella Love Nonprofit</h3>
-    <p>
-      Provides food support, outreach programs, and community services for individuals and families in need throughout the region.
-    </p>
+    <p>Provides food support, outreach programs, and community services for individuals and families in need throughout the region.</p>
   </div>
-
   <h2>Why It Matters</h2>
-  <p>
-    Access to reliable food sources helps families stay healthy, focused, and stable. Community food programs reduce hunger, support children’s development, and create stronger neighborhoods. By connecting residents with trusted food resources, the Community Resource Hub ensures that no one in the community has to face food insecurity alone.
-  </p>
+  <p>Access to reliable food sources helps families stay healthy, focused, and stable. Community food programs reduce hunger, support children’s development, and create stronger neighborhoods. By connecting residents with trusted food resources, the Community Resource Hub ensures that no one in the community has to face food insecurity alone.</p>
 </section>
-
 <nav class="page-nav">
   <a href="index.html">⬅ Home</a>
   <a href="youth-learning.html">Next ➡</a>
 </nav>
-
 </body>
 </html>
