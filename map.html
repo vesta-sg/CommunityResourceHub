@@ -8,33 +8,30 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background-color: #000; /* black background for hub pages */
+      background-color: #000;
       color: #fff;
       text-align: center;
     }
 
-    nav.topnav {
+    .topnav {
       background-color: #fff;
-      padding: 15px 0;
+      display: flex;
+      align-items: center;
+      padding: 15px 20px; /* same as other pages */
     }
 
-    nav.topnav .logo {
-      font-size: 24px;
-      font-weight: bold;
-      color: #000;
-    }
-
-    nav.topnav .nav-links a {
+    .nav-links { margin-left: auto; }
+    .nav-links a {
       color: #000;
       text-decoration: none;
-      margin: 0 15px;
+      margin-left: 25px;
+      font-weight: bold;
       font-size: 16px;
     }
 
-    nav.topnav .nav-links a:hover {
-      text-decoration: underline;
-    }
-
+    .logo-link { display: flex; align-items: center; }
+    .logo-img { height: 30px; width: auto; margin-right: 10px; } /* match other pages */
+    
     h1 {
       text-align: center;
       margin-top: 20px;
@@ -42,11 +39,10 @@
     }
 
     .btm {
-      display: block;
+      display: inline-block;
       text-align: center;
       margin: 20px auto;
-      width: 120px;
-      padding: 10px 0;
+      padding: 10px 20px;
       background-color: #4CAF50;
       color: white;
       text-decoration: none;
@@ -54,11 +50,8 @@
       font-size: 16px;
     }
 
-    .btm:hover {
-      background-color: #45a049;
-    }
+    .btm:hover { background-color: #45a049; }
 
-    /* Make sure the map has a visible height */
     #map {
       height: 500px;
       width: 90%;
@@ -81,58 +74,51 @@
 </head>
 <body>
 
+  <nav class="topnav">
+    <a href="index.html" class="logo-link">
+      <img src="https://i.postimg.cc/0yCzGm7K/Screenshot-2026-02-13-190748.png" alt="Community Hub Logo" class="logo-img">
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="directory.html">Directory</a>
+      <a href="submit.html">Submit</a>
+    </div>
+  </nav>
 
-<nav class="topnav">
-  <a href="index.html" class="logo-link">
-    <img src="https://i.postimg.cc/0yCzGm7K/Screenshot-2026-02-13-190748.png" alt="Community Hub Logo" class="logo-img">
-  </a>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="directory.html">Directory</a>
-    <a href="submit.html">Submit</a>
-  </div>
-</nav>
+  <h1>Community Resource Map</h1>
+  <a href="index.html" class="btm">Back</a>
 
+  <div id="map"></div>
 
-<h1>Community Resource Map</h1>
-<a href="index.html" class="btm">Back</a>
+  <script>
+    var map = L.map('map').setView([34.05, -84.28], 11);
 
-<div id="map"></div>
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
+      subdomains: 'abcd',
+      maxZoom: 19
+    }).addTo(map);
 
-<script>
-  // Initialize map
-  var map = L.map('map').setView([34.05, -84.28], 11);
+    var locations = [
+      ["Post Consumer Brands Food Accessibility (Atlanta)", 33.753746, -84.386330, "https://www.postconsumerbrands.com/responsibility/community-impact/food-accessibility/"],
+      ["Stella Love Nonprofit (Roswell)", 34.021000, -84.360000, "https://iamstellalove.com/"],
+      ["America's Youth In Motion (Alpharetta)", 34.075000, -84.294000, "https://americasyouthinmotion.org/"],
+      ["North Fulton Young Life (Roswell/Alpharetta)", 34.023000, -84.360000, "https://northfulton.younglife.org/"],
+      ["Best Brains Alpharetta", 34.068500, -84.294000, "https://bestbrains.com/alpharetta"],
+      ["East Cobb Tutoring Center (Marietta)", 33.944600, -84.511000, "https://eastcobbtutoringcenter.com/"],
+      ["Merely Players Theater (Alpharetta)", 34.105000, -84.297500, "https://www.merelyplayerspresents.com/"],
+      ["Act1 Theater (Roswell)", 34.038000, -84.361700, "https://act1theater.org/contact-us"],
+      ["Children's Healthcare Volunteer (Marietta)", 33.950000, -84.550000, "https://www.childrn.org/volunteer/"],
+      ["Open Hand Atlanta", 33.788000, -84.387000, "https://www.openhandatlanta.org/"],
+      ["Goodman Dermatology (Atlanta)", 33.786000, -84.387000, "https://www.goodmandermatology.com/"],
+      ["Southeast Medical Group (Roswell)", 34.034000, -84.364000, "https://mysemg.com/"]
+    ];
 
-  // Dark tiles from Carto (better on black background)
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
-    subdomains: 'abcd',
-    maxZoom: 19
-  }).addTo(map);
-
-// Locations array
-var locations = [
-  ["Post Consumer Brands Food Accessibility (Atlanta)", 33.753746, -84.386330, "https://www.postconsumerbrands.com/responsibility/community-impact/food-accessibility/"],
-  ["Stella Love Nonprofit (Roswell)", 34.021000, -84.360000, "https://iamstellalove.com/"],
-  ["America's Youth In Motion (Alpharetta)", 34.075000, -84.294000, "https://americasyouthinmotion.org/"],
-  ["North Fulton Young Life (Roswell/Alpharetta)", 34.023000, -84.360000, "https://northfulton.younglife.org/"],
-  ["Best Brains Alpharetta", 34.068500, -84.294000, "https://bestbrains.com/alpharetta"],
-  ["East Cobb Tutoring Center (Marietta)", 33.944600, -84.511000, "https://eastcobbtutoringcenter.com/"],
-  ["Merely Players Theater (Alpharetta)", 34.105000, -84.297500, "https://www.merelyplayerspresents.com/"],
-  ["Act1 Theater (Roswell)", 34.038000, -84.361700, "https://act1theater.org/contact-us"],
-  ["Children's Healthcare Volunteer (Marietta)", 33.950000, -84.550000, "https://www.childrn.org/volunteer/"],
-  ["Open Hand Atlanta", 33.788000, -84.387000, "https://www.openhandatlanta.org/"],
-  ["Goodman Dermatology (Atlanta)", 33.786000, -84.387000, "https://www.goodmandermatology.com/"],
-  ["Southeast Medical Group (Roswell)", 34.034000, -84.364000, "https://mysemg.com/"]
-];
-
-
-  // Add markers
-  locations.forEach(function(loc){
-    L.marker([loc[1], loc[2]]).addTo(map)
-      .bindPopup("<b>" + loc[0] + "</b><br><a href='" + loc[3] + "' target='_blank'>Visit Website</a>");
-  });
-</script>
+    locations.forEach(function(loc){
+      L.marker([loc[1], loc[2]]).addTo(map)
+        .bindPopup("<b>" + loc[0] + "</b><br><a href='" + loc[3] + "' target='_blank'>Visit Website</a>");
+    });
+  </script>
 
 </body>
 </html>
