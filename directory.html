@@ -4,104 +4,25 @@
 <meta charset="UTF-8">
 <title>Community Directory</title>
 <style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-  }
-
-  /* Top Navigation Bar */
-  nav.topnav {
-    background: #fff;
-    padding: 15px 0;
-  }
-
-  nav.topnav .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #000;
-  }
-
-  nav.topnav .nav-links a {
-    color: #000;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 16px;
-  }
-
-  nav.topnav .nav-links a:hover {
-    text-decoration: underline;
-  }
-
-  /* Page Header */
-  header {
-    background-color: #3498db;
-    padding: 40px 20px;
-    opacity: 0;
-    animation: fadeIn 1s forwards;
-    animation-delay: 0.3s;
-  }
-
-  header h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-  }
-
-  header p {
-    font-size: 18px;
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.6;
-  }
-
-  /* Directory Boxes */
-  .directory-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 40px 0;
-    gap: 20px;
-  }
-
-  .directory-box {
-    background-color: #111;
-    border-radius: 10px;
-    padding: 25px;
-    width: 250px;
-    text-align: left;
-    cursor: pointer;
-    transition: transform 0.3s;
-    opacity: 0;
-    animation: fadeIn 1s forwards;
-  }
-
-  .directory-box:hover {
-    transform: scale(1.05);
-  }
-
-  .directory-box h3 {
-    color: #4CAF50;
-    margin-bottom: 10px;
-  }
-
-  .directory-box p {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
+body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #000; color: #fff; text-align: center; }
+.topnav { background: #fff; display: flex; align-items: center; padding: 10px 20px; }
+.nav-links { margin-left: auto; }
+.nav-links a { text-decoration: none; color: #000; margin-left: 25px; font-weight: bold; font-size: 16px; }
+.logo-link { display: flex; align-items: center; }
+.logo-img { height: 40px; width: auto; border-radius: 5px; margin-right: 15px; transition: transform 0.2s; }
+.logo-img:hover { transform: scale(1.05); }
+header { background-color: #3498db; padding: 40px 20px; opacity: 0; animation: fadeIn 1s forwards; animation-delay: 0.3s; }
+header h1 { font-size: 36px; margin-bottom: 10px; }
+header p { font-size: 18px; max-width: 800px; margin: 0 auto; line-height: 1.6; }
+.directory-container { display: flex; flex-wrap: wrap; justify-content: center; margin: 40px 0; gap: 20px; }
+.directory-box { background-color: #111; border-radius: 10px; padding: 25px; width: 250px; text-align: left; cursor: pointer; transition: transform 0.3s; opacity: 0; animation: fadeIn 1s forwards; }
+.directory-box:hover { transform: scale(1.05); }
+.directory-box h3 { color: #4CAF50; margin-bottom: 10px; }
+.directory-box p { font-size: 16px; line-height: 1.5; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 </style>
 </head>
 <body>
-
-<!-- Top Navigation -->
 <nav class="topnav">
   <a href="index.html" class="logo-link">
     <img src="https://i.postimg.cc/0yCzGm7K/Screenshot-2026-02-13-190748.png" alt="Community Hub Logo" class="logo-img">
@@ -112,53 +33,38 @@
     <a href="submit.html">Submit</a>
   </div>
 </nav>
-
-<!-- Header -->
 <header>
   <h1>Community Resources Directory</h1>
   <p>Click a box to learn more about each resource. Newly submitted resources appear below as cards.</p>
 </header>
-
-<!-- Directory Boxes -->
 <div class="directory-container" id="directoryContainer">
-
-  <!-- Pre-made Boxes -->
   <div class="directory-box" style="animation-delay: 0.3s;" onclick="location.href='youth-learning.html'">
     <h3>Youth Learning Center</h3>
     <p>Tutoring, mentoring, and after-school programs for students of all ages.</p>
   </div>
-
   <div class="directory-box" style="animation-delay: 0.6s;" onclick="location.href='health-clinic.html'">
     <h3>Health Clinic</h3>
     <p>Provides general healthcare, screenings, and wellness resources for the community.</p>
   </div>
-
   <div class="directory-box" style="animation-delay: 0.9s;" onclick="location.href='food-pantry.html'">
     <h3>Food Pantry</h3>
     <p>Nonprofit programs offering food assistance to families in need.</p>
   </div>
-
   <div class="directory-box" style="animation-delay: 1.2s;" onclick="location.href='events-program.html'">
     <h3>Community Events & Programs</h3>
     <p>Local arts, events, and activities that engage residents of all ages.</p>
   </div>
-
 </div>
-
 <script>
-  // Dynamically add submitted resources from sessionStorage
-  const storedResources = JSON.parse(sessionStorage.getItem("communityResources")) || [];
-  const container = document.getElementById("directoryContainer");
-
-  storedResources.forEach((resource, index) => {
-    const box = document.createElement("div");
-    box.className = "directory-box";
-    box.style.animationDelay = `${1.5 + index * 0.3}s`; // staggered animation
-    box.innerHTML = `<h3>${resource.name}</h3><p><strong>Category:</strong> ${resource.category}<br>${resource.description}</p>`;
-    // No link for submitted resources
-    container.appendChild(box);
-  });
+const storedResources = JSON.parse(sessionStorage.getItem("communityResources")) || [];
+const container = document.getElementById("directoryContainer");
+storedResources.forEach((resource, index) => {
+  const box = document.createElement("div");
+  box.className = "directory-box";
+  box.style.animationDelay = `${1.5 + index * 0.3}s`;
+  box.innerHTML = `<h3>${resource.name}</h3><p><strong>Category:</strong> ${resource.category}<br>${resource.description}</p>`;
+  container.appendChild(box);
+});
 </script>
-
 </body>
 </html>
