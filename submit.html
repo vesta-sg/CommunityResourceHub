@@ -15,6 +15,7 @@
     text-align: center;
   }
 
+  /* Top Navigation */
   .topnav {
     background-color: #111;
     padding: 15px;
@@ -22,17 +23,19 @@
 
   .nav-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* center nav links */
     align-items: center;
+    gap: 40px; /* spacing between links */
   }
 
-  .nav-links a {
+  .nav-links a, .logo {
     color: white;
     text-decoration: none;
-    margin-left: 20px;
+    font-weight: bold;
+    font-size: 16px;
   }
 
-  .nav-links a:hover {
+  .nav-links a:hover, .logo:hover {
     color: cyan;
   }
 
@@ -46,14 +49,13 @@
   }
 
   h1 {
-    color: cyan;
+    color: #1A3F7A; /* darker blue */
     font-size: 42px;
     margin-bottom: 25px;
-    text-shadow: 2px 2px 6px #00ffff;
   }
 
   h2 {
-    color: cyan;
+    color: #1A3F7A;
     text-align: center;
   }
 
@@ -106,16 +108,14 @@
 <nav class="topnav">
   <div class="nav-container">
     <div class="logo">Community Hub</div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="map.html">Map</a>
-      <a href="directory.html">Directory</a>
-    </div>
+    <a href="index.html">Home</a>
+    <a href="map.html">Map</a>
+    <a href="directory.html">Directory</a>
   </div>
 </nav>
 
 <section>
-  <h1>🚀 Submit a New Community Resource 🚀</h1>
+  <h1>Submit a New Community Resource</h1>
   <form id="resourceForm">
     <input type="text" id="name" placeholder="Resource Name" required>
 
