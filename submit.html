@@ -1,94 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Submit a New Community Resource</title>
-  <meta name="description" content="Submit a new resource to the Chattahoochee Community Hub">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      background-color: black;
-      color: white;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+<meta charset="UTF-8">
+<title>Submit a New Community Resource</title>
+<meta name="description" content="Submit a new resource to the Chattahoochee Community Hub">
+<link rel="stylesheet" href="style.css">
+<style>
+  body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
 
-    .topnav {
-      background-color: #111;
-      padding: 15px;
-    }
+  .topnav {
+    background-color: #111;
+    padding: 15px;
+  }
 
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-    }
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+  }
 
-    .nav-links a:hover {
-      color: cyan;
-    }
+  .nav-links a:hover {
+    color: cyan;
+  }
 
-    section {
-      max-width: 700px;
-      margin: 50px auto;
-      padding: 20px;
-      background-color: #111;
-      border-radius: 10px;
-    }
+  section {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #111;
+    border-radius: 10px;
+    text-align: center;
+  }
 
-    h1, h2 {
-      text-align: center;
-      color: cyan;
-    }
+  h1 {
+    color: cyan;
+    font-size: 42px;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 6px #00ffff;
+  }
 
-    input, select, textarea {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 20px;
-      border-radius: 5px;
-      border: none;
-      font-size: 16px;
-    }
+  h2 {
+    color: cyan;
+    text-align: center;
+  }
 
-    button {
-      display: block;
-      width: 100%;
-      padding: 12px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
+  input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
 
-    button:hover {
-      background-color: #45a049;
-    }
+  button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
 
-    .btm {
-      display: inline-block;
-      margin-top: 20px;
-      text-align: center;
-      color: white;
-      text-decoration: none;
-      background-color: #4CAF50;
-      padding: 10px 20px;
-      border-radius: 5px;
-    }
+  button:hover {
+    background-color: #45a049;
+  }
 
-    .btm:hover {
-      background-color: #45a049;
-    }
-  </style>
+  .btm {
+    display: inline-block;
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    background-color: #4CAF50;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+
+  .btm:hover {
+    background-color: #45a049;
+  }
+</style>
 </head>
 <body>
 
@@ -104,7 +115,7 @@
 </nav>
 
 <section>
-  <h1>Submit a New Community Resource</h1>
+  <h1>🚀 Submit a New Community Resource 🚀</h1>
   <form id="resourceForm">
     <input type="text" id="name" placeholder="Resource Name" required>
 
@@ -130,10 +141,8 @@ const resourceForm = document.getElementById("resourceForm");
 resourceForm.addEventListener("submit", e => {
   e.preventDefault();
   
-  // Get existing submissions from sessionStorage (not localStorage)
   const stored = JSON.parse(sessionStorage.getItem("communityResources")) || [];
   
-  // Create new resource object
   const newResource = {
     name: document.getElementById("name").value,
     category: document.getElementById("category").value,
@@ -141,15 +150,12 @@ resourceForm.addEventListener("submit", e => {
   };
   
   stored.push(newResource);
-  
-  // Save back to sessionStorage
   sessionStorage.setItem("communityResources", JSON.stringify(stored));
   
   alert("Thank you for submitting a resource!");
   resourceForm.reset();
 });
 </script>
-
 
 </body>
 </html>
